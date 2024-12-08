@@ -1,0 +1,265 @@
+{
+  "log": {
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": "",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-",
+          "geosite-"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".",
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.2",
+        "188.114.96.2"
+      ]
+    }
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify-Nexttt کانال تلگرام § 0",
+        "@Hiddify-Nexttt کانال تلگرام § 1",
+        "@Hiddify-Nexttt کانال تلگرام § 2",
+        "@Hiddify-Nexttt کانال تلگرام § 3",
+        "@Hiddify-Nexttt کانال تلگرام § 4"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify-Nexttt کانال تلگرام § 0",
+        "@Hiddify-Nexttt کانال تلگرام § 1",
+        "@Hiddify-Nexttt کانال تلگرام § 2",
+        "@Hiddify-Nexttt کانال تلگرام § 3",
+        "@Hiddify-Nexttt کانال تلگرام § 4"
+      ],
+      "tolerance": 1
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify-Nexttt کانال تلگرام § 0",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8f1b:cfce:3d9e:210c:6e93/128"
+      ],
+      "private_key": "qOlLD9v1xyIY+dR9cpswRE12g1h7QvySF9fkAJmkrU4=",
+      "server": "162.159.195.32",
+      "server_port": 943,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "4u6j",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "10-30",
+      "fake_packets_delay": "10-30"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify-Nexttt کانال تلگرام § 1",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8550:5216:627d:7cdc:547a/128"
+      ],
+      "private_key": "OPqeP519HFKnW0Im5OF8qhuvDtjfNxL77h1rrj4qqkE=",
+      "server": "162.159.192.160",
+      "server_port": 5279,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "DNXk",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "10-30",
+      "fake_packets_delay": "10-30"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify-Nexttt کانال تلگرام § 2",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:871a:d1ce:4f72:f25b:77f4/128"
+      ],
+      "private_key": "qCoCXp8kF2Gg5LuJKNiI5L16t6Di6eu9YaLoVThIOUo=",
+      "server": "162.159.192.148",
+      "server_port": 5279,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "8spZ",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "10-30",
+      "fake_packets_delay": "10-30"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify-Nexttt کانال تلگرام § 3",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:89f3:2bb2:6208:62e0:69c9/128"
+      ],
+      "private_key": "wKF+9NOqKFj3dzaSgE/d7NLhfqfZ3Tz5hd9CY6GZ7HI=",
+      "server": "162.159.195.190",
+      "server_port": 3476,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "WUiU",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "10-30",
+      "fake_packets_delay": "10-30"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify-Nexttt کانال تلگرام § 4",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8671:e379:4a42:8aa:b71c/128"
+      ],
+      "private_key": "2JIxsEIzMH1FLyi2pvw1b2s9vzilKpTdb3DC2ily6Uk=",
+      "server": "162.159.195.69",
+      "server_port": 4177,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "+sn/",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "10-30",
+      "fake_packets_delay": "10-30"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "domain": ".",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-",
+          "geosite-"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  }
+}
