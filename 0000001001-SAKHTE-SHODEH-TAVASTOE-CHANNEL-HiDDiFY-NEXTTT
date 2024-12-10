@@ -1,0 +1,327 @@
+  
+{
+  "log": {
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "us.569520.xyz",
+          "in.569520.xyz",
+          "uk.569520.xyz",
+          "",
+          "o1.ab.096888.xyz",
+          "sg.569520.xyz",
+          "jp.569520.xyz",
+          "kr.569520.xyz",
+          "hk.569520.xyz",
+          "nl.569520.xyz",
+          "o2.ab.096888.xyz",
+          "o3.ab.096888.xyz",
+          "ca.569520.xyz",
+          "de.569520.xyz"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-",
+          "geosite-"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".",
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3"
+      ]
+    }
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "💥5@Hiddify_Nexttt  § 18",
+        "💥16@Hiddify_Nexttt  § 4",
+        "💥11@Hiddify_Nexttt  § 5",
+        "💥20@Hiddify_Nexttt  § 7",
+        "💥28@Hiddify_Nexttt  § 13"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+       "💥5@Hiddify_Nexttt  § 18",
+        "💥16@Hiddify_Nexttt  § 4",
+        "💥11@Hiddify_Nexttt  § 5",
+        "💥20@Hiddify_Nexttt  § 7",
+        "💥28@Hiddify_Nexttt  § 13"
+      ],
+      "tolerance": 1
+    },
+ {
+      "type": "vmess",
+      "tag": "💥5@Hiddify_Nexttt  § 18",
+      "server": "nl.569520.xyz",
+      "server_port": 10002,
+      "uuid": "c7716936-798d-4237-b101-2d914e6d543a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nl.569520.xyz",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/cctv13/4k.m3u8",
+        "headers": {
+          "Host": "nl.569520.xyz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+{
+      "type": "vmess",
+      "tag": "💥16@Hiddify_Nexttt  § 4",
+      "server": "us.569520.xyz",
+      "server_port": 10001,
+      "uuid": "c7716936-798d-4237-b101-2d914e6d543a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "us.569520.xyz",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/cctv13/4k.m3u8",
+        "headers": {
+          "Host": "us.569520.xyz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+{
+      "type": "trojan",
+      "tag": "💥11@Hiddify_Nexttt  § 5",
+      "server": "us.569520.xyz",
+      "server_port": 40001,
+      "password": "c7716936-798d-4237-b101-2d914e6d543a",
+      "tls": {
+        "enabled": true,
+        "server_name": "us.569520.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/cctv13/4k.m3u8",
+        "headers": {
+          "Host": "us.569520.xyz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+{
+      "type": "vmess",
+      "tag": "💥20@Hiddify_Nexttt  § 7",
+      "server": "sg.569520.xyz",
+      "server_port": 10001,
+      "uuid": "c7716936-798d-4237-b101-2d914e6d543a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "sg.569520.xyz",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/cctv13/4k.m3u8",
+        "headers": {
+          "Host": "sg.569520.xyz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+ {
+      "type": "vmess",
+      "tag": "💥28@Hiddify_Nexttt  § 13",
+      "server": "jp.569520.xyz",
+      "server_port": 10001,
+      "uuid": "c7716936-798d-4237-b101-2d914e6d543a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jp.569520.xyz",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/cctv13/4k.m3u8",
+        "headers": {
+          "Host": "jp.569520.xyz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+        {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "domain": ".",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-",
+          "geosite-"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  }
+}
