@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
         "188.114.99.0",
-        "2a06:98c1:3122::",
+        "188.114.98.0",
         "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.98.0",
         "188.114.99.0",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::"
+        "188.114.98.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::"
       ]
     },
     "independent_cache": true
@@ -118,7 +118,7 @@
       "tag": "@Hiddify_nexttt 7day-location 🇩🇪 § 0",
       "server": "join.v2rynng.darkping.net",
       "server_port": 1633,
-      "uuid": "237c1b51-97e6-4415-8b0f-21390c68965d",
+      "uuid": "cac29e75-6568-4037-94e0-f1a1df679bc2",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -203,7 +203,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "A6jC_nwxRvzMpQaU"
+      "secret": "0rQewk_K0dTDxF1Y"
     }
   }
 }
