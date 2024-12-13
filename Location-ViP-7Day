@@ -99,7 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt 7day-location+1 🇩🇪 § 0"
+        "@Hiddify_nexttt 7day-location+2 🇩🇪 § 0"
       ],
       "default": "auto"
     },
@@ -107,7 +107,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt 7day-location+1 🇩🇪 § 0"
+        "@Hiddify_nexttt 7day-location+2 🇩🇪 § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,7 +115,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt 7day-location+1 🇩🇪 § 0",
+      "tag": "@Hiddify_nexttt 7day-location+2 🇩🇪 § 0",
       "server": "join.v2rynng.darkping.net",
       "server_port": 1633,
       "uuid": "8d8328c2-1ce3-41c0-8e26-6e7d2c9e8f20",
