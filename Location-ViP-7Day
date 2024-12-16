@@ -55,8 +55,8 @@
         "188.114.99.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::",
-        "104.17.147.22",
         "104.17.148.22",
+        "104.17.147.22",
         "188.114.98.0",
         "188.114.99.0",
         "2a06:98c1:3122::",
@@ -99,7 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇩🇪@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt  § 0"
       ],
       "default": "auto"
     },
@@ -107,7 +107,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt  § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,10 +115,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt § 0",
+      "tag": "@Hiddify_nexttt  § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "632ff9a5-40fb-45bd-9722-3fa628837ff3",
+      "uuid": "14b697ed-6219-4a4d-bcaa-40e1d67d8167",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -206,7 +206,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "k6lsVWsUyruiSX-X"
+      "secret": "34WrS0nOKz-9FM3Q"
     }
   }
 }
