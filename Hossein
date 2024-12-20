@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
+        "104.17.148.22",
+        "104.17.147.22",
         "188.114.96.6",
         "188.114.97.6",
-        "2a06:98c1:3121::6",
         "2a06:98c1:3120::6",
-        "104.17.147.22",
-        "104.17.148.22",
-        "188.114.99.0",
-        "188.114.98.0",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::"
+        "2a06:98c1:3121::6"
       ]
     },
     "independent_cache": true
@@ -120,7 +120,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "0ab0b53d-d834-40d3-b333-86f8cce0c96a",
+      "uuid": "TELEGRAM-NUFiLTER",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -131,11 +131,11 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "joinshhproxybedeeeeeee.ir"
+          "Host": "kazemi11zerofun.coM"
         },
-        "max_early_data": 2048,
+        "max_early_data": 80,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -145,7 +145,7 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "39a3d05e-42d0-45af-8a28-12fb56038233",
+      "uuid": "TELEGRAM-NUFiLTER",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -156,11 +156,11 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
+          "Host": "6.fidsxss11x.ir"
         },
-        "max_early_data": 2048,
+        "max_early_data": 80,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -233,7 +233,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "6H44ZvCqWLCkCXP7"
+      "secret": "C0OWmQYCMLZwgM1U"
     }
   }
 }
