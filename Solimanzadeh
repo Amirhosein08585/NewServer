@@ -55,12 +55,12 @@
         "188.114.99.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::",
-        "104.17.147.22",
         "104.17.148.22",
-        "188.114.98.0",
-        "188.114.99.0",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::"
+        "104.17.147.22",
+        "188.114.96.6",
+        "188.114.97.6",
+        "2a06:98c1:3120::6",
+        "2a06:98c1:3121::6"
       ]
     },
     "independent_cache": true
@@ -100,8 +100,7 @@
       "outbounds": [
         "auto",
         "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "@Hiddify_nexttt +2 § 1"
       ],
       "default": "auto"
     },
@@ -110,8 +109,7 @@
       "tag": "auto",
       "outbounds": [
         "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "@Hiddify_nexttt +2 § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -120,21 +118,25 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "65.109.218.177",
-      "server_port": 2083,
-      "uuid": "aa70ade0-863b-4a95-9977-9480880015d5",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "TELEGRAM-NUFiLTER",
       "tls": {
         "enabled": true,
-        "server_name": "refersion.com",
+        "server_name": "hajlab.ucdavis.edu",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "oVRY8h7Njgw25j3CNhaJVMUys378tTvecrSRbrB3gyo",
-          "short_id": "2ebd6e17dec6a5d9"
         }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "kazemi11zerofun.coM"
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
@@ -143,7 +145,7 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "d9b14552-ebda-4168-abc7-c270cb3010a3",
+      "uuid": "TELEGRAM-NUFiLTER",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -154,36 +156,11 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "joinshhproxybedeeeeeee.ir"
+          "Host": "6.fidsxss11x.ir"
         },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "3b3f5aae-8c59-40c2-a21f-28ae01aa84d7",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
-        "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
-        },
-        "max_early_data": 2048,
+        "max_early_data": 80,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -256,7 +233,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "nMmjlx6DyB1fEOx9"
+      "secret": "C0OWmQYCMLZwgM1U"
     }
   }
 }
