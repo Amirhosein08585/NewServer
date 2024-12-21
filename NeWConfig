@@ -59,8 +59,8 @@
         "104.17.147.22",
         "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -120,7 +120,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "TELEGRAM-NUFiLTER",
+      "uuid": "79c6e4fb-92e1-45cf-8d35-6f2078a50fd3",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -131,11 +131,11 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "kazemi11zerofun.coM"
+          "Host": "joinshhproxybedeeeeeee.ir"
         },
-        "max_early_data": 80,
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -145,7 +145,7 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "TELEGRAM-NUFiLTER",
+      "uuid": "2f7a4074-ac45-4065-a927-6cc7f5ef8c13",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -156,11 +156,11 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "6.fidsxss11x.ir"
+          "Host": "joinshhproxybedeeeee.ir"
         },
-        "max_early_data": 80,
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -233,7 +233,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "6nrEhl_rG0a17MVd"
+      "secret": "w8cNVMASJwj-Xj3c"
     }
   }
 }
