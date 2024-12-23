@@ -51,14 +51,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
         "188.114.99.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::",
+        "188.114.98.0",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "104.17.147.22",
         "104.17.148.22",
-        "188.114.99.0",
         "188.114.98.0",
+        "188.114.99.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::"
       ]
@@ -120,7 +120,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "920a1a11-e67b-4634-b1e3-0972696fbcc7",
+      "uuid": "f7454b06-1380-4e0b-bf9b-bd80e000b24a",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -145,7 +145,7 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "9c56374f-2fc8-42dc-a0ac-4dc02cc9c1e2",
+      "uuid": "438675cf-7646-45d4-acd2-75346809def7",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -233,7 +233,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "xT3wVvIPgxKt4yoo"
+      "secret": "DuMDMTgms4s4j1B4"
     }
   }
 }
