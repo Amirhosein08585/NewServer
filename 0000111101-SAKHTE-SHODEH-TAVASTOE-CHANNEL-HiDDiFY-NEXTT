@@ -1,0 +1,403 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "a4.bikofile.com",
+          "a1.bikofile.com",
+          "fieldersdominator.com.au",
+          "a2.bikofile.com"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "connectivitycheck.gstatic.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.2",
+        "188.114.97.2"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 12334,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "set_system_proxy": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 16450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt  🇵🇹 § 0 ",
+        "@Hiddify_Nexttt 🇹🇷 § 1",
+        "@Hiddify_Nexttt 🇹🇷 § 2",
+        "@Hiddify_Nexttt کانال تلگرام",
+        "@Hiddify_Nexttt 🇧🇪  § 3",
+        "@Hiddify_Nexttt 🇪🇪 § 4",
+        "@Hiddify_Nexttt 🇨🇭 § 5",
+        "@Hiddify_Nexttt 🇪🇪 § 6",
+        "@Hiddify_Nexttt 🇩🇪 § 7",
+        "@Hiddify_Nexttt 🇩🇪 § 8",
+        "@Hiddify_Nexttt 🇳🇱 § 9"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt  🇵🇹 § 0 ",
+        "@Hiddify_Nexttt 🇹🇷 § 1",
+        "@Hiddify_Nexttt 🇹🇷 § 2",
+        "@Hiddify_Nexttt کانال تلگرام",
+        "@Hiddify_Nexttt 🇧🇪  § 3",
+        "@Hiddify_Nexttt 🇪🇪 § 4",
+        "@Hiddify_Nexttt 🇨🇭 § 5",
+        "@Hiddify_Nexttt 🇪🇪 § 6",
+        "@Hiddify_Nexttt 🇩🇪 § 7",
+        "@Hiddify_Nexttt 🇩🇪 § 8",
+        "@Hiddify_Nexttt 🇳🇱 § 9"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "tolerance": 1,
+      "idle_timeout": "30m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt  🇵🇹 § 0 ",
+      "server": "fieldersdominator.com.au",
+      "server_port": 80,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshinportoghal.net",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇹🇷 § 1",
+      "server": "a2.bikofile.com",
+      "server_port": 8080,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "RCJrxssGE3akICKN-Z6bVSCyi5vlX0U8VzxxCG7eAwU"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇹🇷 § 2",
+      "server": "fieldersdominator.com.au",
+      "server_port": 80,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshinturkey.org",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال تلگرام",
+      "server": "0.0.0.0",
+      "server_port": 2020,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇧🇪  § 3",
+      "server": "a4.bikofile.com",
+      "server_port": 2052,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "RCJrxssGE3akICKN-Z6bVSCyi5vlX0U8VzxxCG7eAwU"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇪🇪 § 4",
+      "server": "fieldersdominator.com.au",
+      "server_port": 80,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshinfranch.com.su",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇨🇭 § 5",
+      "server": "fieldersdominator.com.au",
+      "server_port": 80,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshinzurich.com",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇪🇪 § 6",
+      "server": "fieldersdominator.com.au",
+      "server_port": 80,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshinfranch.com.su",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇩🇪 § 7",
+      "server": "fieldersdominator.com.au",
+      "server_port": 80,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshingermany.com",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇩🇪 § 8",
+      "server": "a1.bikofile.com",
+      "server_port": 2093,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "RCJrxssGE3akICKN-Z6bVSCyi5vlX0U8VzxxCG7eAwU"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt 🇳🇱 § 9",
+      "server": "fieldersdominator.com.au",
+      "server_port": 80,
+      "uuid": "43e54d66-a507-9653-b081-71e0cb19b417",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshinnetherland.com.au",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "domain": ".ir",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:16756",
+      "secret": "UJYVtT8sHk96Bnus"
+    }
+  }
+}
