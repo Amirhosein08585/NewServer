@@ -34,12 +34,7 @@
     ],
     "rules": [
       {
-        "domain": [
-          "a2.bikofile.com",
-          "a4.bikofile.com",
-          "a1.bikofile.com",
-          "fieldersdominator.com.au"
-        ],
+        "domain": "hajlab.ucdavis.edu",
         "server": "dns-direct"
       },
       {
@@ -56,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
         "188.114.98.0",
+        "188.114.99.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::",
-        "104.17.147.22",
         "104.17.148.22",
-        "188.114.98.0",
+        "104.17.147.22",
         "188.114.99.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "188.114.98.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -104,17 +99,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_Nexttt 🇵🇹 § 0",
-        "🇹🇷 @Hiddify_Nexttt § 1",
-        "@Hiddify_Nexttt 🇹🇷 § 2",
-        "ساخته شده توسط کانال @Hiddify_Nexttt § 3",
-        "🇧🇪 @Hiddify_Nexttt § 4",
-        "@Hiddify_Nexttt 🇪🇪 § 5",
-        "@Hiddify_Nexttt 🇨🇭 § 6",
-        "@Hiddify_Nexttt 🇪🇪 § 7",
-        "@Hiddify_Nexttt 🇩🇪 § 8",
-        "🇩🇪 @Hiddify_Nexttt § 9",
-        "@Hiddify_Nexttt 🇳🇱 § 10"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
       "default": "auto"
     },
@@ -122,19 +108,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_Nexttt 🇵🇹 § 0",
-        "🇹🇷 @Hiddify_Nexttt § 1",
-        "@Hiddify_Nexttt 🇹🇷 § 2",
-        "ساخته شده توسط کانال @Hiddify_Nexttt § 3",
-        "🇧🇪 @Hiddify_Nexttt § 4",
-        "@Hiddify_Nexttt 🇪🇪 § 5",
-        "@Hiddify_Nexttt 🇨🇭 § 6",
-        "@Hiddify_Nexttt 🇪🇪 § 7",
-        "@Hiddify_Nexttt 🇩🇪 § 8",
-        "🇩🇪 @Hiddify_Nexttt § 9",
-        "@Hiddify_Nexttt 🇳🇱 § 10"
-
-
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -142,189 +117,53 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_Nexttt 🇵🇹 § 0",
-      "server": "fieldersdominator.com.au",
-      "server_port": 80,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marzneshinportoghal.net",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
-        },
-        "max_early_data": 8880,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇹🇷 @Hiddify_Nexttt § 1",
-      "server": "a2.bikofile.com",
-      "server_port": 8080,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "flow": "xtls-rprx-vision",
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "c779b486-c6ae-44c1-8d54-7df867371572",
       "tls": {
         "enabled": true,
-        "server_name": "refersion.com",
+        "server_name": "hajlab.ucdavis.edu",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "RCJrxssGE3akICKN-Z6bVSCyi5vlX0U8VzxxCG7eAwU"
         }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_Nexttt 🇹🇷 § 2",
-      "server": "fieldersdominator.com.au",
-      "server_port": 80,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
+      },
       "transport": {
         "type": "ws",
-        "path": "/",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "marzneshinturkey.org",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+          "Host": "joinshhproxybedeeeeeee.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
+      },
+      "packet_encoding": ""
     },
     {
       "type": "vless",
-      "tag": "ساخته شده توسط کانال @Hiddify_Nexttt § 3",
-      "server": "0.0.0.0",
-      "server_port": 2020,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833"
-    },
-    {
-      "type": "vless",
-      "tag": "🇧🇪 @Hiddify_Nexttt § 4",
-      "server": "a4.bikofile.com",
-      "server_port": 2052,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "flow": "xtls-rprx-vision",
+      "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "3ebfe9c6-4ab8-480b-a2dd-e2f92b2559d2",
       "tls": {
         "enabled": true,
-        "server_name": "refersion.com",
+        "server_name": "hajlab.ucdavis.edu",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "RCJrxssGE3akICKN-Z6bVSCyi5vlX0U8VzxxCG7eAwU"
         }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_Nexttt 🇪🇪 § 5",
-      "server": "fieldersdominator.com.au",
-      "server_port": 80,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
+      },
       "transport": {
         "type": "ws",
-        "path": "/",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "marzneshinestonia.car",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
+          "Host": "joinshhproxybedeeeee.ir"
         },
-        "max_early_data": 1024,
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_Nexttt 🇨🇭 § 6",
-      "server": "fieldersdominator.com.au",
-      "server_port": 80,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marzneshinzurich.com",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
-        },
-        "max_early_data": 1024,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_Nexttt 🇪🇪 § 7",
-      "server": "fieldersdominator.com.au",
-      "server_port": 80,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marzneshinestonia.car",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
-        },
-        "max_early_data": 1024,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_Nexttt 🇩🇪 § 8",
-      "server": "fieldersdominator.com.au",
-      "server_port": 80,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marzneshingermany.com",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
-        },
-        "max_early_data": 1024,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇩🇪 @Hiddify_Nexttt § 9",
-      "server": "a1.bikofile.com",
-      "server_port": 2093,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "refersion.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "RCJrxssGE3akICKN-Z6bVSCyi5vlX0U8VzxxCG7eAwU"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_Nexttt 🇳🇱 § 10",
-      "server": "fieldersdominator.com.au",
-      "server_port": 80,
-      "uuid": "32321074-0ce6-8088-604c-70b7128af833",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marzneshinnetherland.com.au",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3"
-        },
-        "max_early_data": 8080,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
+      },
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -394,7 +233,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "4hXajSt4OgLAxea2"
+      "secret": "xeSDeQkNKVu1NRG_"
     }
   }
 }
