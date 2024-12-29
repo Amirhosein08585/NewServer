@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "speedrun.com",
+        "domain": "hajlab.ucdavis.edu",
         "server": "dns-direct"
       },
       {
@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
+        "188.114.99.0",
+        "188.114.98.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.96.3",
-        "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -99,25 +99,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "(@Hiddify_nexttt) 🔋999.15 GB ⏳∞ Days",
-        "🇺🇸USA",
-        "🇦🇪UAE",
-        "🇩🇪GER",
-        "🇨🇦CA",
-        "🇫🇷FRA",
-        "🇳🇱NL",
-        "🇸🇬SG",
-        "🇦🇺AU",
-        "🇯🇵JP",
-        "🇰🇷KR",
-        "🇸🇪SWE",
-        "🇭🇰HK",
-        "🇮🇳IN",
-        "🇧🇷BR",
-        "🇺🇸USA-RL",
-        "🇩🇪GER-RL",
-        "🇦🇪UAE-RL",
-        "🇳🇱NL-RL"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
       "default": "auto"
     },
@@ -125,25 +108,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "(@Hiddify_nexttt) 🔋999.15 GB ⏳∞ Days",
-        "🇺🇸USA",
-        "🇦🇪UAE",
-        "🇩🇪GER",
-        "🇨🇦CA",
-        "🇫🇷FRA",
-        "🇳🇱NL",
-        "🇸🇬SG",
-        "🇦🇺AU",
-        "🇯🇵JP",
-        "🇰🇷KR",
-        "🇸🇪SWE",
-        "🇭🇰HK",
-        "🇮🇳IN",
-        "🇧🇷BR",
-        "🇺🇸USA-RL",
-        "🇩🇪GER-RL",
-        "🇦🇪UAE-RL",
-        "🇳🇱NL-RL"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -151,495 +117,53 @@
     },
     {
       "type": "vless",
-      "tag": "(@Hiddify_nexttt) 🔋999.15 GB ⏳∞ Days",
-      "server": "1.1.1.1",
-      "server_port": 1111,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸USA",
-      "server": "speedrun.com",
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
+      "uuid": "fe4984af-e614-4c0a-af34-c11df9c6f65f",
       "tls": {
         "enabled": true,
-        "server_name": "speedrun.com",
+        "server_name": "hajlab.ucdavis.edu",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
       "transport": {
         "type": "ws",
-        "path": "ws/",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "datamanageglobal.ir"
+          "Host": "joinshhproxybedeeeeeee.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
+      },
+      "packet_encoding": ""
     },
     {
       "type": "vless",
-      "tag": "🇦🇪UAE",
-      "server": "speedrun.com",
+      "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
+      "uuid": "6ba9c4f4-37f2-4c01-ae93-29067d3bd619",
       "tls": {
         "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "safewireconnection.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇩🇪GER",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
+        "server_name": "hajlab.ucdavis.edu",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
       "transport": {
         "type": "ws",
-        "path": "ws/",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "volvorepairvip.ir"
+          "Host": "joinshhproxybedeeeee.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇨🇦CA",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
       },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "Infodatabasefree.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇷FRA",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "hamarasafesys.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱NL",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "manageglobalinfo.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇬SG",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "globallightdata.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇦🇺AU",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "directconnectionmanger.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇯🇵JP",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "connectionwiremanager.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇰🇷KR",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "carfixgroupvip.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇪SWE",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "vehiclefixgroup.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇭🇰HK",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "multisalestore.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇳IN",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "alwaysdiscountstore.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇧🇷BR",
-      "server": "speedrun.com",
-      "server_port": 443,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "speedrun.com"
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      },
-      "transport": {
-        "type": "ws",
-        "path": "ws/",
-        "headers": {
-          "Host": "cheapstocksale.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸USA-RL",
-      "server": "138.124.25.81",
-      "server_port": 9090,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "refersion.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "7wMxPQE_dDnSTme4_LlmiMQp28_B0ovKf53KyvRm4BQ"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇩🇪GER-RL",
-      "server": "138.124.25.81",
-      "server_port": 5757,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "refersion.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "Km5SzQsIFMRVl4TlxVFAdhih7C6CnjMvUrtf38gTyQM"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇦🇪UAE-RL",
-      "server": "138.124.25.81",
-      "server_port": 9191,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "refersion.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "Xu729q6Ids2ONqwgvqA7oNbd_7wXfnWLJxCJj6ZDD3Y"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱NL-RL",
-      "server": "138.124.25.81",
-      "server_port": 7070,
-      "uuid": "33dc6301-e4bf-4612-94f5-7006fe062892",
-      "tls": {
-        "enabled": true,
-        "server_name": "refersion.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "DxPtd1787UcyAgqYogqAQ35b1hhXLbe0ZwIa0Z5PIBg",
-          "short_id": "5dc28d801f8d86ac"
-        }
-      },
-      "multiplex": {
-        "protocol": "h2mux",
-        "max_streams": 8
-      }
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -709,7 +233,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "lsoDGQfT_tGK322N"
+      "secret": "u83J-V7p-4Q094_E"
     }
   }
 }
