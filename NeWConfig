@@ -34,10 +34,6 @@
     ],
     "rules": [
       {
-        "domain": "hajlab.ucdavis.edu",
-        "server": "dns-direct"
-      },
-      {
         "domain_suffix": ".ir",
         "geosite": "ir",
         "server": "dns-direct"
@@ -51,16 +47,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
+        "188.114.99.0",
+        "188.114.98.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
+        "104.17.147.22",
+        "104.17.148.22",
         "188.114.98.0",
         "188.114.99.0",
         "2a06:98c1:3123::",
-        "2a06:98c1:3122::",
-        "104.17.148.22",
-        "104.17.147.22",
-        "188.114.99.0",
-        "188.114.98.0",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3"
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -99,8 +95,96 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1"
+        "🔒 VM-TCP-NA 🇺🇸 US-206.206.80.66:23423 📡 PING-050.15-MS § 0",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.213.242.165:443 📡 PING-052.91-MS § 1",
+        "🔒 SS-TCP-NA 🇺🇸 US-35.92.45.179:443 📡 PING-053.63-MS § 2",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.219.80.203:443 📡 PING-054.34-MS § 3",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.222.132.123:443 📡 PING-054.40-MS § 4",
+        "🔒 SS-TCP-NA 🇺🇸 US-35.90.2.104:443 📡 PING-054.49-MS § 5",
+        "🔒 SS-TCP-NA 🇺🇸 US-35.161.59.194:443 📡 PING-055.05-MS § 6",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.213.200.250:443 📡 PING-055.74-MS § 7",
+        "🔒 SS-TCP-NA 🇺🇸 US-54.244.200.142:443 📡 PING-063.25-MS § 8",
+        "🔒 VM-TCP-NA 🇺🇸 US-198.2.218.108:41400 📡 PING-064.93-MS § 9",
+        "🔒 SS-TCP-NA 🇺🇸 US-137.175.97.159:8388 📡 PING-065.51-MS § 10",
+        "🔒 SS-TCP-NA 🇺🇸 US-54.69.180.74:443 📡 PING-080.06-MS § 11",
+        "🔒 SS-TCP-NA 🇺🇸 US-52.32.68.164:443 📡 PING-080.07-MS § 12",
+        "🔒 TR-TCP-TLS 🇮🇪 IE-52.214.131.130:22222 📡 PING-087.44-MS § 13",
+        "🔒 SS-TCP-NA 🇬🇧 GB-18.175.5.101:443 📡 PING-097.45-MS § 14",
+        "🔒 TR-TCP-TLS 🇫🇷 FR-15.237.166.212:22222 📡 PING-102.61-MS § 15",
+        "🔒 VL-TCP-NONE 🇨🇾 CY-171.22.124.176:2198 📡 PING-105.34-MS § 16",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.112.156:2198 📡 PING-105.65-MS § 17",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.182:2198 📡 PING-105.68-MS § 18",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.112.107:2198 📡 PING-106.34-MS § 19",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.184:2198 📡 PING-107.08-MS § 20",
+        "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.171:8080 📡 PING-107.72-MS § 21",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.187:2198 📡 PING-107.74-MS § 22",
+        "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.178:8080 📡 PING-108.16-MS § 23",
+        "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:443 📡 PING-108.27-MS § 24",
+        "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:2083 📡 PING-109.00-MS § 25",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-95.164.86.59:2198 📡 PING-109.21-MS § 26",
+        "🔒 TR-TCP-TLS 🇩🇪 DE-3.69.96.26:22222 📡 PING-110.16-MS § 27",
+        "🔒 VL-TCP-NONE 🇨🇾 CY-171.22.124.195:2198 📡 PING-111.21-MS § 28",
+        "🔒 VL-TCP-NONE 🇲🇩 MD-91.225.219.71:2198 📡 PING-112.91-MS § 29",
+        "🔒 SS-TCP-NA 🇩🇪 DE-188.245.81.145:39477 📡 PING-113.74-MS § 30",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-188.245.81.145:30339 📡 PING-113.76-MS § 31",
+        "🔒 VL-GRPC-RLT 🇩🇪 DE-91.107.161.47:110 📡 PING-113.80-MS § 32",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-138.199.146.7:666 📡 PING-113.83-MS § 33",
+        "🔒 SS-TCP-NA 🇩🇪 DE-23.88.39.22:22301 📡 PING-113.95-MS § 34",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-167.235.204.96:3306 📡 PING-114.15-MS § 35",
+        "🔒 VL-TCP-RLT 🇩🇪 DE-188.245.125.48:1766 📡 PING-114.63-MS § 36",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-95.164.87.30:2198 📡 PING-117.51-MS § 37",
+        "🔒 SS-TCP-NA 🇦🇹 AT-212.113.106.76:29149 📡 PING-118.12-MS § 38",
+        "🔒 VL-TCP-NONE 🇬🇮 GI-95.164.3.165:2198 📡 PING-119.75-MS § 39",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.113.164:2198 📡 PING-122.05-MS § 40",
+        "🔒 VL-GRPC-NONE 🇸🇰 SK-[0:0:0:0:0:ffff:05fc:17ad]:80 📡 PING-122.71-MS § 41",
+        "🔒 SS-TCP-NA 🇺🇦 UA-95.164.249.61:54075 📡 PING-134.05-MS § 42",
+        "🔒 SS-TCP-NA 🇷🇺 RU-45.142.246.232:19796 📡 PING-137.48-MS § 43",
+        "🔒 SS-TCP-NA 🇷🇺 RU-45.142.246.232:19994 📡 PING-138.45-MS § 44",
+        "🔒 SS-TCP-NA 🇫🇮 FI-95.216.202.137:19304 📡 PING-139.03-MS § 45",
+        "🔒 SS-TCP-NA 🇯🇵 JP-43.207.232.228:443 📡 PING-140.65-MS § 46",
+        "🔒 SS-TCP-NA 🇯🇵 JP-54.248.142.136:443 📡 PING-141.02-MS § 47",
+        "🔒 SS-TCP-NA 🇯🇵 JP-52.68.44.53:443 📡 PING-141.20-MS § 48",
+        "🔒 SS-TCP-NA 🇯🇵 JP-13.114.67.166:443 📡 PING-143.33-MS § 49",
+        "🔒 SS-TCP-NA 🇯🇵 JP-57.181.42.233:443 📡 PING-143.50-MS § 50",
+        "🔒 SS-TCP-NA 🇯🇵 JP-52.194.212.235:443 📡 PING-146.25-MS § 51",
+        "🔒 SS-TCP-NA 🇯🇵 JP-194.105.83.3:40003 📡 PING-150.48-MS § 52",
+        "🔒 SS-TCP-NA 🇯🇵 JP-54.178.191.236:443 📡 PING-151.84-MS § 53",
+        "🔒 SS-TCP-NA 🇯🇵 JP-13.114.31.63:443 📡 PING-157.40-MS § 54",
+        "🔒 SS-TCP-NA 🇯🇵 JP-18.179.197.216:443 📡 PING-158.80-MS § 55",
+        "🔒 SS-TCP-NA 🇯🇵 JP-54.178.84.59:443 📡 PING-162.11-MS § 56",
+        "🔒 SS-TCP-NA 🇰🇷 KR-43.200.1.13:443 📡 PING-167.17-MS § 57",
+        "🔒 SS-TCP-NA 🇰🇷 KR-52.79.52.119:443 📡 PING-169.56-MS § 58",
+        "🔒 SS-TCP-NA 🇰🇷 KR-3.35.206.24:443 📡 PING-169.66-MS § 59",
+        "🔒 SS-TCP-NA 🇰🇷 KR-43.203.122.162:443 📡 PING-169.76-MS § 60",
+        "🔒 TR-TCP-TLS 🇫🇷 FR-35.181.245.61:22222 📡 PING-150.48-MS § 61",
+        "🔒 SS-TCP-NA 🇰🇷 KR-43.203.243.93:443 📡 PING-170.12-MS § 62",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-93.126.50.230:12358 📡 PING-192.23-MS § 63",
+        "🔒 SS-TCP-NA 🇧🇭 BH-16.24.51.179:443 📡 PING-203.23-MS § 64",
+        "🔒 SS-TCP-NA 🇦🇪 AE-40.172.124.15:443 📡 PING-207.47-MS § 65",
+        "🔒 SS-TCP-NA 🇦🇪 AE-40.172.156.242:443 📡 PING-208.54-MS § 66",
+        "🔒 VL-TCP-NONE 🇲🇩 MD-94.232.244.5:2198 📡 PING-209.95-MS § 67",
+        "🔒 SS-TCP-NA 🇸🇬 SG-13.213.28.231:443 📡 PING-210.58-MS § 68",
+        "🔒 VM-TCP-NA 🇮🇷 IR-92.242.220.22:37885 📡 PING-213.08-MS § 69",
+        "🔒 SS-TCP-NA 🇮🇷 IR-85.133.241.75:1935 📡 PING-218.77-MS § 70",
+        "🔒 VL-WS-NONE 🇮🇳 IN-151.101.158.204:80 📡 PING-229.30-MS § 71",
+        "🔒 SS-TCP-NA 🇸🇬 SG-18.140.65.217:443 📡 PING-238.07-MS § 72",
+        "🔒 SS-TCP-NA 🇻🇳 VN-160.19.78.75:443 📡 PING-238.61-MS § 73",
+        "🔒 SS-TCP-NA 🇰🇷 KR-52.79.248.193:443 📡 PING-239.36-MS § 74",
+        "🔒 SS-TCP-NA 🇸🇬 SG-52.221.190.255:443 📡 PING-243.47-MS § 75",
+        "🔒 VL-WS-NONE 🇮🇷 IR-185.208.77.113:14040 📡 PING-310.17-MS § 76",
+        "🔒 VL-GRPC-RLT 🇺🇸 US-173.199.122.162:443 📡 PING-029.16-MS § 77",
+        "🔒 TR-TCP-TLS 🇨🇦 CA-52.60.126.136:22222 📡 PING-021.48-MS § 78",
+        "🔒 VL-TCP-TLS 🇺🇸 US-147.135.4.2:443 📡 PING-016.95-MS § 79",
+        "🔒 VL-WS-TLS 🇺🇸 US-151.101.2.133:443 📡 PING-001.93-MS § 80",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.0.223:80 📡 PING-001.87-MS § 81",
+        "🔒 VL-WS-NA 🇺🇸 US-151.101.194.219:80 📡 PING-001.82-MS § 82",
+        "🔒 VL-WS-NA 🇺🇸 US-140.248.178.15:80 📡 PING-001.72-MS § 83",
+        "🔒 VL-WS-NA 🇺🇸 US-151.101.66.219:80 📡 PING-001.65-MS § 84",
+        "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.157:8080 📡 PING-107.52-MS § 85",
+        "🔒 SS-TCP-NA 🇵🇱 PL-64.176.71.35:42141 📡 PING-118.22-MS § 86",
+        "🔒 SS-TCP-NA 🇩🇪 DE-138.124.93.193:38500 📡 PING-109.21-MS § 87",
+        "🔒 VL-TCP-NONE 🇵🇱 PL-64.176.71.35:45203 📡 PING-125.68-MS § 88",
+        "🔒 VM-TCP-NA 🇩🇰 DK-193.29.107.234:49020 📡 PING-116.28-MS § 89"
       ],
       "default": "auto"
     },
@@ -108,22 +192,321 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1"
+        "🔒 VM-TCP-NA 🇺🇸 US-206.206.80.66:23423 📡 PING-050.15-MS § 0",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.213.242.165:443 📡 PING-052.91-MS § 1",
+        "🔒 SS-TCP-NA 🇺🇸 US-35.92.45.179:443 📡 PING-053.63-MS § 2",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.219.80.203:443 📡 PING-054.34-MS § 3",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.222.132.123:443 📡 PING-054.40-MS § 4",
+        "🔒 SS-TCP-NA 🇺🇸 US-35.90.2.104:443 📡 PING-054.49-MS § 5",
+        "🔒 SS-TCP-NA 🇺🇸 US-35.161.59.194:443 📡 PING-055.05-MS § 6",
+        "🔒 SS-TCP-NA 🇺🇸 US-34.213.200.250:443 📡 PING-055.74-MS § 7",
+        "🔒 SS-TCP-NA 🇺🇸 US-54.244.200.142:443 📡 PING-063.25-MS § 8",
+        "🔒 VM-TCP-NA 🇺🇸 US-198.2.218.108:41400 📡 PING-064.93-MS § 9",
+        "🔒 SS-TCP-NA 🇺🇸 US-137.175.97.159:8388 📡 PING-065.51-MS § 10",
+        "🔒 SS-TCP-NA 🇺🇸 US-54.69.180.74:443 📡 PING-080.06-MS § 11",
+        "🔒 SS-TCP-NA 🇺🇸 US-52.32.68.164:443 📡 PING-080.07-MS § 12",
+        "🔒 TR-TCP-TLS 🇮🇪 IE-52.214.131.130:22222 📡 PING-087.44-MS § 13",
+        "🔒 SS-TCP-NA 🇬🇧 GB-18.175.5.101:443 📡 PING-097.45-MS § 14",
+        "🔒 TR-TCP-TLS 🇫🇷 FR-15.237.166.212:22222 📡 PING-102.61-MS § 15",
+        "🔒 VL-TCP-NONE 🇨🇾 CY-171.22.124.176:2198 📡 PING-105.34-MS § 16",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.112.156:2198 📡 PING-105.65-MS § 17",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.182:2198 📡 PING-105.68-MS § 18",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.112.107:2198 📡 PING-106.34-MS § 19",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.184:2198 📡 PING-107.08-MS § 20",
+        "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.171:8080 📡 PING-107.72-MS § 21",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.187:2198 📡 PING-107.74-MS § 22",
+        "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.178:8080 📡 PING-108.16-MS § 23",
+        "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:443 📡 PING-108.27-MS § 24",
+        "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:2083 📡 PING-109.00-MS § 25",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-95.164.86.59:2198 📡 PING-109.21-MS § 26",
+        "🔒 TR-TCP-TLS 🇩🇪 DE-3.69.96.26:22222 📡 PING-110.16-MS § 27",
+        "🔒 VL-TCP-NONE 🇨🇾 CY-171.22.124.195:2198 📡 PING-111.21-MS § 28",
+        "🔒 VL-TCP-NONE 🇲🇩 MD-91.225.219.71:2198 📡 PING-112.91-MS § 29",
+        "🔒 SS-TCP-NA 🇩🇪 DE-188.245.81.145:39477 📡 PING-113.74-MS § 30",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-188.245.81.145:30339 📡 PING-113.76-MS § 31",
+        "🔒 VL-GRPC-RLT 🇩🇪 DE-91.107.161.47:110 📡 PING-113.80-MS § 32",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-138.199.146.7:666 📡 PING-113.83-MS § 33",
+        "🔒 SS-TCP-NA 🇩🇪 DE-23.88.39.22:22301 📡 PING-113.95-MS § 34",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-167.235.204.96:3306 📡 PING-114.15-MS § 35",
+        "🔒 VL-TCP-RLT 🇩🇪 DE-188.245.125.48:1766 📡 PING-114.63-MS § 36",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-95.164.87.30:2198 📡 PING-117.51-MS § 37",
+        "🔒 SS-TCP-NA 🇦🇹 AT-212.113.106.76:29149 📡 PING-118.12-MS § 38",
+        "🔒 VL-TCP-NONE 🇬🇮 GI-95.164.3.165:2198 📡 PING-119.75-MS § 39",
+        "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.113.164:2198 📡 PING-122.05-MS § 40",
+        "🔒 VL-GRPC-NONE 🇸🇰 SK-[0:0:0:0:0:ffff:05fc:17ad]:80 📡 PING-122.71-MS § 41",
+        "🔒 SS-TCP-NA 🇺🇦 UA-95.164.249.61:54075 📡 PING-134.05-MS § 42",
+        "🔒 SS-TCP-NA 🇷🇺 RU-45.142.246.232:19796 📡 PING-137.48-MS § 43",
+        "🔒 SS-TCP-NA 🇷🇺 RU-45.142.246.232:19994 📡 PING-138.45-MS § 44",
+        "🔒 SS-TCP-NA 🇫🇮 FI-95.216.202.137:19304 📡 PING-139.03-MS § 45",
+        "🔒 SS-TCP-NA 🇯🇵 JP-43.207.232.228:443 📡 PING-140.65-MS § 46",
+        "🔒 SS-TCP-NA 🇯🇵 JP-54.248.142.136:443 📡 PING-141.02-MS § 47",
+        "🔒 SS-TCP-NA 🇯🇵 JP-52.68.44.53:443 📡 PING-141.20-MS § 48",
+        "🔒 SS-TCP-NA 🇯🇵 JP-13.114.67.166:443 📡 PING-143.33-MS § 49",
+        "🔒 SS-TCP-NA 🇯🇵 JP-57.181.42.233:443 📡 PING-143.50-MS § 50",
+        "🔒 SS-TCP-NA 🇯🇵 JP-52.194.212.235:443 📡 PING-146.25-MS § 51",
+        "🔒 SS-TCP-NA 🇯🇵 JP-194.105.83.3:40003 📡 PING-150.48-MS § 52",
+        "🔒 SS-TCP-NA 🇯🇵 JP-54.178.191.236:443 📡 PING-151.84-MS § 53",
+        "🔒 SS-TCP-NA 🇯🇵 JP-13.114.31.63:443 📡 PING-157.40-MS § 54",
+        "🔒 SS-TCP-NA 🇯🇵 JP-18.179.197.216:443 📡 PING-158.80-MS § 55",
+        "🔒 SS-TCP-NA 🇯🇵 JP-54.178.84.59:443 📡 PING-162.11-MS § 56",
+        "🔒 SS-TCP-NA 🇰🇷 KR-43.200.1.13:443 📡 PING-167.17-MS § 57",
+        "🔒 SS-TCP-NA 🇰🇷 KR-52.79.52.119:443 📡 PING-169.56-MS § 58",
+        "🔒 SS-TCP-NA 🇰🇷 KR-3.35.206.24:443 📡 PING-169.66-MS § 59",
+        "🔒 SS-TCP-NA 🇰🇷 KR-43.203.122.162:443 📡 PING-169.76-MS § 60",
+        "🔒 TR-TCP-TLS 🇫🇷 FR-35.181.245.61:22222 📡 PING-150.48-MS § 61",
+        "🔒 SS-TCP-NA 🇰🇷 KR-43.203.243.93:443 📡 PING-170.12-MS § 62",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-93.126.50.230:12358 📡 PING-192.23-MS § 63",
+        "🔒 SS-TCP-NA 🇧🇭 BH-16.24.51.179:443 📡 PING-203.23-MS § 64",
+        "🔒 SS-TCP-NA 🇦🇪 AE-40.172.124.15:443 📡 PING-207.47-MS § 65",
+        "🔒 SS-TCP-NA 🇦🇪 AE-40.172.156.242:443 📡 PING-208.54-MS § 66",
+        "🔒 VL-TCP-NONE 🇲🇩 MD-94.232.244.5:2198 📡 PING-209.95-MS § 67",
+        "🔒 SS-TCP-NA 🇸🇬 SG-13.213.28.231:443 📡 PING-210.58-MS § 68",
+        "🔒 VM-TCP-NA 🇮🇷 IR-92.242.220.22:37885 📡 PING-213.08-MS § 69",
+        "🔒 SS-TCP-NA 🇮🇷 IR-85.133.241.75:1935 📡 PING-218.77-MS § 70",
+        "🔒 VL-WS-NONE 🇮🇳 IN-151.101.158.204:80 📡 PING-229.30-MS § 71",
+        "🔒 SS-TCP-NA 🇸🇬 SG-18.140.65.217:443 📡 PING-238.07-MS § 72",
+        "🔒 SS-TCP-NA 🇻🇳 VN-160.19.78.75:443 📡 PING-238.61-MS § 73",
+        "🔒 SS-TCP-NA 🇰🇷 KR-52.79.248.193:443 📡 PING-239.36-MS § 74",
+        "🔒 SS-TCP-NA 🇸🇬 SG-52.221.190.255:443 📡 PING-243.47-MS § 75",
+        "🔒 VL-WS-NONE 🇮🇷 IR-185.208.77.113:14040 📡 PING-310.17-MS § 76",
+        "🔒 VL-GRPC-RLT 🇺🇸 US-173.199.122.162:443 📡 PING-029.16-MS § 77",
+        "🔒 TR-TCP-TLS 🇨🇦 CA-52.60.126.136:22222 📡 PING-021.48-MS § 78",
+        "🔒 VL-TCP-TLS 🇺🇸 US-147.135.4.2:443 📡 PING-016.95-MS § 79",
+        "🔒 VL-WS-TLS 🇺🇸 US-151.101.2.133:443 📡 PING-001.93-MS § 80",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.0.223:80 📡 PING-001.87-MS § 81",
+        "🔒 VL-WS-NA 🇺🇸 US-151.101.194.219:80 📡 PING-001.82-MS § 82",
+        "🔒 VL-WS-NA 🇺🇸 US-140.248.178.15:80 📡 PING-001.72-MS § 83",
+        "🔒 VL-WS-NA 🇺🇸 US-151.101.66.219:80 📡 PING-001.65-MS § 84",
+        "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.157:8080 📡 PING-107.52-MS § 85",
+        "🔒 SS-TCP-NA 🇵🇱 PL-64.176.71.35:42141 📡 PING-118.22-MS § 86",
+        "🔒 SS-TCP-NA 🇩🇪 DE-138.124.93.193:38500 📡 PING-109.21-MS § 87",
+        "🔒 VL-TCP-NONE 🇵🇱 PL-64.176.71.35:45203 📡 PING-125.68-MS § 88",
+        "🔒 VM-TCP-NA 🇩🇰 DK-193.29.107.234:49020 📡 PING-116.28-MS § 89"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "hajlab.ucdavis.edu",
+      "type": "vmess",
+      "tag": "🔒 VM-TCP-NA 🇺🇸 US-206.206.80.66:23423 📡 PING-050.15-MS § 0",
+      "server": "206.206.80.66",
+      "server_port": 23423,
+      "uuid": "8825fd04-9005-4410-b48c-d2f345ec7fee",
+      "security": "auto",
+      "authenticated_length": true
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-34.213.242.165:443 📡 PING-052.91-MS § 1",
+      "server": "34.213.242.165",
       "server_port": 443,
-      "uuid": "bd015c94-987d-484c-92bd-224a5e86efad",
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-35.92.45.179:443 📡 PING-053.63-MS § 2",
+      "server": "35.92.45.179",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-34.219.80.203:443 📡 PING-054.34-MS § 3",
+      "server": "34.219.80.203",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-34.222.132.123:443 📡 PING-054.40-MS § 4",
+      "server": "34.222.132.123",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-35.90.2.104:443 📡 PING-054.49-MS § 5",
+      "server": "35.90.2.104",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-35.161.59.194:443 📡 PING-055.05-MS § 6",
+      "server": "35.161.59.194",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-34.213.200.250:443 📡 PING-055.74-MS § 7",
+      "server": "34.213.200.250",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-54.244.200.142:443 📡 PING-063.25-MS § 8",
+      "server": "54.244.200.142",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "vmess",
+      "tag": "🔒 VM-TCP-NA 🇺🇸 US-198.2.218.108:41400 📡 PING-064.93-MS § 9",
+      "server": "198.2.218.108",
+      "server_port": 41400,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "auto",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-137.175.97.159:8388 📡 PING-065.51-MS § 10",
+      "server": "137.175.97.159",
+      "server_port": 8388,
+      "method": "chacha20-ietf",
+      "password": "asd123456"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-54.69.180.74:443 📡 PING-080.06-MS § 11",
+      "server": "54.69.180.74",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇸 US-52.32.68.164:443 📡 PING-080.07-MS § 12",
+      "server": "52.32.68.164",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "trojan",
+      "tag": "🔒 TR-TCP-TLS 🇮🇪 IE-52.214.131.130:22222 📡 PING-087.44-MS § 13",
+      "server": "52.214.131.130",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
       "tls": {
         "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇬🇧 GB-18.175.5.101:443 📡 PING-097.45-MS § 14",
+      "server": "18.175.5.101",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "W74XFALLLuw6m5IA"
+    },
+    {
+      "type": "trojan",
+      "tag": "🔒 TR-TCP-TLS 🇫🇷 FR-15.237.166.212:22222 📡 PING-102.61-MS § 15",
+      "server": "15.237.166.212",
+      "server_port": 22222,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇨🇾 CY-171.22.124.176:2198 📡 PING-105.34-MS § 16",
+      "server": "171.22.124.176",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.112.156:2198 📡 PING-105.65-MS § 17",
+      "server": "188.119.112.156",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.182:2198 📡 PING-105.68-MS § 18",
+      "server": "171.22.125.182",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.112.107:2198 📡 PING-106.34-MS § 19",
+      "server": "188.119.112.107",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.184:2198 📡 PING-107.08-MS § 20",
+      "server": "171.22.125.184",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.171:8080 📡 PING-107.72-MS § 21",
+      "server": "45.87.175.171",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "4a2rfixophdjffa8KVA4Aa"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-171.22.125.187:2198 📡 PING-107.74-MS § 22",
+      "server": "171.22.125.187",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.178:8080 📡 PING-108.16-MS § 23",
+      "server": "45.87.175.178",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "cvII85TrW6n0OGyfpHVS1u"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:443 📡 PING-108.27-MS § 24",
+      "server": "45.63.117.50",
+      "server_port": 443,
+      "uuid": "fcf99985-147b-4c71-c3f2-f448e5a379f1",
+      "tls": {
+        "enabled": true,
+        "server_name": "cpanel3.sassanidempire.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -131,9 +514,635 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "path": "/ws",
         "headers": {
-          "Host": "joinshhproxybedeeeeeee.ir"
+          "Host": "cpanel3.sassanidempire.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:2083 📡 PING-109.00-MS § 25",
+      "server": "45.63.117.50",
+      "server_port": 2083,
+      "uuid": "c46a54bf-b220-4c22-cd6e-fb1fcabda0af",
+      "tls": {
+        "enabled": true,
+        "server_name": "cpanel3.sassanidempire.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "cpanel3.sassanidempire.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-95.164.86.59:2198 📡 PING-109.21-MS § 26",
+      "server": "95.164.86.59",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🔒 TR-TCP-TLS 🇩🇪 DE-3.69.96.26:22222 📡 PING-110.16-MS § 27",
+      "server": "3.69.96.26",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇨🇾 CY-171.22.124.195:2198 📡 PING-111.21-MS § 28",
+      "server": "171.22.124.195",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇲🇩 MD-91.225.219.71:2198 📡 PING-112.91-MS § 29",
+      "server": "91.225.219.71",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇩🇪 DE-188.245.81.145:39477 📡 PING-113.74-MS § 30",
+      "server": "188.245.81.145",
+      "server_port": 39477,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "LHA8mRPN3ZoV8QnLmjfpueT1fJKGYIzt+oGmTfqouRw=:cWb/TYEyxC9G/hoWZ25CfQhPK5jFfO2a9JJvXvdIX6c="
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇩🇪 DE-188.245.81.145:30339 📡 PING-113.76-MS § 31",
+      "server": "188.245.81.145",
+      "server_port": 30339,
+      "uuid": "626e5631-2928-4725-8d74-8eef698aabb1",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-RLT 🇩🇪 DE-91.107.161.47:110 📡 PING-113.80-MS § 32",
+      "server": "91.107.161.47",
+      "server_port": 110,
+      "uuid": "396fba08-39c8-46dc-ba9d-ead46498b5df",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.jsdelivr.net",
+        "alpn": "h2",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "gjpZdZmvqNvzY9cgnc0tTF9XXAvvq5Hmp37jJl2lvWY",
+          "short_id": "ce9fa5"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "Go4HFJDtQYDNh5HQII31",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇩🇪 DE-138.199.146.7:666 📡 PING-113.83-MS § 33",
+      "server": "138.199.146.7",
+      "server_port": 666,
+      "uuid": "fa590a45-02ee-4ebc-af6d-de5c5db93619",
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇩🇪 DE-23.88.39.22:22301 📡 PING-113.95-MS § 34",
+      "server": "23.88.39.22",
+      "server_port": 22301,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "TczN1j63KbLamEeXYjNQj7d7I/UPhOZWpJ5qBoI/f10=:NMZX2WajjShpecWvxU5TIsPQGJEaC1rF9zCBsA3thJg="
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇩🇪 DE-167.235.204.96:3306 📡 PING-114.15-MS § 35",
+      "server": "167.235.204.96",
+      "server_port": 3306,
+      "uuid": "b1182b8b-e53e-4b67-b789-b364182f4a62",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-RLT 🇩🇪 DE-188.245.125.48:1766 📡 PING-114.63-MS § 36",
+      "server": "188.245.125.48",
+      "server_port": 1766,
+      "uuid": "1d4a985a-336b-48d8-99df-3736a89b48ce",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "y6JSkggQ__RA_nmCJpX1_ddSQC6vzDUPaN7KyvjVuic"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-95.164.87.30:2198 📡 PING-117.51-MS § 37",
+      "server": "95.164.87.30",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇦🇹 AT-212.113.106.76:29149 📡 PING-118.12-MS § 38",
+      "server": "212.113.106.76",
+      "server_port": 29149,
+      "method": "chacha20-ietf-poly1305",
+      "password": "sFVCtr4TgyC9m7vmukd58U"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇬🇮 GI-95.164.3.165:2198 📡 PING-119.75-MS § 39",
+      "server": "95.164.3.165",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇳🇱 NL-188.119.113.164:2198 📡 PING-122.05-MS § 40",
+      "server": "188.119.113.164",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-NONE 🇸🇰 SK-[0:0:0:0:0:ffff:05fc:17ad]:80 📡 PING-122.71-MS § 41",
+      "server": "5.252.23.173",
+      "server_port": 80,
+      "uuid": "b22663cb-4b84-5ce8-b3f2-4edee9cb8145",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇺🇦 UA-95.164.249.61:54075 📡 PING-134.05-MS § 42",
+      "server": "95.164.249.61",
+      "server_port": 54075,
+      "method": "chacha20-ietf-poly1305",
+      "password": "o38yuvzSe3m5aDNpHtUPH1zGwbGEXXMDsGwVaub2SYEmHUa2WGZUjiezX3Vvva9CCzpjxYtuJLgKsSnsyKBf9ciPVba3y4o3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇷🇺 RU-45.142.246.232:19796 📡 PING-137.48-MS § 43",
+      "server": "45.142.246.232",
+      "server_port": 19796,
+      "method": "aes-256-gcm",
+      "password": "b12360f4-33ba-4c9b-ae0c-3da5f8c6ed05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇷🇺 RU-45.142.246.232:19994 📡 PING-138.45-MS § 44",
+      "server": "45.142.246.232",
+      "server_port": 19994,
+      "method": "aes-256-gcm",
+      "password": "b12360f4-33ba-4c9b-ae0c-3da5f8c6ed05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇫🇮 FI-95.216.202.137:19304 📡 PING-139.03-MS § 45",
+      "server": "95.216.202.137",
+      "server_port": 19304,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "0RE9wxKCxco4hvwYpDdSmWdcl2FRs6jJQNezUyFA1u8=:Xf5trxObRuzLIWTI7xiRPb2RY6yjWSEy36OOWr0iXQk="
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-43.207.232.228:443 📡 PING-140.65-MS § 46",
+      "server": "43.207.232.228",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-54.248.142.136:443 📡 PING-141.02-MS § 47",
+      "server": "54.248.142.136",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-52.68.44.53:443 📡 PING-141.20-MS § 48",
+      "server": "52.68.44.53",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-13.114.67.166:443 📡 PING-143.33-MS § 49",
+      "server": "13.114.67.166",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-57.181.42.233:443 📡 PING-143.50-MS § 50",
+      "server": "57.181.42.233",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-52.194.212.235:443 📡 PING-146.25-MS § 51",
+      "server": "52.194.212.235",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-194.105.83.3:40003 📡 PING-150.48-MS § 52",
+      "server": "194.105.83.3",
+      "server_port": 40003,
+      "method": "chacha20-ietf-poly1305",
+      "password": "ab8b625c-efb8-45cd-b509-c7cceabe0cc6"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-54.178.191.236:443 📡 PING-151.84-MS § 53",
+      "server": "54.178.191.236",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-13.114.31.63:443 📡 PING-157.40-MS § 54",
+      "server": "13.114.31.63",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-18.179.197.216:443 📡 PING-158.80-MS § 55",
+      "server": "18.179.197.216",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇯🇵 JP-54.178.84.59:443 📡 PING-162.11-MS § 56",
+      "server": "54.178.84.59",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇰🇷 KR-43.200.1.13:443 📡 PING-167.17-MS § 57",
+      "server": "43.200.1.13",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇰🇷 KR-52.79.52.119:443 📡 PING-169.56-MS § 58",
+      "server": "52.79.52.119",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇰🇷 KR-3.35.206.24:443 📡 PING-169.66-MS § 59",
+      "server": "3.35.206.24",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇰🇷 KR-43.203.122.162:443 📡 PING-169.76-MS § 60",
+      "server": "43.203.122.162",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "trojan",
+      "tag": "🔒 TR-TCP-TLS 🇫🇷 FR-35.181.245.61:22222 📡 PING-150.48-MS § 61",
+      "server": "35.181.245.61",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇰🇷 KR-43.203.243.93:443 📡 PING-170.12-MS § 62",
+      "server": "43.203.243.93",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇮🇷 IR-93.126.50.230:12358 📡 PING-192.23-MS § 63",
+      "server": "93.126.50.230",
+      "server_port": 12358,
+      "uuid": "777654b8-e712-4d9b-a621-3f9b3d0b6482",
+      "transport": {
+        "type": "http",
+        "host": "telewebion.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇧🇭 BH-16.24.51.179:443 📡 PING-203.23-MS § 64",
+      "server": "16.24.51.179",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "P7PqQpnyhsnzKNrm"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇦🇪 AE-40.172.124.15:443 📡 PING-207.47-MS § 65",
+      "server": "40.172.124.15",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇦🇪 AE-40.172.156.242:443 📡 PING-208.54-MS § 66",
+      "server": "40.172.156.242",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇲🇩 MD-94.232.244.5:2198 📡 PING-209.95-MS § 67",
+      "server": "94.232.244.5",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇸🇬 SG-13.213.28.231:443 📡 PING-210.58-MS § 68",
+      "server": "13.213.28.231",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "vmess",
+      "tag": "🔒 VM-TCP-NA 🇮🇷 IR-92.242.220.22:37885 📡 PING-213.08-MS § 69",
+      "server": "92.242.220.22",
+      "server_port": 37885,
+      "uuid": "8dee19ab-50ce-4d06-be42-5e53c8989ccc",
+      "security": "auto",
+      "authenticated_length": true
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇮🇷 IR-85.133.241.75:1935 📡 PING-218.77-MS § 70",
+      "server": "85.133.241.75",
+      "server_port": 1935,
+      "method": "chacha20-ietf-poly1305",
+      "password": "21586aab-3a37-4f55-b8b7-5ae69572d403"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇮🇳 IN-151.101.158.204:80 📡 PING-229.30-MS § 71",
+      "server": "151.101.158.204",
+      "server_port": 80,
+      "uuid": "860fe05e-c554-4c69-a54e-392a2a550af6",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "fatmelo.com"
+        },
+        "max_early_data": 64,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇸🇬 SG-18.140.65.217:443 📡 PING-238.07-MS § 72",
+      "server": "18.140.65.217",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇻🇳 VN-160.19.78.75:443 📡 PING-238.61-MS § 73",
+      "server": "160.19.78.75",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "Nk9asglDzHzjktVzTkvhaA"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇰🇷 KR-52.79.248.193:443 📡 PING-239.36-MS § 74",
+      "server": "52.79.248.193",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇸🇬 SG-52.221.190.255:443 📡 PING-243.47-MS § 75",
+      "server": "52.221.190.255",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇮🇷 IR-185.208.77.113:14040 📡 PING-310.17-MS § 76",
+      "server": "185.208.77.113",
+      "server_port": 14040,
+      "uuid": "a2691bdd-7989-4e7e-9c44-302e360c021f",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-RLT 🇺🇸 US-173.199.122.162:443 📡 PING-029.16-MS § 77",
+      "server": "173.199.122.162",
+      "server_port": 443,
+      "uuid": "77f2d87d-c808-37d6-e70c-9aa442454eaa",
+      "tls": {
+        "enabled": true,
+        "server_name": "roro44.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "09fO1eQEJfCiXw-CXd3oEkSoBx2hHpX5ZbpdKkUyuiw",
+          "short_id": "82da0e90491e74f4"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "443vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🔒 TR-TCP-TLS 🇨🇦 CA-52.60.126.136:22222 📡 PING-021.48-MS § 78",
+      "server": "52.60.126.136",
+      "server_port": 22222,
+      "password": "telegram-id-v2rayvpnchannel",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-TLS 🇺🇸 US-147.135.4.2:443 📡 PING-016.95-MS § 79",
+      "server": "147.135.4.2",
+      "server_port": 443,
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇺🇸 US-151.101.2.133:443 📡 PING-001.93-MS § 80",
+      "server": "151.101.2.133",
+      "server_port": 443,
+      "uuid": "d007696f-75c9-406f-8fae-baf4f78bb7e0",
+      "tls": {
+        "enabled": true,
+        "server_name": "ergwork.web.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ws/",
+        "headers": {
+          "Host": "snappir.ir"
+        },
+        "max_early_data": 2052,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.0.223:80 📡 PING-001.87-MS § 81",
+      "server": "151.101.0.223",
+      "server_port": 80,
+      "uuid": "092f6989-74a2-5deb-841c-46622fd8f96d",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "O-ELi-V2-RAY.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🇺🇸 US-151.101.194.219:80 📡 PING-001.82-MS § 82",
+      "server": "151.101.194.219",
+      "server_port": 80,
+      "uuid": "c8f92407-72d3-4917-c678-0ab92c9795d2",
+      "transport": {
+        "type": "ws",
+        "path": "/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam",
+        "headers": {
+          "Host": "XpnTeam.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -142,28 +1151,79 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "7f6d3d5d-3811-4345-af2e-ac1c8c17b436",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "tag": "🔒 VL-WS-NA 🇺🇸 US-140.248.178.15:80 📡 PING-001.72-MS § 83",
+      "server": "140.248.178.15",
+      "server_port": 80,
+      "uuid": "86194c79-e829-40d4-8e3e-d79b33732e0d",
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "path": "/@Daily_Configs--@Daily_Configs--@Daily_Configs--@Daily_Configs--@Daily_Configs--@Daily_Configs",
         "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
+          "Host": "joinbedeee-daily-configs.net"
+        },
+        "max_early_data": 2056,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🇺🇸 US-151.101.66.219:80 📡 PING-001.65-MS § 84",
+      "server": "151.101.66.219",
+      "server_port": 80,
+      "uuid": "c8f92407-72d3-4917-c678-0ab92c9795d2",
+      "transport": {
+        "type": "ws",
+        "path": "/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam",
+        "headers": {
+          "Host": "XpnTeam.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇱🇹 LT-45.87.175.157:8080 📡 PING-107.52-MS § 85",
+      "server": "45.87.175.157",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "4a2rfixophdjffa8KVA4Aa"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇵🇱 PL-64.176.71.35:42141 📡 PING-118.22-MS § 86",
+      "server": "64.176.71.35",
+      "server_port": 42141,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "iwVoxpUSEaEBeQK9HZap7gTAN3OGoE4rg2h9orLZvdA=:pLsOybg5ng6icspjXqxXnwfVqyGk8j29Pcpytxp7O6E="
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🔒 SS-TCP-NA 🇩🇪 DE-138.124.93.193:38500 📡 PING-109.21-MS § 87",
+      "server": "138.124.93.193",
+      "server_port": 38500,
+      "method": "chacha20-ietf-poly1305",
+      "password": "SzBqgnh7RAvT8FZgVgHYGH"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇵🇱 PL-64.176.71.35:45203 📡 PING-125.68-MS § 88",
+      "server": "64.176.71.35",
+      "server_port": 45203,
+      "uuid": "06cd4260-bd81-4bdd-900d-37fb0af80d01",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🔒 VM-TCP-NA 🇩🇰 DK-193.29.107.234:49020 📡 PING-116.28-MS § 89",
+      "server": "193.29.107.234",
+      "server_port": 49020,
+      "uuid": "2e967dd5-8d24-4099-a901-412dcb4024fd",
+      "security": "auto",
+      "alter_id": 64,
+      "authenticated_length": true
     },
     {
       "type": "dns",
@@ -233,7 +1293,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "sdYevPcDTCPks_ih"
+      "secret": "o0JL3Y6RatKVo9Xf"
     }
   }
 }
