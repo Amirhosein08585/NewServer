@@ -34,6 +34,10 @@
     ],
     "rules": [
       {
+        "domain": "faculty.ucdavis.edu",
+        "server": "dns-direct"
+      },
+      {
         "domain_suffix": ".ir",
         "geosite": "ir",
         "server": "dns-direct"
@@ -47,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::",
         "104.17.148.22",
         "104.17.147.22",
         "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::"
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::"
       ]
     },
     "independent_cache": true
@@ -95,7 +99,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt § 0"
+        "🇬🇪@Hiddify_Nexttt کانال تلگرام  § 0",
+        "🇫🇷@Hiddify_Nexttt کانال تلگرام § 1"
       ],
       "default": "auto"
     },
@@ -103,18 +108,43 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt § 0"
+        "🇬🇪@Hiddify_Nexttt کانال تلگرام  § 0",
+        "🇫🇷@Hiddify_Nexttt کانال تلگرام § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
+      "type": "shadowsocks",
+      "tag": "🇬🇪@Hiddify_Nexttt کانال تلگرام  § 0",
+      "server": "195.69.143.214",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "9Jxs7aPUDjykc5lO2IILj0"
+    },
+    {
       "type": "vless",
-      "tag": "@Hiddify_nexttt § 0",
-      "server": "138.199.146.7",
-      "server_port": 666,
-      "uuid": "fa590a45-02ee-4ebc-af6d-de5c5db93619",
+      "tag": "🇫🇷@Hiddify_Nexttt کانال تلگرام § 1",
+      "server": "faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "3615973e-8c70-5e83-ad69-c3115829661b",
+      "tls": {
+        "enabled": true,
+        "server_name": "faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/--@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY?ed=443ed=2560",
+        "headers": {
+          "Host": "TG.ELiV2RAY.iR"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
       "packet_encoding": ""
     },
     {
@@ -185,7 +215,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "_pcwmmoPRuOKZ8It"
+      "secret": "SowbIToyJ_CxZz1S"
     }
   }
 }
