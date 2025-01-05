@@ -1,0 +1,3548 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.99.0",
+        "188.114.98.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🔒 VL-TCP-TLS 🇺🇸 US-15.204.153.78:443 § 0",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443 § 1",
+        "🔒 VL-WS-TLS 🇺🇸 US-151.101.130.228:443 § 2",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.65.6:80 § 3",
+        "🔒 VL-TCP-TLS 🇺🇸 US-147.135.4.2:443 § 4",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.108:45147 § 5",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.3:443 § 6",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-5.75.202.97:19211 § 7",
+        "🔒 VL-TCP-TLS 🇺🇸 US-51.81.36.78:443 § 8",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.104:36279 § 9",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.27.94:443 § 10",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.2.216:80 § 11",
+        "🔒 VL-TCP-NA 🇵🇱 PL-64.176.71.35:45203 § 12",
+        "🔒 VL-TCP-NA 🇮🇷 IR-79.127.70.72:443 § 13",
+        "🔒 VL-GRPC-NONE 🇷🇸 RS-45.89.55.188:8880 § 14",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.193.6:80 § 15",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.2.219:80 § 16",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.66.219:80 § 17",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.3:443 § 18",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.198.188:443 § 19",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.9.38:2053 § 20",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.109:443 § 21",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-188.114.97.3:8080 § 22",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.12.158:443 § 23",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.12:443 § 24",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.97:443 § 25",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443 § 26",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443 § 27",
+        "🔒 VL-TCP-NONE 🇫🇮 FI-65.109.228.235:45743 § 28",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.175.2:80 § 29",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-3.79.61.93:20733 § 30",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.9:443 § 31",
+        "🔒 VL-GRPC-NA 🇨🇦 CA-3.96.177.85:52837 § 32",
+        "🔒 VL-TCP-TLS 🇺🇸 US-147.135.1.195:443 § 33",
+        "🔒 VL-GRPC-TLS 🏴‍☠️ NA-104.17.134.62:443 § 34",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.64.1:443 § 35",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-188.245.81.145:30339 § 36",
+        "🔒 VL-WS-NA 🇺🇸 US-151.101.129.6:80 § 37",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443 § 38",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.192:443 § 39",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.57:443 § 40",
+        "🔒 VL-GRPC-NONE 🇮🇹 IT-[0:0:0:0:0:ffff:5fa4:2e27]:2052 § 41",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.76.15:443 § 42",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443 § 43",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.59.165:8880 § 44",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.95.103:443 § 45",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.64.80.35:8080 § 46",
+        "🔒 VL-TCP-NONE 🇲🇩 MD-94.232.244.5:2198 § 47",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443 § 48",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.130.219:80 § 49",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.84.35:443 § 50",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443 § 51",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443 § 52",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-188.114.96.1:8880 § 53",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.125.175:443 § 54",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-104.21.16.48:80 § 55",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.141.169:443 § 56",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443 § 57",
+        "🔒 VL-TCP-NONE 🇫🇮 FI-135.181.155.147:40240 § 58",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.0.223:80 § 59",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443 § 60",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.173:443 § 61",
+        "🔒 VL-GRPC-NONE 🇸🇰 SK-5.252.23.173:80 § 62",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-188.114.96.3:8080 § 63",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-162.159.135.115:8080 § 64",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.194.216:80 § 65",
+        "🔒 VL-TCP-NONE 🇫🇮 FI-95.216.140.41:44439 § 66",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.103:443 § 67",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.223:443 § 68",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053 § 69",
+        "🔒 VL-WS-TLS 🇩🇪 DE-50.7.85.221:443 § 70",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443 § 71",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-162.159.152.2:80 § 72",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-172.67.187.219:8880 § 73",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.48.84:443 § 74",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443 § 75",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.138.64:80 § 76",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443 § 77",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.11.28:443 § 78",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.157.34:80 § 79",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.66.229:443 § 80",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.147.94:443 § 81",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.147.162:443 § 82",
+        "🔒 VL-WS-NONE 🇮🇷 IR-185.208.77.113:14040 § 83",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.94:443 § 84",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443 § 85",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.96:443 § 86",
+        "🔒 VL-WS-TLS 🇺🇸 US-151.101.130.133:443 § 87",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053 § 88",
+        "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:443 § 89",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.219:443 § 90",
+        "🔒 VL-TCP-TLS 🇺🇸 US-135.148.177.196:443 § 91",
+        "🔒 VL-WS-NONE 🇩🇪 DE-209.38.219.225:2052 § 92",
+        "🔒 VL-WS-TLS 🇨🇦 CA-23.227.38.135:443 § 93",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.86.123:443 § 94",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.22.22.164:443 § 95",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.92.169:80 § 96",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.96.87:443 § 97",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.209.25:443 § 98",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.177.51:443 § 99",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.156.99:443 § 100",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.165.22:443 § 101",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443 § 102",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.1:443 § 103",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.101:443 § 104",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.20.18.168:8880 § 105",
+        "🔒 VL-WS-NONE 🇮🇳 IN-151.101.158.204:80 § 106",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.144.73:443 § 107",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.61.8:443 § 108",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.132.187:80 § 109",
+        "🔒 VL-TCP-TLS 🇺🇦 UA-5.188.6.73:443 § 110",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.41.131:443 § 111",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.203.232:443 § 112",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.28.34:8880 § 113",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.18.32.69:2086 § 114",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.84.22:443 § 115",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.107:45147 § 116",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.53.146:8080 § 117",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.205.138:443 § 118",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.98:443 § 119",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.30.14:80 § 120",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.69.227:443 § 121",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.149.17:80 § 122",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.200.215:443 § 123",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443 § 124",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.157.75:443 § 125",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.54.238:443 § 126",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.18.41.138:8880 § 127",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.37.192:80 § 128",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.188.41:80 § 129",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.146.180:443 § 130",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.92.162:8880 § 131",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-49.12.185.64:80 § 132",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443 § 133",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443 § 134",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.177.129:80 § 135",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.106:45147 § 136",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443 § 137",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.95.172:443 § 138",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.253:443 § 139",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.22.78.49:443 § 140",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.49.221:80 § 141",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.54.161:80 § 142",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.44.107:443 § 143",
+        "🔒 VL-WS-NONE 🇨🇾 CY-45.67.214.53:80 § 144",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.2.88:443 § 145",
+        "🔒 VL-WS-NA 🇩🇪 DE-138.201.159.5:2053 § 146",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.210.173:443 § 147",
+        "🔒 VL-WS-TLS 🇺🇸 US-170.114.45.159:443 § 148",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.54.149:8080 § 149",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.155:443 § 150",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.42.56:80 § 151"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🔒 VL-TCP-TLS 🇺🇸 US-15.204.153.78:443 § 0",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443 § 1",
+        "🔒 VL-WS-TLS 🇺🇸 US-151.101.130.228:443 § 2",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.65.6:80 § 3",
+        "🔒 VL-TCP-TLS 🇺🇸 US-147.135.4.2:443 § 4",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.108:45147 § 5",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.3:443 § 6",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-5.75.202.97:19211 § 7",
+        "🔒 VL-TCP-TLS 🇺🇸 US-51.81.36.78:443 § 8",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.104:36279 § 9",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.27.94:443 § 10",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.2.216:80 § 11",
+        "🔒 VL-TCP-NA 🇵🇱 PL-64.176.71.35:45203 § 12",
+        "🔒 VL-TCP-NA 🇮🇷 IR-79.127.70.72:443 § 13",
+        "🔒 VL-GRPC-NONE 🇷🇸 RS-45.89.55.188:8880 § 14",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.193.6:80 § 15",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.2.219:80 § 16",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.66.219:80 § 17",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.3:443 § 18",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.198.188:443 § 19",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.9.38:2053 § 20",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.109:443 § 21",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-188.114.97.3:8080 § 22",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.12.158:443 § 23",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.12:443 § 24",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.97:443 § 25",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443 § 26",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443 § 27",
+        "🔒 VL-TCP-NONE 🇫🇮 FI-65.109.228.235:45743 § 28",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.175.2:80 § 29",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-3.79.61.93:20733 § 30",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.9:443 § 31",
+        "🔒 VL-GRPC-NA 🇨🇦 CA-3.96.177.85:52837 § 32",
+        "🔒 VL-TCP-TLS 🇺🇸 US-147.135.1.195:443 § 33",
+        "🔒 VL-GRPC-TLS 🏴‍☠️ NA-104.17.134.62:443 § 34",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.64.1:443 § 35",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-188.245.81.145:30339 § 36",
+        "🔒 VL-WS-NA 🇺🇸 US-151.101.129.6:80 § 37",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443 § 38",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.192:443 § 39",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.57:443 § 40",
+        "🔒 VL-GRPC-NONE 🇮🇹 IT-[0:0:0:0:0:ffff:5fa4:2e27]:2052 § 41",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.76.15:443 § 42",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443 § 43",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.59.165:8880 § 44",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.95.103:443 § 45",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.64.80.35:8080 § 46",
+        "🔒 VL-TCP-NONE 🇲🇩 MD-94.232.244.5:2198 § 47",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443 § 48",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.130.219:80 § 49",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.84.35:443 § 50",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443 § 51",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443 § 52",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-188.114.96.1:8880 § 53",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.125.175:443 § 54",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-104.21.16.48:80 § 55",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.141.169:443 § 56",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443 § 57",
+        "🔒 VL-TCP-NONE 🇫🇮 FI-135.181.155.147:40240 § 58",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.0.223:80 § 59",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443 § 60",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.173:443 § 61",
+        "🔒 VL-GRPC-NONE 🇸🇰 SK-5.252.23.173:80 § 62",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-188.114.96.3:8080 § 63",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-162.159.135.115:8080 § 64",
+        "🔒 VL-WS-NONE 🇺🇸 US-151.101.194.216:80 § 65",
+        "🔒 VL-TCP-NONE 🇫🇮 FI-95.216.140.41:44439 § 66",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.103:443 § 67",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.223:443 § 68",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053 § 69",
+        "🔒 VL-WS-TLS 🇩🇪 DE-50.7.85.221:443 § 70",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443 § 71",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-162.159.152.2:80 § 72",
+        "🔒 VL-WS-NA 🏴‍☠️ NA-172.67.187.219:8880 § 73",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.48.84:443 § 74",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443 § 75",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.138.64:80 § 76",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443 § 77",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.11.28:443 § 78",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.157.34:80 § 79",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.66.229:443 § 80",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.147.94:443 § 81",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.147.162:443 § 82",
+        "🔒 VL-WS-NONE 🇮🇷 IR-185.208.77.113:14040 § 83",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.94:443 § 84",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443 § 85",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.96:443 § 86",
+        "🔒 VL-WS-TLS 🇺🇸 US-151.101.130.133:443 § 87",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053 § 88",
+        "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:443 § 89",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.219:443 § 90",
+        "🔒 VL-TCP-TLS 🇺🇸 US-135.148.177.196:443 § 91",
+        "🔒 VL-WS-NONE 🇩🇪 DE-209.38.219.225:2052 § 92",
+        "🔒 VL-WS-TLS 🇨🇦 CA-23.227.38.135:443 § 93",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.86.123:443 § 94",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.22.22.164:443 § 95",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.92.169:80 § 96",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.96.87:443 § 97",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.209.25:443 § 98",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.177.51:443 § 99",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.156.99:443 § 100",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.165.22:443 § 101",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443 § 102",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.1:443 § 103",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.101:443 § 104",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.20.18.168:8880 § 105",
+        "🔒 VL-WS-NONE 🇮🇳 IN-151.101.158.204:80 § 106",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.144.73:443 § 107",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.61.8:443 § 108",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.132.187:80 § 109",
+        "🔒 VL-TCP-TLS 🇺🇦 UA-5.188.6.73:443 § 110",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.41.131:443 § 111",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.203.232:443 § 112",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.28.34:8880 § 113",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.18.32.69:2086 § 114",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.84.22:443 § 115",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.107:45147 § 116",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.53.146:8080 § 117",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.205.138:443 § 118",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.98:443 § 119",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.30.14:80 § 120",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.69.227:443 § 121",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.149.17:80 § 122",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.200.215:443 § 123",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443 § 124",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.157.75:443 § 125",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.54.238:443 § 126",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.18.41.138:8880 § 127",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.37.192:80 § 128",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.188.41:80 § 129",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.146.180:443 § 130",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.92.162:8880 § 131",
+        "🔒 VL-TCP-NONE 🇩🇪 DE-49.12.185.64:80 § 132",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443 § 133",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443 § 134",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.177.129:80 § 135",
+        "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.106:45147 § 136",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443 § 137",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.95.172:443 § 138",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.253:443 § 139",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.22.78.49:443 § 140",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.49.221:80 § 141",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.54.161:80 § 142",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.44.107:443 § 143",
+        "🔒 VL-WS-NONE 🇨🇾 CY-45.67.214.53:80 § 144",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.2.88:443 § 145",
+        "🔒 VL-WS-NA 🇩🇪 DE-138.201.159.5:2053 § 146",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.210.173:443 § 147",
+        "🔒 VL-WS-TLS 🇺🇸 US-170.114.45.159:443 § 148",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.54.149:8080 § 149",
+        "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.155:443 § 150",
+        "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.42.56:80 § 151"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-TLS 🇺🇸 US-15.204.153.78:443 § 0",
+      "server": "15.204.153.78",
+      "server_port": 443,
+      "uuid": "3b9bc773-05eb-4d5f-8c1f-57342c0c4f40",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135010103.sec19org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443 § 1",
+      "server": "188.114.97.2",
+      "server_port": 8443,
+      "uuid": "6ad08747-42b9-4618-8f11-ac47de0da0f8",
+      "tls": {
+        "enabled": true,
+        "server_name": "proxiiraniii.fiseye5589.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "proxiiraniii.fiseye5589.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇺🇸 US-151.101.130.228:443 § 2",
+      "server": "151.101.130.228",
+      "server_port": 443,
+      "uuid": "0b5fbb0c-fbc8-5260-a6dc-d536ba9f0e5d",
+      "tls": {
+        "enabled": true,
+        "server_name": "faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "PABLOO-MOSTAFA.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.65.6:80 § 3",
+      "server": "151.101.65.6",
+      "server_port": 80,
+      "uuid": "8167f943-0513-5c93-bda3-2ec02522cd8a",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "PABLO-MOSTAFAA.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-TLS 🇺🇸 US-147.135.4.2:443 § 4",
+      "server": "147.135.4.2",
+      "server_port": 443,
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.108:45147 § 5",
+      "server": "79.127.70.108",
+      "server_port": 45147,
+      "uuid": "7cc88852-6c8c-4ddc-9211-5628824b223d",
+      "transport": {
+        "type": "http",
+        "host": "archlinux.org",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.3:443 § 6",
+      "server": "188.114.97.3",
+      "server_port": 443,
+      "uuid": "08c41e17-9d1c-4d4a-9edc-242d3d71c1ac",
+      "tls": {
+        "enabled": true,
+        "server_name": "oRdEr.fortGIFT.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/B7tnDeiaEFHTS0Li",
+        "headers": {
+          "Host": "order.fortgift.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇩🇪 DE-5.75.202.97:19211 § 7",
+      "server": "5.75.202.97",
+      "server_port": 19211,
+      "uuid": "2163db1f-34a6-437b-a75a-56a6595d6be6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-TLS 🇺🇸 US-51.81.36.78:443 § 8",
+      "server": "51.81.36.78",
+      "server_port": 443,
+      "uuid": "0a44145f-59dc-4e5b-a233-677b97f5114c",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135011033.sec21org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.104:36279 § 9",
+      "server": "79.127.70.104",
+      "server_port": 36279,
+      "uuid": "f41f9dfd-2c09-441b-a293-a32f240eb88d",
+      "transport": {
+        "type": "http",
+        "host": "archlinux.org",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.27.94:443 § 10",
+      "server": "104.18.27.94",
+      "server_port": 443,
+      "uuid": "e22aca05-87ea-48f9-8389-90d88b4a708d",
+      "tls": {
+        "enabled": true,
+        "server_name": "esetsecuritylicense.vvdjqi.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "esetsecuritylicense.vvdjqi.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.2.216:80 § 11",
+      "server": "151.101.2.216",
+      "server_port": 80,
+      "uuid": "60985471-8040-bc44-213e-780f6a853aa9",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marzneshigermanfour.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NA 🇵🇱 PL-64.176.71.35:45203 § 12",
+      "server": "64.176.71.35",
+      "server_port": 45203,
+      "uuid": "06cd4260-bd81-4bdd-900d-37fb0af80d01",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NA 🇮🇷 IR-79.127.70.72:443 § 13",
+      "server": "79.127.70.72",
+      "server_port": 443,
+      "uuid": "b5e3d701-3b7e-4fc6-a107-5c82a3f8b414",
+      "transport": {
+        "type": "http",
+        "host": "archlinux.org",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-NONE 🇷🇸 RS-45.89.55.188:8880 § 14",
+      "server": "45.89.55.188",
+      "server_port": 8880,
+      "uuid": "a01634d7-4070-5586-970e-bdd5e4d17b93",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.193.6:80 § 15",
+      "server": "151.101.193.6",
+      "server_port": 80,
+      "uuid": "8167f943-0513-5c93-bda3-2ec02522cd8a",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "PABLO-MOSTAFAA.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.2.219:80 § 16",
+      "server": "151.101.2.219",
+      "server_port": 80,
+      "uuid": "3e92c450-e23d-4826-e952-9cbe5a508e73",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws?ed=1024@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.66.219:80 § 17",
+      "server": "151.101.66.219",
+      "server_port": 80,
+      "uuid": "3e92c450-e23d-4826-e952-9cbe5a508e73",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws?ed=1024@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.3:443 § 18",
+      "server": "188.114.96.3",
+      "server_port": 443,
+      "uuid": "ffe6ffea-d8df-4efd-9fb1-ab093d6d0a2d",
+      "tls": {
+        "enabled": true,
+        "server_name": "PpAl03.TavEn-rYDAn.WORkerS.DEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/XDibuDFmB3fiURk1",
+        "headers": {
+          "Host": "PPaL03.tAveN-rYDan.WorKERS.DeV"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.198.188:443 § 19",
+      "server": "172.67.198.188",
+      "server_port": 443,
+      "uuid": "780161d1-a345-45d4-96fb-c2c4b88bf151",
+      "tls": {
+        "enabled": true,
+        "server_name": "dd.gevom47953.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/#@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "dd.gevom47953.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.9.38:2053 § 20",
+      "server": "104.18.9.38",
+      "server_port": 2053,
+      "uuid": "25c5cbda-39e5-47ed-b36c-b87ffef2378d",
+      "tls": {
+        "enabled": true,
+        "server_name": "worker-fancy-base-7d08.yajici1215.workers.DEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TABRIZ.NET:@AZARBAYJAB1,TABRIZ.NET:@AZARBAYJAB1,TABRIZ.NET:@AZARBAYJAB1,TABRIZ.NET:@AZARBAYJAB1",
+        "headers": {
+          "Host": "worker-fancy-base-7d08.yajici1215.workers.DEV"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.109:443 § 21",
+      "server": "104.21.25.109",
+      "server_port": 443,
+      "uuid": "1010501a-ca9a-479c-84d0-1308d97789b5",
+      "tls": {
+        "enabled": true,
+        "server_name": "mehr14-iran-mehr14-iran-mehr14-iran-mehr14-iran-mehr14-iran.gowow31220.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "mehr14-iran-mehr14-iran-mehr14-iran-mehr14-iran-mehr14-iran.gowow31220.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🏴‍☠️ NA-188.114.97.3:8080 § 22",
+      "server": "188.114.97.3",
+      "server_port": 8080,
+      "uuid": "08c41e17-9d1c-4d4a-9edc-242d3d71c1ac",
+      "transport": {
+        "type": "ws",
+        "path": "/gfWh39Z4XwUXaqVY",
+        "headers": {
+          "Host": "order.fortgift.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.12.158:443 § 23",
+      "server": "104.21.12.158",
+      "server_port": 443,
+      "uuid": "acff92c5-701c-41e9-b905-c1e18fdd6b77",
+      "tls": {
+        "enabled": true,
+        "server_name": "628b90e7-BLaCk-TrUtH-5368bb.mOSimOsTAfA5544.worKERS.DEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/--%20@MOSIV2--%20%7C,%7C--%20@MOSIV2--%20%7C,%7C--%20@MOSIV2--%20%7C,%7C--%20@MOSIV2--%20%7C,%7C--%20@MOSIV2--%20%7C,%7C--%20@MOSIV2--%20%7C,%7C--%20@MOSIV2--%20%7C,%7C--%20@MOSIV2--%20%7C?ed=443 ",
+        "headers": {
+          "Host": "628b90e7-black-truth-5368bb.mosimostafa5544.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.12:443 § 24",
+      "server": "188.114.97.12",
+      "server_port": 443,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegraM-VirginiaVpn.noleCa2676.WorkerS.DEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "telegraM-VirginiaVpn.noleCa2676.WorkerS.DEV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.97:443 § 25",
+      "server": "141.101.90.97",
+      "server_port": 443,
+      "uuid": "e49ce5e6-b80d-4c9e-82a8-0f14c8887a3b",
+      "tls": {
+        "enabled": true,
+        "server_name": "falcunargo.e0aef55581.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "falcunargo.e0aef55581.workers.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443 § 26",
+      "server": "104.21.20.151",
+      "server_port": 443,
+      "uuid": "b0e6a2c9-e667-4e42-9cb3-77d7db3e736b",
+      "tls": {
+        "enabled": true,
+        "server_name": "bypassfilter.cmyyvat.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@bypass_filter/",
+        "headers": {
+          "Host": "bypassfilter.cmyyvat.workers.dev"
+        },
+        "max_early_data": 100,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443 § 27",
+      "server": "104.21.46.197",
+      "server_port": 443,
+      "uuid": "c0fbd664-9693-4cc0-aa73-9247dbbadbeb",
+      "tls": {
+        "enabled": true,
+        "server_name": "bed7nemarz.ribon88568.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/#@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "bed7nemarz.ribon88568.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇫🇮 FI-65.109.228.235:45743 § 28",
+      "server": "65.109.228.235",
+      "server_port": 45743,
+      "uuid": "3c2e5f39-d738-40d4-929c-249ea568cb4a",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.175.2:80 § 29",
+      "server": "104.24.175.2",
+      "server_port": 80,
+      "uuid": "3487ce43-b803-4770-97ff-f75880d7f9b4",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "rough-mud-93b4-ppal03.wedane7745.workers.dev"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇩🇪 DE-3.79.61.93:20733 § 30",
+      "server": "3.79.61.93",
+      "server_port": 20733,
+      "uuid": "928c7c5b-5928-4b7c-98d7-dcfca65d02f3",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.9:443 § 31",
+      "server": "188.114.97.9",
+      "server_port": 443,
+      "uuid": "8e4c1245-49d1-4d2c-9caf-ab21a0e96d4c",
+      "tls": {
+        "enabled": true,
+        "server_name": "xvklqowuxstxdudeqokjvvxfvmigl7uxdcubhqszg2iwie9usafao7kgolyl79k.1czwnc.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "xvklqowuxstxdudeqokjvvxfvmigl7uxdcubhqszg2iwie9usafao7kgolyl79k.1czwnc.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-NA 🇨🇦 CA-3.96.177.85:52837 § 32",
+      "server": "3.96.177.85",
+      "server_port": 52837,
+      "uuid": "b6b685f3-0115-425f-a26f-c0d4421cc528",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-TLS 🇺🇸 US-147.135.1.195:443 § 33",
+      "server": "147.135.1.195",
+      "server_port": 443,
+      "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001195.sec22org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-TLS 🏴‍☠️ NA-104.17.134.62:443 § 34",
+      "server": "104.17.134.62",
+      "server_port": 443,
+      "uuid": "18722220-9249-0051-5849-e8a8f1f76424",
+      "tls": {
+        "enabled": true,
+        "server_name": "hvxoo.metahkh.com",
+        "alpn": "h2",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.64.1:443 § 35",
+      "server": "104.21.64.1",
+      "server_port": 443,
+      "uuid": "dfdd966d-db72-44a3-be06-dfc1ded1cbae",
+      "tls": {
+        "enabled": true,
+        "server_name": "steep-fog-3f46.panelsanaii2.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "steep-fog-3f46.panelsanaii2.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇩🇪 DE-188.245.81.145:30339 § 36",
+      "server": "188.245.81.145",
+      "server_port": 30339,
+      "uuid": "626e5631-2928-4725-8d74-8eef698aabb1",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🇺🇸 US-151.101.129.6:80 § 37",
+      "server": "151.101.129.6",
+      "server_port": 80,
+      "uuid": "312648af-dd40-5de2-bf0f-22d6e6284202",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "PABLO-MOSTAFAA.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443 § 38",
+      "server": "172.67.142.142",
+      "server_port": 443,
+      "uuid": "c8e6e9d4-4339-4ee2-830b-8ece0f78f46b",
+      "tls": {
+        "enabled": true,
+        "server_name": "selincselincselincselincselincselincselincselinc.selincselinc.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "selincselincselincselincselincselincselincselinc.selincselinc.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.192:443 § 39",
+      "server": "188.114.99.192",
+      "server_port": 443,
+      "uuid": "ad4aa165-c30d-48ec-9397-af1d1d3b1c4f",
+      "tls": {
+        "enabled": true,
+        "server_name": "zamimm.e59b57f84c.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "zamimm.e59b57f84c.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.57:443 § 40",
+      "server": "104.21.24.57",
+      "server_port": 443,
+      "uuid": "1fb465ac-60fb-4b77-b4a6-cc590ee6124e",
+      "tls": {
+        "enabled": true,
+        "server_name": "freedom3.pacica4041.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "freedom3.pacica4041.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-NONE 🇮🇹 IT-[0:0:0:0:0:ffff:5fa4:2e27]:2052 § 41",
+      "server": "95.164.46.39",
+      "server_port": 2052,
+      "uuid": "ae49746e-6458-53c7-afc0-fc12d0cc8510",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.76.15:443 § 42",
+      "server": "104.21.76.15",
+      "server_port": 443,
+      "uuid": "5a5d9654-2f1e-4537-b3ca-e76168b2e03f",
+      "tls": {
+        "enabled": true,
+        "server_name": "wlma.jeremaih-talik.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI/",
+        "headers": {
+          "Host": "wlma.jeremaih-talik.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443 § 43",
+      "server": "104.21.26.58",
+      "server_port": 443,
+      "uuid": "61d93b9b-00d0-4df1-8027-6e036f4c1f11",
+      "tls": {
+        "enabled": true,
+        "server_name": "freedom13.bypasojd.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "freedom13.bypasojd.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.59.165:8880 § 44",
+      "server": "104.21.59.165",
+      "server_port": 8880,
+      "uuid": "51d3d249-9095-4cbd-8fd2-3e6c1039cab4",
+      "transport": {
+        "type": "ws",
+        "path": "/@TELEGRAM-MARAMBASHI/",
+        "headers": {
+          "Host": "falcunargo.c2259d7c10.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.95.103:443 § 45",
+      "server": "104.21.95.103",
+      "server_port": 443,
+      "uuid": "b0e6a2c9-e667-4e42-9cb3-77d7db3e736b",
+      "tls": {
+        "enabled": true,
+        "server_name": "bypass.dd-6b2.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@bypass_filter/",
+        "headers": {
+          "Host": "bypass.dd-6b2.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-172.64.80.35:8080 § 46",
+      "server": "172.64.80.35",
+      "server_port": 8080,
+      "uuid": "aa2dc840-be38-4b4d-a002-ba234999fd55",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "cdn-allxn--b6gaceuorg.l4o117en.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇲🇩 MD-94.232.244.5:2198 § 47",
+      "server": "94.232.244.5",
+      "server_port": 2198,
+      "uuid": "838f5273-5d2d-4630-a0f5-9cc8e4aef4d6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443 § 48",
+      "server": "104.19.54.50",
+      "server_port": 443,
+      "uuid": "ad4a8fe9-2a32-49c4-a532-e4eef253f148",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadanet.azadanet.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "azadanet.azadanet.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.130.219:80 § 49",
+      "server": "151.101.130.219",
+      "server_port": 80,
+      "uuid": "528b1201-8b21-5bc2-bbce-5863731a4ac9",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "MO-SI-V2.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.84.35:443 § 50",
+      "server": "104.21.84.35",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "PPAL03.NaVIYi2139.WOrKErs.dEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/0TkRO7B5OMyy4gZu",
+        "headers": {
+          "Host": "pPaL03.nAvIYI2139.wOrkERS.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443 § 51",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "uuid": "3be9e3cf-83cd-4618-b782-1b2a9a72bbec",
+      "tls": {
+        "enabled": true,
+        "server_name": "ppal03.mRs-otHO-rOLfsON.WOrkErS.DEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "PpAL03.MRS-OTho-RoLFson.worKErS.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443 § 52",
+      "server": "104.18.3.57",
+      "server_port": 443,
+      "uuid": "9c682edf-7e17-41d6-83e1-d7f6996a9542",
+      "tls": {
+        "enabled": true,
+        "server_name": "vip1.yomato7390.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "vip1.yomato7390.workers.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-188.114.96.1:8880 § 53",
+      "server": "188.114.96.1",
+      "server_port": 8880,
+      "uuid": "2d8af6f4-ebc2-4ff9-b423-d9ad543c29a2",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegramchannel:@pandavpntc",
+        "headers": {
+          "Host": "654747578685543986654987665498765489766536548763217654432765417.eeb1b765a2f1aa.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.125.175:443 § 54",
+      "server": "104.16.125.175",
+      "server_port": 443,
+      "uuid": "9017544c-38d3-4d7f-879b-f72f3ef946d8",
+      "tls": {
+        "enabled": true,
+        "server_name": "bia-falcunargo.606c0a9742.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "bia-falcunargo.606c0a9742.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🏴‍☠️ NA-104.21.16.48:80 § 55",
+      "server": "104.21.16.48",
+      "server_port": 80,
+      "uuid": "7c18eeab-f38f-48a2-ae25-50c26cdfb0d9",
+      "transport": {
+        "type": "ws",
+        "path": "/6Fb9gZwPctjjwBVW",
+        "headers": {
+          "Host": "anTiFiLTEr.dOXAs38496.wOrkErs.dEV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.141.169:443 § 56",
+      "server": "172.67.141.169",
+      "server_port": 443,
+      "uuid": "c0fbd664-9693-4cc0-aa73-9247dbbadbeb",
+      "tls": {
+        "enabled": true,
+        "server_name": "bed7nemarz.ribon88568.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "bed7nemarz.ribon88568.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443 § 57",
+      "server": "172.67.128.212",
+      "server_port": 443,
+      "uuid": "e794da45-0d8d-4b7a-9ae9-b0b84528b360",
+      "tls": {
+        "enabled": true,
+        "server_name": "hexaprop.dirih76753.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/#@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "hexaprop.dirih76753.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇫🇮 FI-135.181.155.147:40240 § 58",
+      "server": "135.181.155.147",
+      "server_port": 40240,
+      "uuid": "308a14d1-cfae-405f-9d69-2922f87ee79b",
+      "transport": {
+        "type": "http",
+        "host": "canva.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.0.223:80 § 59",
+      "server": "151.101.0.223",
+      "server_port": 80,
+      "uuid": "ee01027e-e413-575a-8a5f-ba8ba569eb8b",
+      "transport": {
+        "type": "ws",
+        "path": "/--@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY",
+        "headers": {
+          "Host": "tg.ELiV2RaY.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443 § 60",
+      "server": "172.67.152.111",
+      "server_port": 443,
+      "uuid": "9f70a4c0-f727-47fb-ba7d-d604dba9669c",
+      "tls": {
+        "enabled": true,
+        "server_name": "worker-little-leaf-7f8e.foxici5037.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/#@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "worker-little-leaf-7f8e.foxici5037.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.173:443 § 61",
+      "server": "172.67.190.173",
+      "server_port": 443,
+      "uuid": "f6c960f3-dc81-45ca-9891-4138f78d9125",
+      "tls": {
+        "enabled": true,
+        "server_name": "FalcuNaRgO.e9744be7d6.woRKeRs.DEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vn1-fm3_Ez8K-mTw",
+        "headers": {
+          "Host": "FalCUnaRGO.E9744be7D6.woRKERs.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-GRPC-NONE 🇸🇰 SK-5.252.23.173:80 § 62",
+      "server": "5.252.23.173",
+      "server_port": 80,
+      "uuid": "f8d38e09-c654-5045-9816-27cf78cc93fa",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🏴‍☠️ NA-188.114.96.3:8080 § 63",
+      "server": "188.114.96.3",
+      "server_port": 8080,
+      "uuid": "08c41e17-9d1c-4d4a-9edc-242d3d71c1ac",
+      "transport": {
+        "type": "ws",
+        "path": "/z5lsHF5zQrd1rJDr",
+        "headers": {
+          "Host": "order.fortgift.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-162.159.135.115:8080 § 64",
+      "server": "162.159.135.115",
+      "server_port": 8080,
+      "uuid": "aa2dc840-be38-4b4d-a002-ba234999fd55",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "cdn-allxn--b6gaceuorg.l4o117en.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇺🇸 US-151.101.194.216:80 § 65",
+      "server": "151.101.194.216",
+      "server_port": 80,
+      "uuid": "60985471-8040-bc44-213e-780f6a853aa9",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "marzneshinnetherland.com.au"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇫🇮 FI-95.216.140.41:44439 § 66",
+      "server": "95.216.140.41",
+      "server_port": 44439,
+      "uuid": "6a2db678-6eea-4fd9-aa70-b264008bdd5d",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.103:443 § 67",
+      "server": "79.127.70.103",
+      "server_port": 443,
+      "uuid": "0069b36c-ba6c-4c70-ae39-71be514b9820",
+      "transport": {
+        "type": "http",
+        "host": "archlinux.org",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.223:443 § 68",
+      "server": "188.114.96.223",
+      "server_port": 443,
+      "uuid": "eb201923-0e39-4425-bd0f-6244cd24ef2a",
+      "tls": {
+        "enabled": true,
+        "server_name": "zaq11000d.b835a8094d.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "zaq11000d.b835a8094d.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053 § 69",
+      "server": "104.21.4.56",
+      "server_port": 2053,
+      "uuid": "1ef91e6f-7522-4ded-84ea-4523dd2a15d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇩🇪 DE-50.7.85.221:443 § 70",
+      "server": "50.7.85.221",
+      "server_port": 443,
+      "uuid": "3af3a0f3-28ea-407c-a3df-2ae3b33fc174",
+      "tls": {
+        "enabled": true,
+        "server_name": "salampesarm.sesewov745.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "salampesarm.sesewov745.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443 § 71",
+      "server": "172.67.193.39",
+      "server_port": 443,
+      "uuid": "b0e6a2c9-e667-4e42-9cb3-77d7db3e736b",
+      "tls": {
+        "enabled": true,
+        "server_name": "bypassfilter.cmyyvat.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@bypass_filter/",
+        "headers": {
+          "Host": "bypassfilter.cmyyvat.workers.dev"
+        },
+        "max_early_data": 100,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-162.159.152.2:80 § 72",
+      "server": "162.159.152.2",
+      "server_port": 80,
+      "uuid": "11f0eadd-9a8d-4791-ada3-4789ac3ff7ca",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "empty-tree-6008.jobaf49186.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🏴‍☠️ NA-172.67.187.219:8880 § 73",
+      "server": "172.67.187.219",
+      "server_port": 8880,
+      "uuid": "a61fc8cb-0012-4c4b-aa5e-d1c623ae8092",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "worker-late-feather-d436.wedome3486.workers.DEV"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.48.84:443 § 74",
+      "server": "162.159.48.84",
+      "server_port": 443,
+      "uuid": "ce6dc9fc-4c53-4804-aea8-414a5a34bba4",
+      "tls": {
+        "enabled": true,
+        "server_name": "pqtd745wu7shc1zrfvy5itansz3c1nsesbmn6iy6myvfwempkcmoy67rdij0rp7.i8f9j.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "pqtd745wu7shc1zrfvy5itansz3c1nsesbmn6iy6myvfwempkcmoy67rdij0rp7.i8f9j.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443 § 75",
+      "server": "104.18.2.57",
+      "server_port": 443,
+      "uuid": "9c682edf-7e17-41d6-83e1-d7f6996a9542",
+      "tls": {
+        "enabled": true,
+        "server_name": "vip1.yomato7390.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "vip1.yomato7390.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.138.64:80 § 76",
+      "server": "104.24.138.64",
+      "server_port": 80,
+      "uuid": "5d8bc42a-d345-4bd3-a844-4b90afc44670",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "patient-shadow-baf1-ppal03.hohel98085.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443 § 77",
+      "server": "104.17.247.203",
+      "server_port": 443,
+      "uuid": "46dbac8b-eaba-4275-940c-819f95d16916",
+      "tls": {
+        "enabled": true,
+        "server_name": "falcunargo.9cfaf68585.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "falcunargo.9cfaf68585.workers.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.11.28:443 § 78",
+      "server": "104.21.11.28",
+      "server_port": 443,
+      "uuid": "c92856da-9532-49ec-bb71-d981a623f5c9",
+      "tls": {
+        "enabled": true,
+        "server_name": "freedom6.mamav81785.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI/",
+        "headers": {
+          "Host": "freedom6.mamav81785.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.157.34:80 § 79",
+      "server": "172.67.157.34",
+      "server_port": 80,
+      "uuid": "6034088f-b713-40dd-93be-eaea802eafe1",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram+channel+:+@pandavpntc",
+        "headers": {
+          "Host": "5435.nhopzuei.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.66.229:443 § 80",
+      "server": "104.21.66.229",
+      "server_port": 443,
+      "uuid": "297121ff-c2a0-4f7a-b17c-8517e1e43707",
+      "tls": {
+        "enabled": true,
+        "server_name": "easynet23.mfrpb.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "easynet23.mfrpb.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.147.94:443 § 81",
+      "server": "172.67.147.94",
+      "server_port": 443,
+      "uuid": "c3c20db7-d32b-454a-9843-ec22d064a842",
+      "tls": {
+        "enabled": true,
+        "server_name": "uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/",
+        "headers": {
+          "Host": "uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev"
+        },
+        "max_early_data": 2047,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.147.162:443 § 82",
+      "server": "172.67.147.162",
+      "server_port": 443,
+      "uuid": "3fefc100-faed-43ad-b087-d47ddfe75121",
+      "tls": {
+        "enabled": true,
+        "server_name": "s92qb78mnok7yh5ykir1ayugvc49aqclfapp4qmqvixdxyd8crqppthcfpsjmm2.esmpy.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "s92qb78mnok7yh5ykir1ayugvc49aqclfapp4qmqvixdxyd8crqppthcfpsjmm2.esmpy.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇮🇷 IR-185.208.77.113:14040 § 83",
+      "server": "185.208.77.113",
+      "server_port": 14040,
+      "uuid": "a2691bdd-7989-4e7e-9c44-302e360c021f",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.94:443 § 84",
+      "server": "172.67.216.94",
+      "server_port": 443,
+      "uuid": "c43cf30c-18f1-4e20-bd88-73b1288c5202",
+      "tls": {
+        "enabled": true,
+        "server_name": "worker-dry-breeze-60a0.chngyznwy.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "worker-dry-breeze-60a0.chngyznwy.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443 § 85",
+      "server": "104.21.25.228",
+      "server_port": 443,
+      "uuid": "1010501a-ca9a-479c-84d0-1308d97789b5",
+      "tls": {
+        "enabled": true,
+        "server_name": "abbas-boveiry1.kisigen176.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "abbas-boveiry1.kisigen176.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.96:443 § 86",
+      "server": "141.101.90.96",
+      "server_port": 443,
+      "uuid": "e49ce5e6-b80d-4c9e-82a8-0f14c8887a3b",
+      "tls": {
+        "enabled": true,
+        "server_name": "falcunargo.e0aef55581.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "falcunargo.e0aef55581.workers.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇺🇸 US-151.101.130.133:443 § 87",
+      "server": "151.101.130.133",
+      "server_port": 443,
+      "uuid": "5ccc8c4b-bd08-4891-ae00-c01f947cae26",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.wkrq.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-EiV2Ray-Telegram-EiV2Ray-Telegram-EiV2Ray-Telegram-EiV2Ray-Telegram-EiV2Ray-Telegram-EiV2Ray",
+        "headers": {
+          "Host": "Streamcpgang.Net"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053 § 88",
+      "server": "172.67.154.6",
+      "server_port": 2053,
+      "uuid": "1ef91e6f-7522-4ded-84ea-4523dd2a15d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇩🇪 DE-45.63.117.50:443 § 89",
+      "server": "45.63.117.50",
+      "server_port": 443,
+      "uuid": "fcf99985-147b-4c71-c3f2-f448e5a379f1",
+      "tls": {
+        "enabled": true,
+        "server_name": "cpanel3.sassanidempire.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "cpanel3.sassanidempire.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.219:443 § 90",
+      "server": "172.67.128.219",
+      "server_port": 443,
+      "uuid": "e794da45-0d8d-4b7a-9ae9-b0b84528b360",
+      "tls": {
+        "enabled": true,
+        "server_name": "hexaprop.dirih76753.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "hexaprop.dirih76753.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-TLS 🇺🇸 US-135.148.177.196:443 § 91",
+      "server": "135.148.177.196",
+      "server_port": 443,
+      "uuid": "e20ebe01-1815-4c09-8e77-fb2f168263ce",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001178.sec22org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇩🇪 DE-209.38.219.225:2052 § 92",
+      "server": "209.38.219.225",
+      "server_port": 2052,
+      "uuid": "1681ec0a-8d65-40f1-a220-55a2e9f22b4b",
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws",
+        "headers": {
+          "Host": "de1.v4vless.xyz."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇨🇦 CA-23.227.38.135:443 § 93",
+      "server": "23.227.38.135",
+      "server_port": 443,
+      "uuid": "465fc43c-9872-40f9-bb94-ebee934e40b4",
+      "tls": {
+        "enabled": true,
+        "server_name": "eupmaq-fyvoq0da0mdvvzehshnqqcd6inl5ihzvry3fo5veeghhfkkhertre6uy.t03w4b.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "eupmaq-fyvoq0da0mdvvzehshnqqcd6inl5ihzvry3fo5veeghhfkkhertre6uy.t03w4b.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.86.123:443 § 94",
+      "server": "172.67.86.123",
+      "server_port": 443,
+      "uuid": "b97b8288-82fb-4a90-b4a1-1e36ab9988c7",
+      "tls": {
+        "enabled": true,
+        "server_name": "divine-surf-b984.princess310.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "divine-surf-b984.princess310.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.22.22.164:443 § 95",
+      "server": "104.22.22.164",
+      "server_port": 443,
+      "uuid": "85b82e66-e9cb-49c7-be5b-81b3ae1bda90",
+      "tls": {
+        "enabled": true,
+        "server_name": "mehdiama.vpntestvpn794.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "mehdiama.vpntestvpn794.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.92.169:80 § 96",
+      "server": "104.16.92.169",
+      "server_port": 80,
+      "uuid": "3487ce43-b803-4770-97ff-f75880d7f9b4",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "rough-mud-93b4-ppal03.wedane7745.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.96.87:443 § 97",
+      "server": "104.21.96.87",
+      "server_port": 443,
+      "uuid": "b981829e-9bd1-4a7d-880d-9169fc2bd275",
+      "tls": {
+        "enabled": true,
+        "server_name": "pPaL03.JesSy-PADBerg.WorkeRS.DEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/lMuv-8IfB5AOf3_-",
+        "headers": {
+          "Host": "pPAL03.JESSy-pAdbErg.workERs.deV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.209.25:443 § 98",
+      "server": "172.67.209.25",
+      "server_port": 443,
+      "uuid": "297121ff-c2a0-4f7a-b17c-8517e1e43707",
+      "tls": {
+        "enabled": true,
+        "server_name": "easynet23.mfrpb.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "easynet23.mfrpb.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.177.51:443 § 99",
+      "server": "104.17.177.51",
+      "server_port": 443,
+      "uuid": "54c5f9f1-1f0d-4d61-9eb8-db65a1f62d56",
+      "tls": {
+        "enabled": true,
+        "server_name": "salad.1945157171.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "salad.1945157171.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.156.99:443 § 100",
+      "server": "172.67.156.99",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "PPAL03.wopaJO6948.WorKErs.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/2h9pwob102xqfyhg",
+        "headers": {
+          "Host": "PPAL03.wopaJO6948.WorKErs.dEv"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.165.22:443 § 101",
+      "server": "172.67.165.22",
+      "server_port": 443,
+      "uuid": "c92856da-9532-49ec-bb71-d981a623f5c9",
+      "tls": {
+        "enabled": true,
+        "server_name": "freedom6.mamav81785.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "freedom6.mamav81785.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443 § 102",
+      "server": "188.114.99.1",
+      "server_port": 443,
+      "uuid": "a17ff0c6-3aee-48c9-92e7-9f5019c595d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "esetsecuritylicense1.zzzgldy.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "esetsecuritylicense1.zzzgldy.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.1:443 § 103",
+      "server": "188.114.96.1",
+      "server_port": 443,
+      "uuid": "4bdab609-92da-4c23-b993-bbcb8caf2b03",
+      "tls": {
+        "enabled": true,
+        "server_name": "r9ihm85sq4egopelgbfjgeigbox2dd4ljfouocj8eewswjghmtfuhrdl1agzy7s.2mievr34.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "r9ihm85sq4egopelgbfjgeigbox2dd4ljfouocj8eewswjghmtfuhrdl1agzy7s.2mievr34.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.101:443 § 104",
+      "server": "79.127.70.101",
+      "server_port": 443,
+      "uuid": "fc640950-1dc2-48c8-bb75-800cbf3fb627",
+      "transport": {
+        "type": "http",
+        "host": "archlinux.org",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.20.18.168:8880 § 105",
+      "server": "104.20.18.168",
+      "server_port": 8880,
+      "uuid": "96494ca5-6dcf-4d33-b94f-5c3485586095",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "hamedan.hiven33959.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇮🇳 IN-151.101.158.204:80 § 106",
+      "server": "151.101.158.204",
+      "server_port": 80,
+      "uuid": "3c500f0f-64ce-47c5-a0be-04341bebf9c3",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws?ed=64@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn",
+        "headers": {
+          "Host": "fatmelo.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.144.73:443 § 107",
+      "server": "172.67.144.73",
+      "server_port": 443,
+      "uuid": "b0e6a2c9-e667-4e42-9cb3-77d7db3e736b",
+      "tls": {
+        "enabled": true,
+        "server_name": "bypass.dd-6b2.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@bypass_filter/",
+        "headers": {
+          "Host": "bypass.dd-6b2.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.61.8:443 § 108",
+      "server": "104.16.61.8",
+      "server_port": 443,
+      "uuid": "c3215f6b-bd47-4123-989d-ee59baf7c1f2",
+      "tls": {
+        "enabled": true,
+        "server_name": "hello-world-holy-tooth-3ed5.gjfnoqp.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "hello-world-holy-tooth-3ed5.gjfnoqp.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.132.187:80 § 109",
+      "server": "104.16.132.187",
+      "server_port": 80,
+      "uuid": "80d32ddd-c0ac-4eb6-8a2a-3b27b23f32b4",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "icy-cherry-b8af-ppal03.givay59005.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-TLS 🇺🇦 UA-5.188.6.73:443 § 110",
+      "server": "5.188.6.73",
+      "server_port": 443,
+      "uuid": "7582e721-8c32-4fb1-8669-b3fae590f3eb",
+      "tls": {
+        "enabled": true,
+        "server_name": "005188006073.sec1org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.41.131:443 § 111",
+      "server": "104.21.41.131",
+      "server_port": 443,
+      "uuid": "c3c20db7-d32b-454a-9843-ec22d064a842",
+      "tls": {
+        "enabled": true,
+        "server_name": "uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/",
+        "headers": {
+          "Host": "uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev"
+        },
+        "max_early_data": 2047,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.203.232:443 § 112",
+      "server": "104.18.203.232",
+      "server_port": 443,
+      "uuid": "b0e6a2c9-e667-4e42-9cb3-77d7db3e736b",
+      "tls": {
+        "enabled": true,
+        "server_name": "bypass-filter.vikzrcqt.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@bypass_filter/",
+        "headers": {
+          "Host": "bypass-filter.vikzrcqt.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.28.34:8880 § 113",
+      "server": "104.16.28.34",
+      "server_port": 8880,
+      "uuid": "075a365b-b0c7-4ba3-b5a6-597850c223f9",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "sinaazizpor.wapgiz.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.18.32.69:2086 § 114",
+      "server": "104.18.32.69",
+      "server_port": 2086,
+      "uuid": "33039dbe-8889-42f1-9aeb-ecfbfa2a1640",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "21tg.459tj345.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.84.22:443 § 115",
+      "server": "104.21.84.22",
+      "server_port": 443,
+      "uuid": "375dd25d-0ec6-454c-be6f-ce67b196b23b",
+      "tls": {
+        "enabled": true,
+        "server_name": "freedom11.fmnxmt.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "freedom11.fmnxmt.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.107:45147 § 116",
+      "server": "79.127.70.107",
+      "server_port": 45147,
+      "uuid": "7cc88852-6c8c-4ddc-9211-5628824b223d",
+      "transport": {
+        "type": "http",
+        "host": "archlinux.org",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.53.146:8080 § 117",
+      "server": "172.67.53.146",
+      "server_port": 8080,
+      "uuid": "aa2dc840-be38-4b4d-a002-ba234999fd55",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "cdn-allxn--b6gaceuorg.l4o117en.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.205.138:443 § 118",
+      "server": "172.67.205.138",
+      "server_port": 443,
+      "uuid": "62a49d41-e231-4a6b-af26-cec86ef64001",
+      "tls": {
+        "enabled": true,
+        "server_name": "1403.stopt7307.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "1403.stopt7307.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-141.101.90.98:443 § 119",
+      "server": "141.101.90.98",
+      "server_port": 443,
+      "uuid": "e49ce5e6-b80d-4c9e-82a8-0f14c8887a3b",
+      "tls": {
+        "enabled": true,
+        "server_name": "falcunargo.e0aef55581.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "falcunargo.e0aef55581.workers.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.30.14:80 § 120",
+      "server": "104.21.30.14",
+      "server_port": 80,
+      "uuid": "2c79b667-b103-4d22-86d0-5ef23f303c06",
+      "transport": {
+        "type": "ws",
+        "path": "/ProxyIP=ProxyIP.US.fxxk.dedyn.io",
+        "headers": {
+          "Host": "japan.freenods-8d6.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.69.227:443 § 121",
+      "server": "172.67.69.227",
+      "server_port": 443,
+      "uuid": "291c2abe-716a-4691-acd0-3b13dc2f7b12",
+      "tls": {
+        "enabled": true,
+        "server_name": "wORKER-fRosTY-buTtErfLy-B0e9.4158fb3524.wORKeRs.DeV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vk_l-IzYy3q_-NOq?ed=2048@SinaBigo",
+        "headers": {
+          "Host": "WORKEr-frOSTY-BuTTeRFly-b0E9.4158fb3524.wORKeRs.deV"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.149.17:80 § 122",
+      "server": "104.24.149.17",
+      "server_port": 80,
+      "uuid": "9970aa48-37ce-4217-b525-579e61ab9cfa",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "holy-bush-cbc8-ppal03.rawej75976.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.200.215:443 § 123",
+      "server": "172.67.200.215",
+      "server_port": 443,
+      "uuid": "34b3cbba-e6ac-495a-9481-976a0419eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "eSEtsecuriTYLIceNse.pUDmnquf.WorKErS.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "eSEtsecuriTYLIceNse.pUDmnquf.WorKErS.dEv"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443 § 124",
+      "server": "104.21.61.43",
+      "server_port": 443,
+      "uuid": "630c01ee-92db-4a15-9573-0955853ce362",
+      "tls": {
+        "enabled": true,
+        "server_name": "w26io.deonta-yancy.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "w26io.deonta-yancy.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.157.75:443 § 125",
+      "server": "172.67.157.75",
+      "server_port": 443,
+      "uuid": "9a407093-e267-4f2a-91da-b7bfc63dcaf6",
+      "tls": {
+        "enabled": true,
+        "server_name": "damp-moon-9a22.houmandadash84.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "damp-moon-9a22.houmandadash84.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.54.238:443 § 126",
+      "server": "104.21.54.238",
+      "server_port": 443,
+      "uuid": "15abeb04-e0df-42af-8059-51cada9642ee",
+      "tls": {
+        "enabled": true,
+        "server_name": "kanal-ma-falcunargo.29d5e73daa.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "kanal-ma-falcunargo.29d5e73daa.workers.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.18.41.138:8880 § 127",
+      "server": "104.18.41.138",
+      "server_port": 8880,
+      "uuid": "25af9eb2-3310-4f2b-bc82-ebea62ba7906",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "config-proxy-vl.telegram-config-proxy.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.37.192:80 § 128",
+      "server": "104.24.37.192",
+      "server_port": 80,
+      "uuid": "9a2680ff-c5d5-410a-9108-8d6b10e4ea1e",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "ppal03.dolobe7975.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.188.41:80 § 129",
+      "server": "104.16.188.41",
+      "server_port": 80,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "proud-queen-55500071.cexonoc962.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.146.180:443 § 130",
+      "server": "172.67.146.180",
+      "server_port": 443,
+      "uuid": "767dfba2-ac34-4507-913d-a70703f81a36",
+      "tls": {
+        "enabled": true,
+        "server_name": "mehdiama.mehdiama840.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "mehdiama.mehdiama840.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.92.162:8880 § 131",
+      "server": "104.21.92.162",
+      "server_port": 8880,
+      "uuid": "e9b29a36-f8dc-48ee-b5f9-e0e5be701d03",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "falcunargo-bia-zod.8fcd549b6a.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇩🇪 DE-49.12.185.64:80 § 132",
+      "server": "49.12.185.64",
+      "server_port": 80,
+      "uuid": "5c4f6ca8-b824-48de-8f33-ec3c9eda1c5e",
+      "transport": {
+        "type": "http",
+        "host": "speedtest.net",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443 § 133",
+      "server": "104.21.72.167",
+      "server_port": 443,
+      "uuid": "f20bcdc7-1a98-4573-aef5-653a40524c87",
+      "tls": {
+        "enabled": true,
+        "server_name": "esetsecuritylicense.ltlumj.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "esetsecuritylicense.ltlumj.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443 § 134",
+      "server": "104.21.16.169",
+      "server_port": 443,
+      "uuid": "71dce9af-d790-4b38-a1fd-7745e0923bd3",
+      "tls": {
+        "enabled": true,
+        "server_name": "uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/",
+        "headers": {
+          "Host": "uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev"
+        },
+        "max_early_data": 2047,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.24.177.129:80 § 135",
+      "server": "104.24.177.129",
+      "server_port": 80,
+      "uuid": "eb19e160-51f8-40d3-966b-9fa5de336924",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "crimson-cell-5828-ppal03.febox45376.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-TCP-NONE 🇮🇷 IR-79.127.70.106:45147 § 136",
+      "server": "79.127.70.106",
+      "server_port": 45147,
+      "uuid": "7cc88852-6c8c-4ddc-9211-5628824b223d",
+      "transport": {
+        "type": "http",
+        "host": "archlinux.org",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443 § 137",
+      "server": "104.21.79.64",
+      "server_port": 443,
+      "uuid": "c8e6e9d4-4339-4ee2-830b-8ece0f78f46b",
+      "tls": {
+        "enabled": true,
+        "server_name": "selincselincselincselincselincselincselincselinc.selincselinc.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@vpnAndroid2/",
+        "headers": {
+          "Host": "selincselincselincselincselincselincselincselinc.selincselinc.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.95.172:443 § 138",
+      "server": "104.21.95.172",
+      "server_port": 443,
+      "uuid": "767dfba2-ac34-4507-913d-a70703f81a36",
+      "tls": {
+        "enabled": true,
+        "server_name": "mehdiama.mehdiama840.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "mehdiama.mehdiama840.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.253:443 § 139",
+      "server": "172.67.128.253",
+      "server_port": 443,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "worker-little-frost-1b1c.cataben844.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "worker-little-frost-1b1c.cataben844.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.22.78.49:443 § 140",
+      "server": "104.22.78.49",
+      "server_port": 443,
+      "uuid": "3091b7ac-ed37-4e51-bc21-a56284e324ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "bamobhamtest.3748azazaz.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "bamobhamtest.3748azazaz.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.49.221:80 § 141",
+      "server": "104.16.49.221",
+      "server_port": 80,
+      "uuid": "9970aa48-37ce-4217-b525-579e61ab9cfa",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "holy-bush-cbc8-ppal03.rawej75976.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.16.54.161:80 § 142",
+      "server": "104.16.54.161",
+      "server_port": 80,
+      "uuid": "1ae17c7d-6074-41e2-894b-478c9fcf5715",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "rough-hill-2959-ppal03.fawik58803.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.44.107:443 § 143",
+      "server": "104.21.44.107",
+      "server_port": 443,
+      "uuid": "780161d1-a345-45d4-96fb-c2c4b88bf151",
+      "tls": {
+        "enabled": true,
+        "server_name": "dd.gevom47953.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "dd.gevom47953.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🇨🇾 CY-45.67.214.53:80 § 144",
+      "server": "45.67.214.53",
+      "server_port": 80,
+      "uuid": "2c79b667-b103-4d22-86d0-5ef23f303c06",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram@WangCai2/",
+        "headers": {
+          "Host": "japan.freenods-8d6.workers.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.2.88:443 § 145",
+      "server": "104.21.2.88",
+      "server_port": 443,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "worker-little-frost-1b1c.cataben844.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "worker-little-frost-1b1c.cataben844.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NA 🇩🇪 DE-138.201.159.5:2053 § 146",
+      "server": "138.201.159.5",
+      "server_port": 2053,
+      "uuid": "06e9c7e0-2c6a-4a06-e37d-29a0035d8c21",
+      "transport": {
+        "type": "ws",
+        "path": "/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.210.173:443 § 147",
+      "server": "172.67.210.173",
+      "server_port": 443,
+      "uuid": "1113a576-d328-447a-99a7-6fe72aac9596",
+      "tls": {
+        "enabled": true,
+        "server_name": "HTTPSTMeYushIkvpn.wI1KEd9-2222.WorkERs.deV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/-iTHd_IhWEGiFXyL?ed=2048@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi",
+        "headers": {
+          "Host": "htTpSTMeyuSHIkVPn.wI1KED9-2222.workeRS.DEV"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🇺🇸 US-170.114.45.159:443 § 148",
+      "server": "170.114.45.159",
+      "server_port": 443,
+      "uuid": "c3708323-48fe-49c2-aaef-84d0a4cd12ff",
+      "tls": {
+        "enabled": true,
+        "server_name": "3my2cynahdu6esnujyt3kd0onc3orjj5nuhqvmoqqbd0sj-dyc.15zyyu2.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "3my2cynahdu6esnujyt3kd0onc3orjj5nuhqvmoqqbd0sj-dyc.15zyyu2.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-172.67.54.149:8080 § 149",
+      "server": "172.67.54.149",
+      "server_port": 8080,
+      "uuid": "aa2dc840-be38-4b4d-a002-ba234999fd55",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "cdn-allxn--b6gaceuorg.l4o117en.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.155:443 § 150",
+      "server": "104.21.40.155",
+      "server_port": 443,
+      "uuid": "5d8b1149-8f78-4154-a647-16563ec99c8a",
+      "tls": {
+        "enabled": true,
+        "server_name": "hello-world-empty-feather-0943.sitosa5105.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "hello-world-empty-feather-0943.sitosa5105.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔒 VL-WS-NONE 🏴‍☠️ NA-104.21.42.56:80 § 151",
+      "server": "104.21.42.56",
+      "server_port": 80,
+      "uuid": "baadfec3-75bd-4df0-ad6b-2ecdfdfe9d52",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram+channel+:+@pandavpntc",
+        "headers": {
+          "Host": "worker-super-shape-975b.1011da65bb0ac5.workers.Dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "594kRitlKoLsM9xE"
+    }
+  }
+}
