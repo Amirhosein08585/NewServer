@@ -51,14 +51,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
-        "188.114.98.0",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3",
-        "104.17.148.22",
-        "104.17.147.22",
         "188.114.97.3",
         "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3"
       ]
@@ -118,7 +118,8 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "liferobot.darkping.net",
       "server_port": 1633,
-      "uuid": "b4989d33-3db4-4b14-b32a-9ade1cbf888d",
+      "uuid": "cad317e7-7db8-492c-b26a-9651c1ea928f",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
         "server_name": "stackoverflow.com",
@@ -202,7 +203,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "MGH3-BEZxi8Kt4uT"
+      "secret": "tdHT4YpFBbrBJxx0"
     }
   }
 }
