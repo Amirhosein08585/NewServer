@@ -1,0 +1,1129 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "yukuai-hk.jiumaojiu.org",
+          "c1.vact.ir",
+          "zmaoz.faculty.ucdavis.edu",
+          "dd4.trackid.ir",
+          "hajlab.ucdavis.edu",
+          "faculty.ucdavis.edu",
+          "speedtest.net",
+          "yukuai-us.jiumaojiu.org",
+          "yukuai-tw.jiumaojiu.org",
+          "c2.vact.ir",
+          "hqmobin.ir",
+          "zmaoz.faculty.ucdavis.edu",
+          "tuae.amin8263.ir",
+          "yukuai-ca.jiumaojiu.org"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt § 0",
+        "@Hiddify_Nexttt § 1",
+        "@Hiddify_Nexttt § 2",
+        "@Hiddify_Nexttt § 3",
+        "@Hiddify_Nexttt § 4",
+        "@Hiddify_Nexttt § 5",
+        "@Hiddify_Nexttt § 6",
+        "@Hiddify_Nexttt § 7",
+        "@Hiddify_Nexttt § 8",
+        "@Hiddify_Nexttt § 9",
+        "@Hiddify_Nexttt § 10",
+        "@Hiddify_Nexttt § 11",
+        "@Hiddify_Nexttt § 12",
+        "@Hiddify_Nexttt § 13",
+        "@Hiddify_Nexttt § 14",
+        "@Hiddify_Nexttt § 15",
+        "@Hiddify_Nexttt § 16",
+        "@Hiddify_Nexttt § 17",
+        "@Hiddify_Nexttt § 18",
+        "@Hiddify_Nexttt § 19",
+        "@Hiddify_Nexttt § 20",
+        "@Hiddify_Nexttt § 21",
+        "@Hiddify_Nexttt § 22",
+        "@Hiddify_Nexttt § 23",
+        "@Hiddify_Nexttt § 24",
+        "@Hiddify_Nexttt § 25",
+        "@Hiddify_Nexttt § 26",
+        "@Hiddify_Nexttt § 27",
+        "@Hiddify_Nexttt § 28",
+        "@Hiddify_Nexttt § 29",
+        "@Hiddify_Nexttt § 30",
+        "@Hiddify_Nexttt § 31",
+        "@Hiddify_Nexttt § 32",
+        "@Hiddify_Nexttt § 33",
+        "@Hiddify_Nexttt § 34",
+        "@Hiddify_Nexttt § 35",
+        "@Hiddify_Nexttt § 36",
+        "@Hiddify_Nexttt § 37",
+        "@Hiddify_Nexttt § 38",
+        "@Hiddify_Nexttt § 39",
+        "@Hiddify_Nexttt § 40",
+        "@Hiddify_Nexttt § 41",
+        "@Hiddify_Nexttt § 42",
+        "@Hiddify_Nexttt § 43",
+        "@Hiddify_Nexttt § 44",
+        "@Hiddify_Nexttt § 45",
+        "@Hiddify_Nexttt § 46",
+        "@Hiddify_Nexttt § 47"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt § 0",
+        "@Hiddify_Nexttt § 1",
+        "@Hiddify_Nexttt § 2",
+        "@Hiddify_Nexttt § 3",
+        "@Hiddify_Nexttt § 4",
+        "@Hiddify_Nexttt § 5",
+        "@Hiddify_Nexttt § 6",
+        "@Hiddify_Nexttt § 7",
+        "@Hiddify_Nexttt § 8",
+        "@Hiddify_Nexttt § 9",
+        "@Hiddify_Nexttt § 10",
+        "@Hiddify_Nexttt § 11",
+        "@Hiddify_Nexttt § 12",
+        "@Hiddify_Nexttt § 13",
+        "@Hiddify_Nexttt § 14",
+        "@Hiddify_Nexttt § 15",
+        "@Hiddify_Nexttt § 16",
+        "@Hiddify_Nexttt § 17",
+        "@Hiddify_Nexttt § 18",
+        "@Hiddify_Nexttt § 19",
+        "@Hiddify_Nexttt § 20",
+        "@Hiddify_Nexttt § 21",
+        "@Hiddify_Nexttt § 22",
+        "@Hiddify_Nexttt § 23",
+        "@Hiddify_Nexttt § 24",
+        "@Hiddify_Nexttt § 25",
+        "@Hiddify_Nexttt § 26",
+        "@Hiddify_Nexttt § 27",
+        "@Hiddify_Nexttt § 28",
+        "@Hiddify_Nexttt § 29",
+        "@Hiddify_Nexttt § 30",
+        "@Hiddify_Nexttt § 31",
+        "@Hiddify_Nexttt § 32",
+        "@Hiddify_Nexttt § 33",
+        "@Hiddify_Nexttt § 34",
+        "@Hiddify_Nexttt § 35",
+        "@Hiddify_Nexttt § 36",
+        "@Hiddify_Nexttt § 37",
+        "@Hiddify_Nexttt § 38",
+        "@Hiddify_Nexttt § 39",
+        "@Hiddify_Nexttt § 40",
+        "@Hiddify_Nexttt § 41",
+        "@Hiddify_Nexttt § 42",
+        "@Hiddify_Nexttt § 43",
+        "@Hiddify_Nexttt § 44",
+        "@Hiddify_Nexttt § 45",
+        "@Hiddify_Nexttt § 46",
+        "@Hiddify_Nexttt § 47"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 0",
+      "server": "185.161.251.211",
+      "server_port": 1633,
+      "uuid": "a2a881b7-9f5f-499e-a166-55bb22df05c5",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 1",
+      "server": "138.197.13.193",
+      "server_port": 443,
+      "uuid": "979e4105-7b3a-4ce9-9fdf-992687869d1e",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "xxBt4wWYurbjkEOZ1N4T1lOH9enyJ1GHdAynjdsw0hQ",
+          "short_id": "7d5b4f2ce8bbef8b"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 2",
+      "server": "hqmobin.ir",
+      "server_port": 443,
+      "uuid": "8b26e417-dc3b-4a16-95a5-a2f60ab48818",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "JaUMywfMifadLlRhsqKoJcZ6RcAqOl_wKc0i4e-sPAY",
+          "short_id": "ec"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 3",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "ZEDMODEON--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "chizdoon.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 4",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "ZEDMODEON--biaZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "cinematicket.org"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 5",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "ZEDMODEON--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "okala.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 6",
+      "server": "166.88.142.45",
+      "server_port": 10091,
+      "uuid": "ZEDMODEON--joinbedeZEDMODEON",
+      "transport": {
+        "type": "grpc",
+        "service_name": "ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-join-ZEDMODEON-tel-ZEDMODEON-zedmodeon-ZEDMODEON-zedmodeon-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-join-ZEDMODEON-tel-ZEDMODEON-zedmodeon-ZEDMODEON-zedmodeon-ZEDMODEON",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 7",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "ZEDMODEON--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "irannsr.org"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 8",
+      "server": "tuae.amin8263.ir",
+      "server_port": 2053,
+      "uuid": "2bbb4f77-fef2-4286-995d-8020e43045bf",
+      "transport": {
+        "type": "ws",
+        "path": "/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 9",
+      "server": "tuae.amin8263.ir",
+      "server_port": 11228,
+      "uuid": "636bcf12-cd5b-415c-fbba-3d1ca44f4b7c",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "jkJpzKFOelmStHPCJNnzmoFzAIBn0AQM3UUmKC1TWm4"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android/@Archive_Android",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 10",
+      "server": "Zmaoz.Faculty.Ucdavis.Edu",
+      "server_port": 443,
+      "uuid": "Parsashonam-148",
+      "tls": {
+        "enabled": true,
+        "server_name": "Zmaoz.Faculty.Ucdavis.Edu.",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Parsashonam/ws",
+        "headers": {
+          "Host": "ParsashonamVPN.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 11",
+      "server": "37.27.249.87",
+      "server_port": 8880,
+      "uuid": "af8c881b-e949-42d3-a701-812f309a30b4",
+      "transport": {
+        "type": "http",
+        "host": "eN.TwiTtER.cOM.:8880",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 12",
+      "server": "172.66.44.200",
+      "server_port": 2096,
+      "uuid": "fed7b870-8d40-4337-b26b-9aca5ac4846f",
+      "tls": {
+        "enabled": true,
+        "server_name": "hP-duBaI.pAgeS.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/p2qsZmRCtRJSk3OC/My4yOS4xMDIuODk=",
+        "headers": {
+          "Host": "hp-dubai.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 13",
+      "server": "172.66.44.200",
+      "server_port": 2053,
+      "uuid": "fed7b870-8d40-4337-b26b-9aca5ac4846f",
+      "tls": {
+        "enabled": true,
+        "server_name": "HP-duBAi.pAgeS.dEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/W6PaDVqD7ARsLjOC/My4yOS4xMDIuODk=",
+        "headers": {
+          "Host": "hp-dubai.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 14",
+      "server": "37.27.202.141",
+      "server_port": 8880,
+      "uuid": "202d4c1f-b173-4a3b-9dce-d401115a5ef9",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 15",
+      "server": "88.216.214.56",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 16",
+      "server": "dd4.trackid.ir",
+      "server_port": 443,
+      "uuid": "bf2434c2-2200-4c3e-a5dc-6f9aadd4fcd4",
+      "tls": {
+        "enabled": true,
+        "server_name": "dd4.trackid.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 17",
+      "server": "91.107.142.169",
+      "server_port": 8880,
+      "uuid": "109c4176-0900-4fef-b779-ec53471bbe20",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 18",
+      "server": "yukuai-ca.jiumaojiu.org",
+      "server_port": 48866,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 19",
+      "server": "yukuai-ca.jiumaojiu.org",
+      "server_port": 48748,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 20",
+      "server": "yukuai-ca.jiumaojiu.org",
+      "server_port": 48423,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 21",
+      "server": "yukuai-ca.jiumaojiu.org",
+      "server_port": 48981,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 22",
+      "server": "yukuai-hk.jiumaojiu.org",
+      "server_port": 48218,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 23",
+      "server": "yukuai-us.jiumaojiu.org",
+      "server_port": 48942,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 24",
+      "server": "yukuai-us.jiumaojiu.org",
+      "server_port": 48942,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 25",
+      "server": "yukuai-us.jiumaojiu.org",
+      "server_port": 48942,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 26",
+      "server": "yukuai-us.jiumaojiu.org",
+      "server_port": 48244,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 27",
+      "server": "yukuai-us.jiumaojiu.org",
+      "server_port": 48534,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 28",
+      "server": "yukuai-us.jiumaojiu.org",
+      "server_port": 48884,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 29",
+      "server": "yukuai-tw.jiumaojiu.org",
+      "server_port": 48100,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 30",
+      "server": "yukuai-tw.jiumaojiu.org",
+      "server_port": 48722,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 31",
+      "server": "yukuai-tw.jiumaojiu.org",
+      "server_port": 48739,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 32",
+      "server": "yukuai-tw.jiumaojiu.org",
+      "server_port": 48036,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 33",
+      "server": "yukuai-hk.jiumaojiu.org",
+      "server_port": 48572,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 34",
+      "server": "yukuai-hk.jiumaojiu.org",
+      "server_port": 48481,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_Nexttt § 35",
+      "server": "yukuai-hk.jiumaojiu.org",
+      "server_port": 48339,
+      "password": "7292af19-90c0-4bc5-954b-237e41db8445",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 36",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "857a6379-7b65-4ebb-bc2f-d3f0081385cd",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET",
+        "headers": {
+          "Host": "loye.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 37",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "c58b5597-35f7-4cbd-9ae8-13bfca5eaef2",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET",
+        "headers": {
+          "Host": "joinbedemaznettel.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 38",
+      "server": "80.240.112.94",
+      "server_port": 443,
+      "uuid": "c39d34d1-8723-42fd-a63d-1c857c76249a",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "mD8V76JrLVJQrQXtyNVgcqwptE9PzcF8nEJe3MyhTDY",
+          "short_id": "f0db85b11110c6"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 39",
+      "server": "145.223.103.84",
+      "server_port": 27241,
+      "uuid": "0ff318a7-5ce4-4184-9b82-b03d645504cf",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "VCW4l_1fi6IdVkhycYzenSJ-YHLpjD0rnwUZvxiLYwE",
+          "short_id": "e6ed2dc0"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 40",
+      "server": "c1.vact.ir",
+      "server_port": 2083,
+      "uuid": "82b21fa8-9ff0-409b-aaf1-46a4bd46dead",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Re7kdDBxVgsI4VmCHrcsPeKD4CBoB6Oc8fqxtWJ6m18",
+          "short_id": "90278dfc"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 41",
+      "server": "c2.vact.ir",
+      "server_port": 2083,
+      "uuid": "078e70f3-47ed-4908-89b4-4886bc0793ae",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "IXXrQcqXgzopBeSGpCO_u53keeKZaN1AoOzdyLA-Mzo",
+          "short_id": "11a4b6bca8"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 42",
+      "server": "150.241.101.173",
+      "server_port": 8890,
+      "uuid": "ebff98ac-7657-4c91-b563-418bb6548113",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "wNfz-DfliYFvRrL3Zd4axX0odhlHOBGpNcrfop2GYCo",
+          "short_id": "ad6886fbf714757b"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 43",
+      "server": "62.60.216.210",
+      "server_port": 443,
+      "uuid": "9d7a5d98-2d17-4f43-b342-eb5962774842",
+      "tls": {
+        "enabled": true,
+        "server_name": "russia.com",
+        "alpn": "h2",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "LoNYZgZ6WvqA2qkrVwkz4RHWnjoFTzw4h59F0GeAqh0",
+          "short_id": "05a6d4aa5e314637"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "djshdgduuxdhgsgstXxCxshcV",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 44",
+      "server": "150.241.101.173",
+      "server_port": 8890,
+      "uuid": "ebff98ac-7657-4c91-b563-418bb6548113",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "wNfz-DfliYFvRrL3Zd4axX0odhlHOBGpNcrfop2GYCo",
+          "short_id": "ad6886fbf714757b"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 45",
+      "server": "faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "0887afab-d8c7-5cfe-b09c-bc677ac8a907",
+      "tls": {
+        "enabled": true,
+        "server_name": "faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY?ed=443ed=2560",
+        "headers": {
+          "Host": "ELiV2--ELENA.COM"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 46",
+      "server": "faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "278f7e89-d3f6-5fda-b827-61fbd50403f6",
+      "tls": {
+        "enabled": true,
+        "server_name": "faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/--@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY?ed=443ed=2560",
+        "headers": {
+          "Host": "TG.ELiV2RAY.iR"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt § 47",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "V2RAXX--",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,V2RAXX,Telegram,",
+        "headers": {
+          "Host": "V2RAXX.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "eCFXIER7Wfj1CUWl"
+    }
+  }
+}
