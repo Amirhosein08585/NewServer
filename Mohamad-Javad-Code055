@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "hajlab.ucdavis.edu",
+        "domain": "liferobot.darkping.net",
         "server": "dns-direct"
       },
       {
@@ -51,14 +51,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
         "188.114.96.3",
+        "188.114.97.3",
         "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
         "104.17.147.22",
         "104.17.148.22",
-        "188.114.97.3",
         "188.114.96.3",
+        "188.114.97.3",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3"
       ]
@@ -99,8 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +1 § 1"
+        "@Hiddify_nexttt 🇩🇪 § 0"
       ],
       "default": "auto"
     },
@@ -108,8 +107,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +1 § 1"
+        "@Hiddify_nexttt 🇩🇪 § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -117,51 +115,23 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 0",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "464d76b2-c5f6-4c6f-b562-dab08795451c",
+      "tag": "@Hiddify_nexttt 🇩🇪 § 0",
+      "server": "liferobot.darkping.net",
+      "server_port": 1633,
+      "uuid": "033ab86a-2c67-4566-b512-a85cd64202e4",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
+        "server_name": "stackoverflow.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
-        "headers": {
-          "Host": "joinshhproxybedeeeeeee.ir"
         },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +1 § 1",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "5c55a62f-c87b-46e8-8ff5-4bba1f194834",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
+        "reality": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
         }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
-        "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
@@ -233,7 +203,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "sB9H81RIJcQojdg3"
+      "secret": "Svu8css_3fFgYf2h"
     }
   }
 }
