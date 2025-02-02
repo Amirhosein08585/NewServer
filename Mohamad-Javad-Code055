@@ -53,12 +53,12 @@
       "sky.rethinkdns.com": [
         "188.114.96.3",
         "188.114.97.3",
-        "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "104.17.147.22",
+        "2a06:98c1:3120::3",
         "104.17.148.22",
-        "188.114.96.3",
+        "104.17.147.22",
         "188.114.97.3",
+        "188.114.96.3",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3"
       ]
@@ -118,7 +118,7 @@
       "tag": "@Hiddify_nexttt § 0",
       "server": "liferobot.darkping.net",
       "server_port": 1633,
-      "uuid": "df26a3e2-77a1-4c1a-87e8-7db285104396",
+      "uuid": "240cd29b-0965-4181-b54d-f6ea27418d80",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -203,7 +203,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "-zWgM3trrfdbPCau"
+      "secret": "USwzlEAo9ipMupXa"
     }
   }
 }
