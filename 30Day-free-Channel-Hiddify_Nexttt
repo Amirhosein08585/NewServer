@@ -1,0 +1,3733 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "vless § 0",
+        "vless § 1",
+        "vless § 2",
+        "vless § 3",
+        "vless § 4",
+        "vless § 5",
+        "vless § 6",
+        "vless § 7",
+        "vless § 8",
+        "vless § 9",
+        "vless § 10",
+        "vless § 11",
+        "vless § 12",
+        "vless § 13",
+        "vless § 14",
+        "vless § 15",
+        "vless § 16",
+        "vless § 17",
+        "vless § 18",
+        "vless § 19",
+        "vless § 20",
+        "vless § 21",
+        "vless § 22",
+        "vless § 23",
+        "vless § 24",
+        "vless § 25",
+        "vless § 26",
+        "vless § 27",
+        "vless § 28",
+        "vless § 29",
+        "vless § 30",
+        "vless § 31",
+        "vless § 32",
+        "vless § 33",
+        "vless § 34",
+        "vless § 35",
+        "vless § 36",
+        "vless § 37",
+        "vless § 38",
+        "vless § 39",
+        "vless § 40",
+        "vless § 41",
+        "vless § 42",
+        "vless § 43",
+        "vless § 44",
+        "vless § 45",
+        "vless § 46",
+        "vless § 47",
+        "vless § 48",
+        "vless § 49",
+        "vless § 50",
+        "vless § 51",
+        "vless § 52",
+        "vless § 53",
+        "vless § 54",
+        "vless § 55",
+        "vless § 56",
+        "vless § 57",
+        "vless § 58",
+        "vless § 59",
+        "vless § 60",
+        "vless § 61",
+        "vless § 62",
+        "vless § 63",
+        "vless § 64",
+        "vless § 65",
+        "vless § 66",
+        "vless § 67",
+        "vless § 68",
+        "vless § 69",
+        "vless § 70",
+        "vless § 71",
+        "vless § 72",
+        "vless § 73",
+        "vless § 74",
+        "vless § 75",
+        "vless § 76",
+        "vless § 77",
+        "vless § 78",
+        "vless § 79",
+        "vless § 80",
+        "vless § 81",
+        "vless § 82",
+        "vless § 83",
+        "vless § 84",
+        "vless § 85",
+        "vless § 86",
+        "vless § 87",
+        "vless § 88",
+        "vless § 89",
+        "vless § 90",
+        "vless § 91",
+        "vless § 92",
+        "vless § 93",
+        "vless § 94",
+        "vless § 95",
+        "vless § 96",
+        "vless § 97",
+        "vless § 98",
+        "vless § 99",
+        "vless § 100",
+        "vless § 101",
+        "vless § 102",
+        "vless § 103",
+        "vless § 104",
+        "vless § 105",
+        "vless § 106",
+        "vless § 107",
+        "vless § 108",
+        "vless § 109",
+        "vless § 110",
+        "vless § 111",
+        "vless § 112",
+        "vless § 113",
+        "vless § 114",
+        "vless § 115",
+        "vless § 116",
+        "vless § 117",
+        "vless § 118",
+        "vless § 119",
+        "vless § 120",
+        "vless § 121",
+        "vless § 122",
+        "vless § 123",
+        "vless § 124",
+        "vless § 125",
+        "vless § 126",
+        "vless § 127",
+        "vless § 128",
+        "vless § 129",
+        "vless § 130",
+        "vless § 131",
+        "vless § 132",
+        "vless § 133",
+        "vless § 134",
+        "vless § 135",
+        "vless § 136",
+        "vless § 137",
+        "vless § 138",
+        "vless § 139",
+        "vless § 140",
+        "vless § 141",
+        "vless § 142",
+        "vless § 143",
+        "vless § 144",
+        "vless § 145",
+        "vless § 146",
+        "vless § 147",
+        "vless § 148",
+        "vless § 149",
+        "vless § 150",
+        "vless § 151",
+        "vless § 152",
+        "vless § 153",
+        "vless § 154",
+        "vless § 155",
+        "vless § 156",
+        "vless § 157",
+        "vless § 158",
+        "vless § 159",
+        "vless § 160",
+        "vless § 161",
+        "vless § 162",
+        "vless § 163",
+        "vless § 164",
+        "vless § 165",
+        "vless § 166",
+        "vless § 167",
+        "vless § 168",
+        "vless § 169",
+        "vless § 170",
+        "vless § 171",
+        "vless § 172",
+        "vless § 173",
+        "vless § 174",
+        "vless § 175",
+        "vless § 176",
+        "vless § 177",
+        "vless § 178",
+        "vless § 179",
+        "vless § 180",
+        "vless § 181",
+        "vless § 182",
+        "vless § 183",
+        "vless § 184",
+        "vless § 185",
+        "vless § 186",
+        "vless § 187"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "vless § 0",
+        "vless § 1",
+        "vless § 2",
+        "vless § 3",
+        "vless § 4",
+        "vless § 5",
+        "vless § 6",
+        "vless § 7",
+        "vless § 8",
+        "vless § 9",
+        "vless § 10",
+        "vless § 11",
+        "vless § 12",
+        "vless § 13",
+        "vless § 14",
+        "vless § 15",
+        "vless § 16",
+        "vless § 17",
+        "vless § 18",
+        "vless § 19",
+        "vless § 20",
+        "vless § 21",
+        "vless § 22",
+        "vless § 23",
+        "vless § 24",
+        "vless § 25",
+        "vless § 26",
+        "vless § 27",
+        "vless § 28",
+        "vless § 29",
+        "vless § 30",
+        "vless § 31",
+        "vless § 32",
+        "vless § 33",
+        "vless § 34",
+        "vless § 35",
+        "vless § 36",
+        "vless § 37",
+        "vless § 38",
+        "vless § 39",
+        "vless § 40",
+        "vless § 41",
+        "vless § 42",
+        "vless § 43",
+        "vless § 44",
+        "vless § 45",
+        "vless § 46",
+        "vless § 47",
+        "vless § 48",
+        "vless § 49",
+        "vless § 50",
+        "vless § 51",
+        "vless § 52",
+        "vless § 53",
+        "vless § 54",
+        "vless § 55",
+        "vless § 56",
+        "vless § 57",
+        "vless § 58",
+        "vless § 59",
+        "vless § 60",
+        "vless § 61",
+        "vless § 62",
+        "vless § 63",
+        "vless § 64",
+        "vless § 65",
+        "vless § 66",
+        "vless § 67",
+        "vless § 68",
+        "vless § 69",
+        "vless § 70",
+        "vless § 71",
+        "vless § 72",
+        "vless § 73",
+        "vless § 74",
+        "vless § 75",
+        "vless § 76",
+        "vless § 77",
+        "vless § 78",
+        "vless § 79",
+        "vless § 80",
+        "vless § 81",
+        "vless § 82",
+        "vless § 83",
+        "vless § 84",
+        "vless § 85",
+        "vless § 86",
+        "vless § 87",
+        "vless § 88",
+        "vless § 89",
+        "vless § 90",
+        "vless § 91",
+        "vless § 92",
+        "vless § 93",
+        "vless § 94",
+        "vless § 95",
+        "vless § 96",
+        "vless § 97",
+        "vless § 98",
+        "vless § 99",
+        "vless § 100",
+        "vless § 101",
+        "vless § 102",
+        "vless § 103",
+        "vless § 104",
+        "vless § 105",
+        "vless § 106",
+        "vless § 107",
+        "vless § 108",
+        "vless § 109",
+        "vless § 110",
+        "vless § 111",
+        "vless § 112",
+        "vless § 113",
+        "vless § 114",
+        "vless § 115",
+        "vless § 116",
+        "vless § 117",
+        "vless § 118",
+        "vless § 119",
+        "vless § 120",
+        "vless § 121",
+        "vless § 122",
+        "vless § 123",
+        "vless § 124",
+        "vless § 125",
+        "vless § 126",
+        "vless § 127",
+        "vless § 128",
+        "vless § 129",
+        "vless § 130",
+        "vless § 131",
+        "vless § 132",
+        "vless § 133",
+        "vless § 134",
+        "vless § 135",
+        "vless § 136",
+        "vless § 137",
+        "vless § 138",
+        "vless § 139",
+        "vless § 140",
+        "vless § 141",
+        "vless § 142",
+        "vless § 143",
+        "vless § 144",
+        "vless § 145",
+        "vless § 146",
+        "vless § 147",
+        "vless § 148",
+        "vless § 149",
+        "vless § 150",
+        "vless § 151",
+        "vless § 152",
+        "vless § 153",
+        "vless § 154",
+        "vless § 155",
+        "vless § 156",
+        "vless § 157",
+        "vless § 158",
+        "vless § 159",
+        "vless § 160",
+        "vless § 161",
+        "vless § 162",
+        "vless § 163",
+        "vless § 164",
+        "vless § 165",
+        "vless § 166",
+        "vless § 167",
+        "vless § 168",
+        "vless § 169",
+        "vless § 170",
+        "vless § 171",
+        "vless § 172",
+        "vless § 173",
+        "vless § 174",
+        "vless § 175",
+        "vless § 176",
+        "vless § 177",
+        "vless § 178",
+        "vless § 179",
+        "vless § 180",
+        "vless § 181",
+        "vless § 182",
+        "vless § 183",
+        "vless § 184",
+        "vless § 185",
+        "vless § 186",
+        "vless § 187"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 0",
+      "server": "142.93.173.137",
+      "server_port": 6067,
+      "uuid": "2e2f5cd2-cf20-4204-868b-fe8ea95e531a",
+      "transport": {
+        "type": "grpc",
+        "service_name": "2055vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 1",
+      "server": "37.156.47.23",
+      "server_port": 30583,
+      "uuid": "2ddbf9ee-6c29-468b-f108-b7f2057797a8",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 2",
+      "server": "213.159.76.239",
+      "server_port": 2052,
+      "uuid": "7dd4a177-2705-4824-8ab6-b3a1b1efad14",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 3",
+      "server": "88.216.214.38",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "flow": ".",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 4",
+      "server": "188.34.137.168",
+      "server_port": 443,
+      "uuid": "SVNTEAM4",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "193rx1HPJxmcw5Igm1lZeCcPnBx1dVfBroBl5FR9BEE"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 5",
+      "server": "88.216.214.30",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 6",
+      "server": "185.146.173.39",
+      "server_port": 8880,
+      "uuid": "Parsashonam-163",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/",
+        "headers": {
+          "Host": "Search.DigiKala.CYoU."
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 7",
+      "server": "2a01:4f8:c010:5aa8::1",
+      "server_port": 13776,
+      "uuid": "TELEGRAM-ServerNett",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 8",
+      "server": "151.101.66.133",
+      "server_port": 443,
+      "uuid": "25b8f4b0-4f7d-400f-bc4a-f10e5b8796a2",
+      "tls": {
+        "enabled": true,
+        "server_name": "anchor.fm",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/stream/",
+        "headers": {
+          "Host": "magdl.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 9",
+      "server": "2a01:4f8:c010:45f6::1",
+      "server_port": 25797,
+      "uuid": "TELEGRAM-ServerNett",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 10",
+      "server": "88.216.214.26",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 11",
+      "server": "185.153.183.181",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 12",
+      "server": "151.101.130.219",
+      "server_port": 80,
+      "uuid": "b00c1456-7489-4cac-8efc-652d2c1fb4b8",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 13",
+      "server": "49.12.200.119",
+      "server_port": 2053,
+      "uuid": "d6f8a5ef-5f51-46db-ed0d-9495a3a5df94",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY",
+        "headers": {
+          "Host": "chess.com"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 14",
+      "server": "2a01:4f8:1c1b:25a3::1",
+      "server_port": 443,
+      "uuid": "42eada98-d52f-493d-a553-4d7172ff8fd0",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 15",
+      "server": "2a01:4f8:1c1b:7df::1",
+      "server_port": 443,
+      "uuid": "c73e736f-fab0-4415-8788-56600f65c1c3",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 16",
+      "server": "37.27.252.79",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 17",
+      "server": "185.231.205.65",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 18",
+      "server": "172.66.168.200",
+      "server_port": 443,
+      "uuid": "ab1d1d10-5d26-4bc9-8476-350d205bde28",
+      "tls": {
+        "enabled": true,
+        "server_name": "UK1-vLEss.greenSSH.ORg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "UK1-vLEss.greenSSH.ORg"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 19",
+      "server": "151.101.2.228",
+      "server_port": 443,
+      "uuid": "3e3f884d-6d4c-4aa6-b87f-b19470a97705",
+      "tls": {
+        "enabled": true,
+        "server_name": "fishlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "JoinBede--Unlimiteddev--Unlimiteddev.iR."
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 20",
+      "server": "151.101.66.219",
+      "server_port": 80,
+      "uuid": "b00c1456-7489-4cac-8efc-652d2c1fb4b8",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 21",
+      "server": "2a01:4f8:1c1b:202e::1",
+      "server_port": 443,
+      "uuid": "b33b8727-1e27-45e2-8d5b-46c402e560d3",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 22",
+      "server": "94.131.111.195",
+      "server_port": 443,
+      "uuid": "2d7c7aa5-364a-4dbb-937a-f8e4f5f73007",
+      "tls": {
+        "enabled": true,
+        "server_name": "de4.connecton.surf",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "headers": {
+          "Host": "de4.connecton.surf"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 23",
+      "server": "2a01:4f8:1c1b:1891::1",
+      "server_port": 443,
+      "uuid": "9829006e-ad40-4025-9288-6a5a4f194c9a",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 24",
+      "server": "185.153.183.94",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 25",
+      "server": "104.17.147.22",
+      "server_port": 2052,
+      "uuid": "900466aa-aa08-49ed-bf40-d740e5c7d5e7",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/",
+        "headers": {
+          "Host": "FN.CafeBazarZzZ.IP-DDNS.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 26",
+      "server": "151.101.193.6",
+      "server_port": 80,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 27",
+      "server": "51.68.81.102",
+      "server_port": 22671,
+      "uuid": "ebc5660f-bb9b-415c-94ab-d3630189ceb9",
+      "transport": {
+        "type": "http",
+        "host": "telewebion.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 28",
+      "server": "95.217.0.23",
+      "server_port": 26209,
+      "uuid": "3415f323-9e99-4b15-ddac-7bdb0409c606",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 29",
+      "server": "88.216.214.57",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 30",
+      "server": "37.27.249.41",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 31",
+      "server": "148.113.140.138",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 32",
+      "server": "135.148.74.147",
+      "server_port": 443,
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 33",
+      "server": "148.113.136.209",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 34",
+      "server": "84.32.131.190",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 35",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "89bb8e01-584f-4a5e-8c33-bd52ea55dd92",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420",
+        "headers": {
+          "Host": "irank9wgscajaigwio.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 36",
+      "server": "185.146.173.7",
+      "server_port": 443,
+      "uuid": "c4258f50-fe5d-4b6c-9f09-5a193b7d34ef",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm_sinavm.sinabigo.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ln2ray",
+        "headers": {
+          "Host": "sinavm_sinavm.sinabigo.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 37",
+      "server": "84.32.131.170",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 38",
+      "server": "84.32.131.186",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 39",
+      "server": "84.32.131.188",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 40",
+      "server": "148.113.136.236",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 41",
+      "server": "148.113.136.39",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 42",
+      "server": "151.101.129.6",
+      "server_port": 80,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 43",
+      "server": "84.32.131.175",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 44",
+      "server": "84.32.131.185",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 45",
+      "server": "91.134.45.125",
+      "server_port": 22671,
+      "uuid": "ebc5660f-bb9b-415c-94ab-d3630189ceb9",
+      "transport": {
+        "type": "http",
+        "host": "telewebion.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 46",
+      "server": "148.113.141.224",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 47",
+      "server": "5.223.53.37",
+      "server_port": 8080,
+      "uuid": "5b001373-8e4b-4ac1-b455-20d9764cbba7",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 48",
+      "server": "172.167.181.175",
+      "server_port": 443,
+      "uuid": "0cf13601-4752-4f9f-b196-e2e214a589bb",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "hefdah.dilik.co",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 49",
+      "server": "88.216.214.18",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 50",
+      "server": "88.216.214.22",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 51",
+      "server": "138.199.194.113",
+      "server_port": 443,
+      "uuid": "13d2e8b0-0eb0-49db-9e25-5928631866e4",
+      "transport": {
+        "type": "http",
+        "host": "playstation.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 52",
+      "server": "138.199.194.113",
+      "server_port": 2053,
+      "uuid": "13d2e8b0-0eb0-49db-9e25-5928631866e4",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Ikwx0g2PAiJglT4BkwRHOyWUbMhZJRO1nF-S-1WHPDU",
+          "short_id": "a4c4d9258f0685a4"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 53",
+      "server": "157.173.127.239",
+      "server_port": 443,
+      "uuid": "667b5dfa-7ec4-45d7-ba9c-6957eed8cfbb",
+      "tls": {
+        "enabled": true,
+        "server_name": "analytics.google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "c5VJpRsIyrxNp0eS3Lz5EMQH6jWBsvSTK7hNZQ77bl4",
+          "short_id": "4fd4ad"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 54",
+      "server": "88.216.214.20",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 55",
+      "server": "104.21.43.145",
+      "server_port": 443,
+      "uuid": "c4258f50-fe5d-4b6c-9f09-5a193b7d34ef",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm_sinavm.sinabigo.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ln2ray",
+        "headers": {
+          "Host": "sinavm_sinavm.sinabigo.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 56",
+      "server": "172.167.12.228",
+      "server_port": 443,
+      "uuid": "7e6d3409-ea79-43d9-eaa1-e881146017de",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "sizdah.dilik.co",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 57",
+      "server": "2a04:4e42::731",
+      "server_port": 80,
+      "uuid": "b00c1456-7489-4cac-8efc-652d2c1fb4b8",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 58",
+      "server": "88.216.214.51",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 59",
+      "server": "104.20.129.2",
+      "server_port": 80,
+      "uuid": "e497da22-d020-40fb-a1fa-bc294066a2d2",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "pormang.webhost99.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 60",
+      "server": "88.216.214.25",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 61",
+      "server": "95.217.0.23",
+      "server_port": 26209,
+      "uuid": "3415f323-9e99-4b15-ddac-7bdb0409c606",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 62",
+      "server": "151.101.194.219",
+      "server_port": 80,
+      "uuid": "b00c1456-7489-4cac-8efc-652d2c1fb4b8",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 63",
+      "server": "162.19.228.119",
+      "server_port": 80,
+      "uuid": "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51",
+      "transport": {
+        "type": "ws",
+        "path": "/http",
+        "headers": {
+          "Host": "google.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 64",
+      "server": "37.156.47.23",
+      "server_port": 30583,
+      "uuid": "2ddbf9ee-6c29-468b-f108-b7f2057797a8",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 65",
+      "server": "151.101.2.165",
+      "server_port": 80,
+      "uuid": "89bb8e01-584f-4a5e-8c33-bd52ea55dd92",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420",
+        "headers": {
+          "Host": "irank9wgscajaigwio.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 66",
+      "server": "151.101.129.57",
+      "server_port": 80,
+      "uuid": "9c35196b-c0cc-4a68-89ee-0e37ea063ce7",
+      "transport": {
+        "type": "ws",
+        "path": "/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6",
+        "headers": {
+          "Host": "Www.speedtest.net.sPeedtest2.sbs."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 67",
+      "server": "185.146.173.7",
+      "server_port": 443,
+      "uuid": "c4258f50-fe5d-4b6c-9f09-5a193b7d34ef",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm_sinavm.sinabigo.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ln2ray",
+        "headers": {
+          "Host": "sinavm_sinavm.sinabigo.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 68",
+      "server": "151.101.193.6",
+      "server_port": 80,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 69",
+      "server": "5.223.53.37",
+      "server_port": 8080,
+      "uuid": "5b001373-8e4b-4ac1-b455-20d9764cbba7",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 70",
+      "server": "151.101.129.6",
+      "server_port": 80,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 71",
+      "server": "151.101.158.204",
+      "server_port": 80,
+      "uuid": "f4041a2e-6f7d-4768-c680-654b71bdce63",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "fatmelo.com"
+        },
+        "max_early_data": 64,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 72",
+      "server": "151.101.194.228",
+      "server_port": 443,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "tls": {
+        "enabled": true,
+        "server_name": "faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 73",
+      "server": "95.142.37.48",
+      "server_port": 23393,
+      "uuid": "72996cf0-59da-4c97-8acd-4fdaf0c49407",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 74",
+      "server": "85.9.122.191",
+      "server_port": 32073,
+      "uuid": "7e8c63a2-71a9-4f46-bb42-cedc17cd99b6",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 75",
+      "server": "45.138.24.119",
+      "server_port": 8443,
+      "uuid": "fed01482-6a05-4234-bff7-d7ff6106ff63",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Paai0w6bHcKmaZzm8Sljt8uKydSYX5h1t3G_Y3T-Rm0",
+          "short_id": "f74b9234"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "JoinBadeChannel@antimeli",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 76",
+      "server": "95.217.0.23",
+      "server_port": 26209,
+      "uuid": "3415f323-9e99-4b15-ddac-7bdb0409c606",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 77",
+      "server": "2a01:4f8:1c1b:7df::1",
+      "server_port": 443,
+      "uuid": "863f9df3-3d66-4c33-93c8-ad4487788c64",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 78",
+      "server": "88.216.214.42",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 79",
+      "server": "85.208.139.222",
+      "server_port": 1633,
+      "uuid": "58a2aa89-2bbb-403a-9f7d-0eeec2f024bd",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 80",
+      "server": "188.245.164.188",
+      "server_port": 443,
+      "uuid": "5bfce67a-9175-4bba-b18b-1da3f11cc872",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "tgju.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
+          "short_id": "e54b5ad736ae4c38"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 81",
+      "server": "168.119.192.76",
+      "server_port": 443,
+      "uuid": "5bfce67a-9175-4bba-b18b-1da3f11cc872",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "tgju.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
+          "short_id": "e54b5ad736ae4c38"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 82",
+      "server": "2a01:4f8:1c1b:3e2::1",
+      "server_port": 443,
+      "uuid": "844719b2-8310-48ab-a48b-4fc709a5f444",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 83",
+      "server": "185.161.251.211",
+      "server_port": 1633,
+      "uuid": "58a2aa89-2bbb-403a-9f7d-0eeec2f024bd",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 84",
+      "server": "88.216.214.55",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 85",
+      "server": "151.101.66.228",
+      "server_port": 443,
+      "uuid": "01632966-673f-4159-bf1b-744cf76c3653",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 86",
+      "server": "213.159.76.239",
+      "server_port": 2052,
+      "uuid": "7dd4a177-2705-4824-8ab6-b3a1b1efad14",
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 87",
+      "server": "2a01:4f8:1c1b:25a3::1",
+      "server_port": 443,
+      "uuid": "ef899f88-a920-4744-a0fd-f6b65c843d42",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 88",
+      "server": "49.12.97.111",
+      "server_port": 443,
+      "uuid": "5bfce67a-9175-4bba-b18b-1da3f11cc872",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "tgju.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
+          "short_id": "e54b5ad736ae4c38"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 89",
+      "server": "51.68.81.102",
+      "server_port": 22671,
+      "uuid": "ebc5660f-bb9b-415c-94ab-d3630189ceb9",
+      "transport": {
+        "type": "http",
+        "host": "telewebion.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 90",
+      "server": "151.101.194.219",
+      "server_port": 80,
+      "uuid": "b00c1456-7489-4cac-8efc-652d2c1fb4b8",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 91",
+      "server": "2a01:4f8:1c1b:1891::1",
+      "server_port": 443,
+      "uuid": "c1ad41f7-66b4-49de-b2d6-ae1358397f5f",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 92",
+      "server": "95.142.37.74",
+      "server_port": 20011,
+      "uuid": "c26181b5-b49e-480e-a3d5-eb1583a1f38d",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 93",
+      "server": "162.19.228.119",
+      "server_port": 80,
+      "uuid": "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51",
+      "transport": {
+        "type": "ws",
+        "path": "/http",
+        "headers": {
+          "Host": "google.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 94",
+      "server": "185.153.183.94",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 95",
+      "server": "151.101.130.219",
+      "server_port": 80,
+      "uuid": "b00c1456-7489-4cac-8efc-652d2c1fb4b8",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 96",
+      "server": "151.101.2.219",
+      "server_port": 80,
+      "uuid": "b00c1456-7489-4cac-8efc-652d2c1fb4b8",
+      "transport": {
+        "type": "ws",
+        "path": "/olem/ws",
+        "headers": {
+          "Host": "foffmelo.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 97",
+      "server": "104.17.147.22",
+      "server_port": 2052,
+      "uuid": "900466aa-aa08-49ed-bf40-d740e5c7d5e7",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/",
+        "headers": {
+          "Host": "FN.CafeBazarZzZ.IP-DDNS.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 98",
+      "server": "88.216.214.29",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 99",
+      "server": "88.216.214.41",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 100",
+      "server": "37.27.252.79",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 101",
+      "server": "151.101.194.228",
+      "server_port": 443,
+      "uuid": "01632966-673f-4159-bf1b-744cf76c3653",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 102",
+      "server": "185.231.205.24",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 103",
+      "server": "91.134.45.125",
+      "server_port": 22671,
+      "uuid": "ebc5660f-bb9b-415c-94ab-d3630189ceb9",
+      "transport": {
+        "type": "http",
+        "host": "telewebion.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 104",
+      "server": "88.216.214.44",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 105",
+      "server": "162.159.38.232",
+      "server_port": 443,
+      "uuid": "8494eec8-2416-4c47-9cb2-a60138151546",
+      "tls": {
+        "enabled": true,
+        "server_name": "ta3317.isfshzist.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/wss",
+        "headers": {
+          "Host": "ta3317.isfshzist.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 106",
+      "server": "65.109.209.201",
+      "server_port": 7642,
+      "uuid": "0096b273-66da-4e05-b309-db0d40cbec41",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 107",
+      "server": "104.17.148.22",
+      "server_port": 2052,
+      "uuid": "900466aa-aa08-49ed-bf40-d740e5c7d5e7",
+      "transport": {
+        "type": "httpupgrade",
+        "headers": {
+          "Host": "FN.CafeBazarZzZ.IP-DDNS.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 108",
+      "server": "85.209.229.8",
+      "server_port": 36899,
+      "uuid": "89e8a3ff-6e0d-4ee2-877e-827ac726ab25",
+      "tls": {
+        "enabled": true,
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "bjUr3kN2r7avyIreIpnUh7KIaKHaIJuEm-uYss_2fUk",
+          "short_id": "3a1c"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 109",
+      "server": "151.101.1.6",
+      "server_port": 80,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 110",
+      "server": "2a01:4f8:1c1b:202e::1",
+      "server_port": 443,
+      "uuid": "aad886d4-cf66-412c-8d37-82a2d43ce186",
+      "tls": {
+        "enabled": true,
+        "server_name": "gsmarena.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AVesZ9rUbwnESVl0YSPs98oWmZbXlhDVjR4ssJAw6yw",
+          "short_id": "32d7a82d"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN,@Everyday_VPN",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 111",
+      "server": "88.216.214.20",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 112",
+      "server": "37.156.47.23",
+      "server_port": 30583,
+      "uuid": "2ddbf9ee-6c29-468b-f108-b7f2057797a8",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 113",
+      "server": "185.153.183.198",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 114",
+      "server": "151.101.2.165",
+      "server_port": 80,
+      "uuid": "89bb8e01-584f-4a5e-8c33-bd52ea55dd92",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420,telegram-@EXPRESSVPN_420",
+        "headers": {
+          "Host": "irank9wgscajaigwio.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 115",
+      "server": "147.135.125.117",
+      "server_port": 443,
+      "uuid": "3b9bc773-05eb-4d5f-8c1f-57342c0c4f40",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135010103.sec19org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 116",
+      "server": "185.231.205.30",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 117",
+      "server": "172.167.181.175",
+      "server_port": 443,
+      "uuid": "0cf13601-4752-4f9f-b196-e2e214a589bb",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "hefdah.dilik.co",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 118",
+      "server": "84.32.131.173",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 119",
+      "server": "15.204.153.78",
+      "server_port": 443,
+      "uuid": "3b9bc773-05eb-4d5f-8c1f-57342c0c4f40",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135010103.sec19org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 120",
+      "server": "148.113.136.209",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 121",
+      "server": "84.32.131.193",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 122",
+      "server": "135.148.74.154",
+      "server_port": 443,
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 123",
+      "server": "148.113.141.224",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 124",
+      "server": "135.148.74.148",
+      "server_port": 443,
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 125",
+      "server": "104.21.43.145",
+      "server_port": 443,
+      "uuid": "c4258f50-fe5d-4b6c-9f09-5a193b7d34ef",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm_sinavm.sinabigo.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ln2ray",
+        "headers": {
+          "Host": "sinavm_sinavm.sinabigo.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 126",
+      "server": "148.113.136.236",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 127",
+      "server": "148.113.139.112",
+      "server_port": 2053,
+      "uuid": "43121bff-3e8a-44bb-9c33-3f1000f8efe3",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nr4qs7JSJShNXIpWKNGReZXaFw910k1X93NDevapa0E",
+          "short_id": "5640288dca4f8519"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "2053vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 128",
+      "server": "84.32.131.186",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 129",
+      "server": "84.32.131.190",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 130",
+      "server": "135.148.152.98",
+      "server_port": 443,
+      "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001195.sec22org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 131",
+      "server": "84.32.131.175",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 132",
+      "server": "151.101.193.6",
+      "server_port": 80,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 133",
+      "server": "84.32.131.188",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 134",
+      "server": "84.32.131.178",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 135",
+      "server": "185.146.173.7",
+      "server_port": 443,
+      "uuid": "c4258f50-fe5d-4b6c-9f09-5a193b7d34ef",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm_sinavm.sinabigo.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ln2ray",
+        "headers": {
+          "Host": "sinavm_sinavm.sinabigo.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 136",
+      "server": "185.231.205.23",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 137",
+      "server": "151.101.129.6",
+      "server_port": 80,
+      "uuid": "0060fb3a-06d1-5962-85cb-5f22ac528d68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0-MOSIV2-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 138",
+      "server": "84.32.190.50",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 139",
+      "server": "157.173.127.233",
+      "server_port": 443,
+      "uuid": "17a6e953-8fac-428c-b86c-8585722b0b52",
+      "tls": {
+        "enabled": true,
+        "server_name": "analytics.google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "MbTwpwMFXu8duJgVMb_jFpqEuopSWJW1FPH_D6fZAEM",
+          "short_id": "1f"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 140",
+      "server": "5.223.53.37",
+      "server_port": 8080,
+      "uuid": "5b001373-8e4b-4ac1-b455-20d9764cbba7",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 141",
+      "server": "88.216.214.16",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 142",
+      "server": "195.177.255.77",
+      "server_port": 56396,
+      "uuid": "ed523ffc-dcc2-4aae-8897-a9c5831d9fc5",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 143",
+      "server": "88.216.214.10",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 144",
+      "server": "74.248.139.80",
+      "server_port": 443,
+      "uuid": "01faecc9-1067-4a19-f848-59a40fb81538",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "six.dilik.co",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 145",
+      "server": "88.216.214.38",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 146",
+      "server": "88.216.214.8",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 147",
+      "server": "37.27.219.115",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 148",
+      "server": "77.221.149.42",
+      "server_port": 2053,
+      "uuid": "665b6586-00af-4615-afc3-6310590489c1",
+      "transport": {
+        "type": "http",
+        "host": "fast.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 149",
+      "server": "135.148.206.182",
+      "server_port": 443,
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 150",
+      "server": "51.81.124.80",
+      "server_port": 443,
+      "uuid": "3b9bc773-05eb-4d5f-8c1f-57342c0c4f40",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135010103.sec19org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 151",
+      "server": "84.32.131.170",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 152",
+      "server": "104.20.129.2",
+      "server_port": 80,
+      "uuid": "e497da22-d020-40fb-a1fa-bc294066a2d2",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "pormang.webhost99.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 153",
+      "server": "138.199.194.113",
+      "server_port": 443,
+      "uuid": "13d2e8b0-0eb0-49db-9e25-5928631866e4",
+      "transport": {
+        "type": "http",
+        "host": "playstation.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 154",
+      "server": "88.216.214.25",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 155",
+      "server": "185.153.183.129",
+      "server_port": 3237,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 156",
+      "server": "88.216.214.33",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 157",
+      "server": "103.168.19.228",
+      "server_port": 54732,
+      "uuid": "f2587596-e4c7-46ca-9ebd-83fe233a98e5",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 158",
+      "server": "88.216.214.30",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 159",
+      "server": "185.156.108.128",
+      "server_port": 58437,
+      "uuid": "a51396aa-8ce4-4e7f-fdc6-8014bf0b712e",
+      "transport": {
+        "type": "http",
+        "host": "fast.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 160",
+      "server": "104.21.61.49",
+      "server_port": 443,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "a.xn--i-sx6a60i.us.kg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "a.xn--i-sx6a60i.us.kg"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 161",
+      "server": "51.81.36.78",
+      "server_port": 443,
+      "uuid": "0a44145f-59dc-4e5b-a233-677b97f5114c",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135011033.sec21org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 162",
+      "server": "135.148.74.155",
+      "server_port": 443,
+      "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135004002.sec20org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 163",
+      "server": "77.239.100.183",
+      "server_port": 58282,
+      "uuid": "e6a16878-1c34-41e8-baf6-ee63bba57f36",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "RJTp-A4QAhq9YjENwATI9cxJqce2DFlgr47PP4q_sDc",
+          "short_id": "57d2e1ac63b771"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 164",
+      "server": "213.21.245.60",
+      "server_port": 443,
+      "uuid": "SVNTEAM",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.latimes.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "PX3Iw8tKNRnG6_MqONvC96D7G1RWe_VvBJ99UGN150k"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 165",
+      "server": "77.239.99.180",
+      "server_port": 15334,
+      "uuid": "1bae5cb2-b8a7-4e72-8980-c9fa36570bd1",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "MrKbAyoy-dwMexaD87JOtfO_kFmCMIXjlJSFPOWMPyo",
+          "short_id": "c1"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 166",
+      "server": "84.32.131.158",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 167",
+      "server": "74.248.139.80",
+      "server_port": 443,
+      "uuid": "01faecc9-1067-4a19-f848-59a40fb81538",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "six.dilik.co",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 168",
+      "server": "2.189.104.10",
+      "server_port": 52418,
+      "uuid": "c31d6b4e-6105-4197-c94d-c45bce6c23a2",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 169",
+      "server": "142.93.173.137",
+      "server_port": 6067,
+      "uuid": "2e2f5cd2-cf20-4204-868b-fe8ea95e531a",
+      "transport": {
+        "type": "grpc",
+        "service_name": "2055vless",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 170",
+      "server": "77.239.100.183",
+      "server_port": 58282,
+      "uuid": "e6a16878-1c34-41e8-baf6-ee63bba57f36",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "RJTp-A4QAhq9YjENwATI9cxJqce2DFlgr47PP4q_sDc",
+          "short_id": "57d2e1ac63b771"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 171",
+      "server": "51.44.124.232",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 172",
+      "server": "88.216.214.21",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 173",
+      "server": "172.64.34.232",
+      "server_port": 443,
+      "uuid": "8494eec8-2416-4c47-9cb2-a60138151546",
+      "tls": {
+        "enabled": true,
+        "server_name": "ta3317.isfshzist.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/wss",
+        "headers": {
+          "Host": "ta3317.isfshzist.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 174",
+      "server": "77.239.99.180",
+      "server_port": 15334,
+      "uuid": "1bae5cb2-b8a7-4e72-8980-c9fa36570bd1",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "MrKbAyoy-dwMexaD87JOtfO_kFmCMIXjlJSFPOWMPyo",
+          "short_id": "c1"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 175",
+      "server": "108.162.193.81",
+      "server_port": 443,
+      "uuid": "a6b9bd95-2c9c-44f9-8089-0bb197893605",
+      "tls": {
+        "enabled": true,
+        "server_name": "86cyyv.billionaire33.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/wss",
+        "headers": {
+          "Host": "86cyyv.billionaire33.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 176",
+      "server": "37.27.249.41",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 177",
+      "server": "135.148.152.100",
+      "server_port": 443,
+      "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001195.sec22org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 178",
+      "server": "135.148.152.106",
+      "server_port": 443,
+      "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001195.sec22org.com",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 179",
+      "server": "172.167.12.228",
+      "server_port": 443,
+      "uuid": "7e6d3409-ea79-43d9-eaa1-e881146017de",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "sizdah.dilik.co",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 180",
+      "server": "157.173.127.238",
+      "server_port": 443,
+      "uuid": "571b311b-4a34-4792-93f9-a5c0cfa66f66",
+      "tls": {
+        "enabled": true,
+        "server_name": "analytics.google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "p2iqEmOs4u682Jz5S-E-s7k8AbsNZbc-mitgU89PRi4",
+          "short_id": "db06"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 181",
+      "server": "84.32.131.191",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 182",
+      "server": "88.216.214.49",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 183",
+      "server": "156.229.163.157",
+      "server_port": 12328,
+      "uuid": "10ade744-d103-40d8-83e0-77a9bc343c07",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.swift.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0YSYFeihg5eJSBANonnWjrMl4SrWsZ0bdPOKhPdFpFI",
+          "short_id": "6ba85179e30d4fc2"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 184",
+      "server": "85.237.211.219",
+      "server_port": 8443,
+      "uuid": "7996d412-0b2a-4533-bba1-f7531861f1ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "ul-uae2.09vpn.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 185",
+      "server": "104.17.148.22",
+      "server_port": 80,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "path": "/LwW5jwrnymnOdqki",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 186",
+      "server": "15.204.150.39",
+      "server_port": 443,
+      "uuid": "e20ebe01-1815-4c09-8e77-fb2f168263ce",
+      "tls": {
+        "enabled": true,
+        "server_name": "147135001178.sec22org.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "vless § 187",
+      "server": "104.17.147.22",
+      "server_port": 80,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "path": "/LwW5jwrnymnOdqki",
+        "headers": {
+          "Host": "redw.pooriam.ir"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "BGXpvC16IukFHbHU"
+    }
+  }
+}
