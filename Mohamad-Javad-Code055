@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "hajlab.ucdavis.edu",
           "join.vpncustomize.fastly80-3.hosting-ip.com",
+          "hajlab.ucdavis.edu",
           "join.unlimiteddev.fastly80-3.hosting-ip.com"
         ],
         "server": "dns-direct"
@@ -57,14 +57,14 @@
       "sky.rethinkdns.com": [
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "188.114.97.3",
         "188.114.96.3",
-        "104.17.148.22",
+        "188.114.97.3",
         "104.17.147.22",
+        "104.17.148.22",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "188.114.97.3",
-        "188.114.96.3"
+        "188.114.96.3",
+        "188.114.97.3"
       ]
     },
     "independent_cache": true
@@ -103,9 +103,12 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +3 § 1",
-        "@Hiddify_nexttt +5 § 2"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "default": "auto"
     },
@@ -113,9 +116,12 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +3 § 1",
-        "@Hiddify_nexttt +5 § 2"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -123,10 +129,44 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 0",
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "join.VPNCUSTOMIZE.fastly80-3.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram----VPNCUSTOMIZE----VPNCUSTOMIZE----VPNCUSTOMIZE---VPNCUSTOMIZE---VPNCUSTOMIZE---VPNCUSTOMIZE",
+        "headers": {
+          "Host": "Join-VPNCUSTOMIZE---VPNCUSTOMIZE.IR"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 § 1",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "72105386-9e62-4600-a69f-f0e954c87274",
+      "uuid": "82a0046a-ab45-404f-a265-a7f761049c78",
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 2",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "04e99454-32f9-4a58-99f9-46c4bae76433",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -140,15 +180,15 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 1",
-      "server": "join.VPNCUSTOMIZE.fastly80-3.hosting-ip.com",
+      "tag": "@Hiddify_nexttt +4 § 3",
+      "server": "151.101.64.155",
       "server_port": 80,
-      "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+      "uuid": "09e61488-6297-4251-b03d-bbb995126360",
       "transport": {
         "type": "ws",
-        "path": "/Telegram----VPNCUSTOMIZE----VPNCUSTOMIZE----VPNCUSTOMIZE---VPNCUSTOMIZE---VPNCUSTOMIZE---VPNCUSTOMIZE",
+        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
         "headers": {
-          "Host": "Join----VPNCUSTOMIZE---VPNCUSTOMIZE.IR"
+          "Host": "1.wexer-rih.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -157,7 +197,24 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +5 § 2",
+      "tag": "@Hiddify_nexttt +5 § 4",
+      "server": "151.101.64.155",
+      "server_port": 80,
+      "uuid": "bc5c6f15-ffc6-43ff-8375-bb91275fd38e",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
+        "headers": {
+          "Host": "2.wexer-rih.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +6 § 5",
       "server": "join.unlimiteddev.fastly80-3.hosting-ip.com",
       "server_port": 80,
       "uuid": "557fa110-899e-4fcc-8d0f-a31f9b90528e",
@@ -240,7 +297,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "iC-BmwXnuhir0wrC"
+      "secret": "0n4sPQap8NbvckKz"
     }
   }
 }
