@@ -34,7 +34,10 @@
     ],
     "rules": [
       {
-        "domain": "liferobot.darkping.net",
+        "domain": [
+          "hajlab.ucdavis.edu",
+          "liferobot.darkping.net"
+        ],
         "server": "dns-direct"
       },
       {
@@ -51,14 +54,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::",
-        "188.114.98.0",
-        "188.114.99.0",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
+        "188.114.97.3",
+        "188.114.96.3",
         "104.17.147.22",
         "104.17.148.22",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "188.114.99.0",
         "188.114.98.0"
       ]
@@ -120,14 +123,14 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "151.101.64.155",
+      "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "4375e80e-d06f-4af9-bfec-afbfd63a1584",
+      "uuid": "7c701fc4-794f-4c41-9475-766bccfddd79",
       "transport": {
         "type": "ws",
-        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "1.wexer-rih.ir"
+          "Host": "joinshhproxybedeeeeeee.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -137,23 +140,6 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "151.101.64.155",
-      "server_port": 80,
-      "uuid": "55f5accf-0aef-427f-a819-e59b4c79293a",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
-        "headers": {
-          "Host": "2.wexer-rih.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 2",
       "server": "liferobot.darkping.net",
       "server_port": 1633,
       "uuid": "0b5a9cb6-97c8-4cd2-a903-4bf21367d3f7",
@@ -170,6 +156,23 @@
           "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
           "short_id": "9bc0a55a5379c0ed"
         }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 2",
+      "server": "151.101.64.155",
+      "server_port": 80,
+      "uuid": "55f5accf-0aef-427f-a819-e59b4c79293a",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
+        "headers": {
+          "Host": "2.wexer-rih.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
@@ -241,7 +244,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "3irb4y250C22x0Zh"
+      "secret": "uSKDQ5US_Au_3MpB"
     }
   }
 }
