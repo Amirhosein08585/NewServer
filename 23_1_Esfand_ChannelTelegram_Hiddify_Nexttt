@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
+        "188.114.96.3",
+        "188.114.97.3",
         "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
-        "188.114.97.3",
-        "188.114.96.3",
         "104.17.147.22",
         "104.17.148.22",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3",
+        "188.114.97.3",
         "188.114.96.3",
-        "188.114.97.3"
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -99,7 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt +1 § 0"
       ],
       "default": "auto"
     },
@@ -107,7 +107,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt +1 § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,10 +115,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt § 0",
+      "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "c2d127e1-5068-40ac-a1ff-9f06715ef44a",
+      "uuid": "d4e22d08-3fcf-4f07-bd36-8992289fc3b3",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -198,7 +198,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "7V-UObg0nAQGzAJI"
+      "secret": "jhKWuJJwZArqx6BD"
     }
   }
 }
