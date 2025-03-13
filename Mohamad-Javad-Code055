@@ -34,10 +34,7 @@
     ],
     "rules": [
       {
-        "domain": [
-          "hajlab.ucdavis.edu",
-          "liferobot.darkping.net"
-        ],
+        "domain": "hajlab.ucdavis.edu",
         "server": "dns-direct"
       },
       {
@@ -54,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
-        "188.114.97.3",
+        "2a06:98c1:3121::3",
         "188.114.96.3",
+        "188.114.97.3",
         "104.17.147.22",
         "104.17.148.22",
-        "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
-        "188.114.99.0",
-        "188.114.98.0"
+        "2a06:98c1:3121::3",
+        "188.114.97.3",
+        "188.114.96.3"
       ]
     },
     "independent_cache": true
@@ -104,7 +101,10 @@
         "auto",
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "default": "auto"
     },
@@ -114,18 +114,29 @@
       "outbounds": [
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vless",
+      "type": "shadowsocks",
       "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "45.144.48.63",
+      "server_port": 57456,
+      "method": "chacha20-ietf-poly1305",
+      "password": "d3837224ed465f00"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 § 1",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "7c701fc4-794f-4c41-9475-766bccfddd79",
+      "uuid": "d5fef3c8-c31b-4f47-94b3-82d533156317",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -138,43 +149,57 @@
       "packet_encoding": ""
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "liferobot.darkping.net",
-      "server_port": 1633,
-      "uuid": "0b5a9cb6-97c8-4cd2-a903-4bf21367d3f7",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "stackoverflow.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
-          "short_id": "9bc0a55a5379c0ed"
-        }
-      },
-      "packet_encoding": ""
+      "type": "shadowsocks",
+      "tag": "@Hiddify_nexttt +3 § 2",
+      "server": "3.28.107.6",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "151.101.64.155",
-      "server_port": 80,
-      "uuid": "55f5accf-0aef-427f-a819-e59b4c79293a",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
-        "headers": {
-          "Host": "2.wexer-rih.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +4 § 3",
+      "server": "77.239.112.132",
+      "server_port": 14055,
+      "obfs": {
+        "type": "salamander",
+        "password": "AOICMIWHB892R8LNKDQX"
       },
-      "packet_encoding": ""
+      "password": "NtG7yVlsWI",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +5 § 4",
+      "server": "77.239.112.132",
+      "server_port": 48149,
+      "obfs": {
+        "type": "salamander",
+        "password": "QOXMQNCOI891E2IACJ"
+      },
+      "password": "NtG7yVlsWI",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +6 § 5",
+      "server": "77.239.112.132",
+      "server_port": 54075,
+      "obfs": {
+        "type": "salamander",
+        "password": "qqodmxm9822E2Q8OC"
+      },
+      "password": "7G96UmkT0I",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
     },
     {
       "type": "dns",
@@ -244,7 +269,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "uSKDQ5US_Au_3MpB"
+      "secret": "W8OCnxFrvLNQL1H3"
     }
   }
 }
