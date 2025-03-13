@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
         "188.114.96.3",
         "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "104.17.147.22",
         "104.17.148.22",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
         "188.114.97.3",
-        "188.114.96.3"
+        "188.114.96.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -99,12 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5"
+        "@Hiddify_nexttt +1 § 0"
       ],
       "default": "auto"
     },
@@ -112,31 +107,18 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5"
+        "@Hiddify_nexttt +1 § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "shadowsocks",
-      "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "45.144.48.63",
-      "server_port": 57456,
-      "method": "chacha20-ietf-poly1305",
-      "password": "d3837224ed465f00"
-    },
-    {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 1",
+      "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "d5fef3c8-c31b-4f47-94b3-82d533156317",
+      "uuid": "d4e22d08-3fcf-4f07-bd36-8992289fc3b3",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -147,59 +129,6 @@
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "3.28.107.6",
-      "server_port": 443,
-      "method": "chacha20-ietf-poly1305",
-      "password": "u17T3BvpYaaiuW2c"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "77.239.112.132",
-      "server_port": 14055,
-      "obfs": {
-        "type": "salamander",
-        "password": "AOICMIWHB892R8LNKDQX"
-      },
-      "password": "NtG7yVlsWI",
-      "tls": {
-        "enabled": true,
-        "insecure": true
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "@Hiddify_nexttt +5 § 4",
-      "server": "77.239.112.132",
-      "server_port": 48149,
-      "obfs": {
-        "type": "salamander",
-        "password": "QOXMQNCOI891E2IACJ"
-      },
-      "password": "NtG7yVlsWI",
-      "tls": {
-        "enabled": true,
-        "insecure": true
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "@Hiddify_nexttt +6 § 5",
-      "server": "77.239.112.132",
-      "server_port": 54075,
-      "obfs": {
-        "type": "salamander",
-        "password": "qqodmxm9822E2Q8OC"
-      },
-      "password": "7G96UmkT0I",
-      "tls": {
-        "enabled": true,
-        "insecure": true
-      }
     },
     {
       "type": "dns",
@@ -269,7 +198,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "W8OCnxFrvLNQL1H3"
+      "secret": "jhKWuJJwZArqx6BD"
     }
   }
 }
