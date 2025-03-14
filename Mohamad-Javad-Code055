@@ -34,7 +34,10 @@
     ],
     "rules": [
       {
-        "domain": "hajlab.ucdavis.edu",
+        "domain": [
+          "hajlab.ucdavis.edu",
+          "www.speedtest.net"
+        ],
         "server": "dns-direct"
       },
       {
@@ -53,8 +56,8 @@
       "sky.rethinkdns.com": [
         "188.114.96.3",
         "188.114.97.3",
-        "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
         "104.17.147.22",
         "104.17.148.22",
         "188.114.97.3",
@@ -99,7 +102,9 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2"
       ],
       "default": "auto"
     },
@@ -107,7 +112,9 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -118,7 +125,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "d4e22d08-3fcf-4f07-bd36-8992289fc3b3",
+      "uuid": "4610b33b-937d-4aad-b504-72f65984f1c0",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -126,6 +133,40 @@
           "Host": "joinshhproxybedeeeeeee.ir"
         },
         "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "104.19.54.50",
+      "server_port": 8080,
+      "uuid": "90e2a66c-f4d1-4fcb-b8f1-227fa39af373",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram----VPNCUSTOMIZE----VPNCUSTOMIZE----VPNCUSTOMIZE---VPNCUSTOMIZE---VPNCUSTOMIZE---VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNCUSTOMIZE.www.webdade.com.www.speedtest.net.irna.ir.ips.ddns-ip.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+},
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 2",
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER-12a61022731d",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "banagh.azadistadium.com"
+        },
+        "max_early_data": 80,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -198,7 +239,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "jhKWuJJwZArqx6BD"
+      "secret": "_IQIJdM7IQyvh29x"
     }
   }
 }
