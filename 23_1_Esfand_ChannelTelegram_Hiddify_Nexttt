@@ -118,7 +118,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "d4e22d08-3fcf-4f07-bd36-8992289fc3b3",
+      "uuid": "4610b33b-937d-4aad-b504-72f65984f1c0",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -171,7 +171,7 @@
       {
         "port": 53,
         "outbound": "dns-out"
-      },
+},
       {
         "clash_mode": "Direct",
         "outbound": "direct"
@@ -198,7 +198,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "jhKWuJJwZArqx6BD"
+      "secret": "Fp0BeXqoi7fmnsTA"
     }
   }
 }
