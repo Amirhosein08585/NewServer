@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
         "188.114.96.3",
-        "2a06:98c1:3120::3",
+        "188.114.97.3",
         "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "104.17.147.22",
         "104.17.148.22",
-        "188.114.97.3",
         "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -118,7 +118,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "13d41a90-fdfc-4e16-b8b5-32863d29b8ad",
+      "uuid": "0a687d1b-8723-4df9-aba8-b2323e66580d",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -198,7 +198,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "UQd5TLfK2QB2GXHR"
+      "secret": "iqMdfgAZlDPQRSVJ"
     }
   }
 }
