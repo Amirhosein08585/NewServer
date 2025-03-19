@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "hajlab.ucdavis.edu",
-          "www.speedtest.net"
+          "www.speedtest.net",
+          "hajlab.ucdavis.edu"
         ],
         "server": "dns-direct"
       },
@@ -54,16 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3",
         "188.114.97.3",
         "188.114.96.3",
-        "104.17.147.22",
-        "104.17.148.22",
         "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
+        "104.17.147.22",
+        "104.17.148.22",
         "188.114.97.3",
-        "188.114.96.3"
+        "188.114.96.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -102,8 +102,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "💚🤍❤️|LinkTelegram|@Hiddify_Nexttt|💚🤍❤️ § 0",
-        "💚🤍❤️|LinkTelegram|@Hiddify_Nexttt|💚🤍❤️ § 1"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇩🇪@Hiddify_nexttt  § 1"
       ],
       "default": "auto"
     },
@@ -111,8 +111,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "💚🤍❤️|LinkTelegram|@Hiddify_Nexttt|💚🤍❤️ § 0",
-        "💚🤍❤️|LinkTelegram|@Hiddify_Nexttt|💚🤍❤️ § 1"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇩🇪@Hiddify_nexttt  § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -120,10 +120,10 @@
     },
     {
       "type": "vless",
-      "tag": "💚🤍❤️|LinkTelegram|@Hiddify_Nexttt|💚🤍❤️ § 0",
+      "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "dcfc52e0-44ef-4adf-959e-962b3c7e698a",
+      "uuid": "1b10cf2b-cd9b-4d38-9fbd-789c218122ad",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -137,10 +137,10 @@
     },
     {
       "type": "vless",
-      "tag": "💚🤍❤️|LinkTelegram|@Hiddify_Nexttt|💚🤍❤️ § 1",
+      "tag": "🇩🇪@Hiddify_nexttt  § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "db44839f-d494-4653-9e5b-f9cef1fd1808",
+      "uuid": "6b5d91ba-2108-41c9-8f0f-5f168f7c0652",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "BozozEOeuALcxZWc"
+      "secret": "DTi5TVSetfsATjeN"
     }
   }
 }
