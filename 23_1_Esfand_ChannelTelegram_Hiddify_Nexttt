@@ -60,10 +60,10 @@
         "2a06:98c1:3120::3",
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.97.3",
         "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -102,10 +102,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +3 § 1",
-        "@Hiddify_nexttt +4 § 2",
-        "@Hiddify_nexttt +5 § 3"
+        "@Hiddify_nexttt +4 § 0",
+        "@Hiddify_nexttt +5 § 1"
       ],
       "default": "auto"
     },
@@ -113,10 +111,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +3 § 1",
-        "@Hiddify_nexttt +4 § 2",
-        "@Hiddify_nexttt +5 § 3"
+        "@Hiddify_nexttt +4 § 0",
+        "@Hiddify_nexttt +5 § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -124,41 +120,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 0",
-      "server": "151.101.64.155",
-      "server_port": 80,
-      "uuid": "3868c9cd-3fbf-46ac-87ff-c941d1e0693f",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
-        "headers": {
-          "Host": "1.wexer-rih.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 1",
-      "server": "151.101.64.155",
-      "server_port": 80,
-      "uuid": "28da528a-d2d4-4cf7-a11f-1a096eafbc63",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
-        "headers": {
-          "Host": "2.wexer-rih.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 2",
+      "tag": "@Hiddify_nexttt +4 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
       "uuid": "899350c2-27fa-45e1-9cd2-97f746db88f7",
@@ -175,7 +137,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +5 § 3",
+      "tag": "@Hiddify_nexttt +5 § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
       "uuid": "6d5ee5fc-673c-42e6-a6fa-61fa14176f67",
@@ -258,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "DNsSLNaZ5etuQay6"
+      "secret": "kLWaoouLfBL1Ul1x"
     }
   }
 }
