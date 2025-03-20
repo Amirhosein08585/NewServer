@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "www.speedtest.net",
-          "hajlab.ucdavis.edu"
+          "hajlab.ucdavis.edu",
+          "www.speedtest.net"
         ],
         "server": "dns-direct"
       },
@@ -54,16 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
         "188.114.96.3",
+        "188.114.97.3",
         "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
-        "104.17.147.22",
         "104.17.148.22",
+        "104.17.147.22",
         "188.114.97.3",
         "188.114.96.3",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3"
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3"
       ]
     },
     "independent_cache": true
@@ -102,8 +102,10 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt +2 § 0",
+        "@Hiddify_nexttt +3 § 1",
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3"
       ],
       "default": "auto"
     },
@@ -111,8 +113,10 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt +2 § 0",
+        "@Hiddify_nexttt +3 § 1",
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -120,10 +124,44 @@
     },
     {
       "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt  § 0",
+      "tag": "@Hiddify_nexttt +2 § 0",
+      "server": "151.101.64.155",
+      "server_port": 80,
+      "uuid": "3868c9cd-3fbf-46ac-87ff-c941d1e0693f",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
+        "headers": {
+          "Host": "1.wexer-rih.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 1",
+      "server": "151.101.64.155",
+      "server_port": 80,
+      "uuid": "28da528a-d2d4-4cf7-a11f-1a096eafbc63",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ipv2ry-telegram-ipv2ry-telegram-ipv2ry",
+        "headers": {
+          "Host": "2.wexer-rih.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +4 § 2",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "1b10cf2b-cd9b-4d38-9fbd-789c218122ad",
+      "uuid": "899350c2-27fa-45e1-9cd2-97f746db88f7",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -137,10 +175,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt  § 1",
+      "tag": "@Hiddify_nexttt +5 § 3",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "6b5d91ba-2108-41c9-8f0f-5f168f7c0652",
+      "uuid": "6d5ee5fc-673c-42e6-a6fa-61fa14176f67",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -220,7 +258,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "DTi5TVSetfsATjeN"
+      "secret": "DNsSLNaZ5etuQay6"
     }
   }
 }
