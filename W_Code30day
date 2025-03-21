@@ -1,7 +1,6 @@
 {
   "log": {
     "level": "warn",
-    "output": "box.log",
     "timestamp": true
   },
   "dns": {
@@ -34,33 +33,38 @@
     ],
     "rules": [
       {
-        "domain": "www.speedtest.net",
-        "server": "dns-direct"
-      },
-      {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
+        "domain": [
+          "www.speedtest.net",
+          "hajlab.ucdavis.edu"
+        ],
         "server": "dns-direct"
       },
       {
         "domain": "cp.cloudflare.com",
         "server": "dns-remote",
         "rewrite_ttl": 3000
+      },
+      {
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
       }
     ],
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
+        "104.17.148.22",
+        "104.17.147.22",
         "188.114.97.3",
         "188.114.96.3",
         "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3",
-        "104.17.147.22",
-        "104.17.148.22",
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -74,15 +78,14 @@
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true,
-      "stack": "mixed",
-      "sniff": true,
-      "sniff_override_destination": true
+      "stack": "gvisor",
+      "sniff": true
     },
     {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 2334,
+      "listen_port": 12334,
       "sniff": true,
       "sniff_override_destination": true
     },
@@ -90,7 +93,7 @@
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
-      "listen_port": 6450
+      "listen_port": 16450
     }
   ],
   "outbounds": [
@@ -99,26 +102,48 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇩🇪@Hiddify_Nexttt § 0"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇩🇪@Hiddify_nexttt  § 1"
       ],
-      "default": "auto"
+      "default": "auto",
+      "interrupt_exist_connections": true
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪@Hiddify_Nexttt § 0"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇩🇪@Hiddify_nexttt  § 1"
       ],
-      "url": "http://cp.cloudflare.com/",
+      "url": "http://cp.cloudflare.com",
       "interval": "10m0s",
-      "idle_timeout": "1h40m0s"
+      "tolerance": 1,
+      "idle_timeout": "30m0s",
+      "interrupt_exist_connections": true
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_Nexttt § 0",
+      "tag": "🇷🇺@Hiddify_nexttt  § 0",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "ed39d11d-9965-4b4a-9e60-0924a3b084fd",
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪@Hiddify_nexttt  § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "d09614ba-c758-4370-940d-ee9f83ce2972",
+      "uuid": "09188882-5d5c-4e65-8c93-08ab2233d137",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -128,7 +153,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "dns",
@@ -143,8 +168,8 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-        "size": "1-500",
-        "sleep": "0-500"
+        "size": "10-30",
+        "sleep": "2-8"
       }
     },
     {
@@ -157,13 +182,12 @@
     }
   ],
   "route": {
-    "geoip": {
-      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
-    },
-    "geosite": {
-      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
-    },
     "rules": [
+      {
+        "inbound": "tun-in",
+        "package_name": "app.hiddify.com",
+        "outbound": "bypass"
+      },
       {
         "inbound": "dns-in",
         "outbound": "dns-out"
@@ -173,18 +197,31 @@
         "outbound": "dns-out"
       },
       {
-        "clash_mode": "Direct",
+        "domain_suffix": ".ir",
         "outbound": "direct"
       },
       {
-        "clash_mode": "Global",
-        "outbound": "select"
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
       },
       {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
-        "geoip": "ir",
-        "outbound": "bypass"
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
       }
     ],
     "final": "select",
@@ -197,8 +234,8 @@
       "path": "clash.db"
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:6756",
-      "secret": "-RcbAH1zicSf1kmA"
+      "external_controller": "127.0.0.1:16756",
+      "secret": "n69WboudnGPoDi4_"
     }
   }
 }
