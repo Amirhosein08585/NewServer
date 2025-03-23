@@ -1,6 +1,7 @@
 {
   "log": {
     "level": "warn",
+    "output": "box.log",
     "timestamp": true
   },
   "dns": {
@@ -45,10 +46,6 @@
         "rewrite_ttl": 3000
       },
       {
-        "domain_suffix": ".ir",
-        "server": "dns-direct"
-      },
-      {
         "rule_set": [
           "geoip-ir",
           "geosite-ir"
@@ -59,10 +56,10 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "104.17.147.22",
         "104.17.148.22",
-        "2a06:98c1:3121::3",
+        "104.17.147.22",
         "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
         "188.114.96.3",
         "188.114.97.3"
       ]
@@ -78,14 +75,15 @@
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true,
-      "stack": "gvisor",
-      "sniff": true
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
     },
     {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 12334,
+      "listen_port": 2334,
       "sniff": true,
       "sniff_override_destination": true
     },
@@ -93,7 +91,7 @@
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
-      "listen_port": 16450
+      "listen_port": 6450
     }
   ],
   "outbounds": [
@@ -103,30 +101,27 @@
       "outbounds": [
         "auto",
         "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt § 1"
+        "🇩🇪@Hiddify_nexttt  § 1"
       ],
-      "default": "auto",
-      "interrupt_exist_connections": true
+      "default": "auto"
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
         "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt § 1"
+        "🇩🇪@Hiddify_nexttt  § 1"
       ],
-      "url": "http://cp.cloudflare.com",
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
-      "tolerance": 1,
-      "idle_timeout": "30m0s",
-      "interrupt_exist_connections": true
+      "idle_timeout": "1h40m0s"
     },
     {
       "type": "vless",
       "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "753759b2-9768-4285-960f-b5eb7dca33a5",
+      "uuid": "f7fa3b47-bded-46b9-b8cb-e0bc78b099e0",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -136,14 +131,14 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": "xudp"
+      "packet_encoding": ""
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt § 1",
+      "tag": "🇩🇪@Hiddify_nexttt  § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "1b7f7a70-cce2-49da-8254-e5eacdac7716",
+      "uuid": "3d55c73c-f0dc-444e-9c1e-499c116fe492",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -153,7 +148,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": "xudp"
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -184,9 +179,11 @@
   "route": {
     "rules": [
       {
-        "inbound": "tun-in",
-        "package_name": "app.hiddify.com",
-        "outbound": "bypass"
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
       },
       {
         "inbound": "dns-in",
@@ -197,15 +194,12 @@
         "outbound": "dns-out"
       },
       {
-        "domain_suffix": ".ir",
+        "clash_mode": "Direct",
         "outbound": "direct"
       },
       {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "outbound": "direct"
+        "clash_mode": "Global",
+        "outbound": "select"
       }
     ],
     "rule_set": [
@@ -234,8 +228,8 @@
       "path": "clash.db"
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:16756",
-      "secret": "AbVKvV_hWlwSVepx"
+      "external_controller": "127.0.0.1:6756",
+      "secret": "vMMZNG75Z2CXUSm5"
     }
   }
 }
