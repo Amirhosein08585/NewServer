@@ -35,29 +35,31 @@
     "rules": [
       {
         "domain": [
-          "www.speedtest.net",
-          "hajlab.ucdavis.edu"
+          "hajlab.ucdavis.edu",
+          "www.speedtest.net"
         ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
         "server": "dns-direct"
       },
       {
         "domain": "cp.cloudflare.com",
         "server": "dns-remote",
         "rewrite_ttl": 3000
-      },
-      {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "server": "dns-direct"
       }
     ],
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "104.17.147.22",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "188.114.96.3",
+        "188.114.97.3",
         "104.17.148.22",
+        "104.17.147.22",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
         "188.114.97.3",
@@ -100,8 +102,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt  § 0",
-        "@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
       "default": "auto"
     },
@@ -109,19 +111,19 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt  § 0",
-        "@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
-      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt  § 0",
+      "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "e3143297-1ad9-4d2e-9351-cba020d5df4c",
+      "uuid": "8ede70ac-e922-4c10-9df6-772347d741e0",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -135,10 +137,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt  § 1",
+      "tag": "@Hiddify_nexttt +2 § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "98950946-b579-482e-9086-05dc411ae71f",
+      "uuid": "ada2abea-4637-4def-9531-16bf306c99c6",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -163,8 +165,8 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-        "size": "10-30",
-        "sleep": "2-8"
+        "size": "1-500",
+        "sleep": "0-500"
       }
     },
     {
@@ -177,14 +179,13 @@
     }
   ],
   "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
     "rules": [
-      {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "outbound": "direct"
-      },
       {
         "inbound": "dns-in",
         "outbound": "dns-out"
@@ -200,22 +201,12 @@
       {
         "clash_mode": "Global",
         "outbound": "select"
-      }
-    ],
-    "rule_set": [
-      {
-        "type": "remote",
-        "tag": "geoip-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
-        "update_interval": "120h0m0s"
       },
       {
-        "type": "remote",
-        "tag": "geosite-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
-        "update_interval": "120h0m0s"
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
       }
     ],
     "final": "select",
@@ -229,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "pZUM1qFl_k6bGFSR"
+      "secret": "7LFZ7FZekeq37hG-"
     }
   }
 }
