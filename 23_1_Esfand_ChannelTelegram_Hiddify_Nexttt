@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "hajlab.ucdavis.edu",
-          "www.speedtest.net"
+          "www.speedtest.net",
+          "hajlab.ucdavis.edu"
         ],
         "server": "dns-direct"
       },
@@ -56,12 +56,12 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "104.17.148.22",
         "104.17.147.22",
+        "104.17.148.22",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "188.114.96.3",
-        "188.114.97.3"
+        "188.114.97.3",
+        "188.114.96.3"
       ]
     },
     "independent_cache": true
@@ -100,8 +100,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt  § 1"
       ],
       "default": "auto"
     },
@@ -109,8 +109,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt  § 1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -118,10 +118,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt  § 0",
+      "tag": "@Hiddify_nexttt  § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "f7fa3b47-bded-46b9-b8cb-e0bc78b099e0",
+      "uuid": "e3143297-1ad9-4d2e-9351-cba020d5df4c",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -135,10 +135,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt  § 1",
+      "tag": "@Hiddify_nexttt  § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "3d55c73c-f0dc-444e-9c1e-499c116fe492",
+      "uuid": "98950946-b579-482e-9086-05dc411ae71f",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -229,7 +229,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "vMMZNG75Z2CXUSm5"
+      "secret": "pZUM1qFl_k6bGFSR"
     }
   }
 }
