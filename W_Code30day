@@ -60,8 +60,8 @@
         "188.114.97.3",
         "104.17.148.22",
         "104.17.147.22",
-        "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "188.114.97.3",
         "188.114.96.3"
       ]
@@ -93,7 +93,9 @@
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
-      "listen_port": 6450
+      "listen_port": 6450,
+      "override_address": "1.1.1.1",
+      "override_port": 53
     }
   ],
   "outbounds": [
@@ -123,7 +125,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "8ede70ac-e922-4c10-9df6-772347d741e0",
+      "uuid": "df005349-f302-4125-808b-fc895ad7a1e5",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -140,7 +142,7 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "ada2abea-4637-4def-9531-16bf306c99c6",
+      "uuid": "070867b9-1f40-41cc-8daa-c3412159c40a",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -220,7 +222,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "7LFZ7FZekeq37hG-"
+      "secret": "ZmDL737TUU80ywxa"
     }
   }
 }
