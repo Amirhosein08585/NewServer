@@ -60,10 +60,10 @@
         "188.114.97.3",
         "104.17.148.22",
         "104.17.147.22",
-        "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
-        "188.114.97.3",
-        "188.114.96.3"
+        "2a06:98c1:3121::3",
+        "188.114.96.3",
+        "188.114.97.3"
       ]
     },
     "independent_cache": true
@@ -104,8 +104,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1"
+        "🇷🇺@Hiddify_Nexttt § 0",
+        "🇩🇪@Hiddify_Nexttt § 1"
       ],
       "default": "auto"
     },
@@ -113,8 +113,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1"
+        "🇷🇺@Hiddify_Nexttt § 0",
+        "🇩🇪@Hiddify_Nexttt § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -122,10 +122,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +1 § 0",
+      "tag": "🇷🇺@Hiddify_Nexttt § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "df005349-f302-4125-808b-fc895ad7a1e5",
+      "uuid": "c813d739-de87-4103-9bb7-f8e425152959",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -139,10 +139,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 1",
+      "tag": "🇩🇪@Hiddify_Nexttt § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "070867b9-1f40-41cc-8daa-c3412159c40a",
+      "uuid": "21b09517-8c2b-48d9-b95a-9f008c7f9d94",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -222,7 +222,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "ZmDL737TUU80ywxa"
+      "secret": "ByZzBqdzCQSjIafL"
     }
   }
 }
