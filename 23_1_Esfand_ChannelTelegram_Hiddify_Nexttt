@@ -53,16 +53,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
+        "104.21.69.44",
+        "172.67.204.84",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "188.114.97.3",
-        "188.114.96.3",
         "104.17.147.22",
         "104.17.148.22",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
         "188.114.97.3",
-        "188.114.96.3"
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3"
       ]
     },
     "independent_cache": true
@@ -123,7 +123,7 @@
       "tag": "@Hiddify_Nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "6f27b41d-312b-41fd-8183-0575056ae502",
+      "uuid": "6242c0ac-9ff5-4a8f-a1e4-89ef943899f4",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -140,7 +140,7 @@
       "tag": "@Hiddify_Nexttt +2 § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "fe732d85-f3d5-4052-a641-227cd29b2a0e",
+      "uuid": "e08e69df-b2bc-4c20-a79c-475a33edc26c",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -219,7 +219,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "80vqFbFLM6kqYtU2"
+      "secret": "-uEcdgxQj2DpL2aV"
     }
   }
 }
