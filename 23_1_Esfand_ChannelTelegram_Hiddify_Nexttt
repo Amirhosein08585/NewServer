@@ -41,8 +41,7 @@
         "server": "dns-direct"
       },
       {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
+        "domain_suffix": ".ru",
         "server": "dns-direct"
       },
       {
@@ -56,12 +55,10 @@
       "sky.rethinkdns.com": [
         "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
-        "188.114.97.3",
         "188.114.96.3",
-        "104.17.148.22",
-        "104.17.147.22",
-        "2a06:98c1:3120::3",
+        "188.114.97.3",
         "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "188.114.96.3",
         "188.114.97.3"
       ]
@@ -74,6 +71,7 @@
       "tag": "tun-in",
       "mtu": 9000,
       "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true,
@@ -123,7 +121,7 @@
       "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "512e80c1-55b5-4729-8908-c0d83ff3def5",
+      "uuid": "5c5696ac-be31-418a-8b42-edb18b8e481a",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -140,7 +138,7 @@
       "tag": "🇩🇪@Hiddify_nexttt  § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "4e271e50-687f-4f89-933a-9c59f3784875",
+      "uuid": "bad45c01-ea33-4fe5-8cba-94b2a518cedb",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -150,8 +148,8 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-"packet_encoding": ""
-    },
+      "packet_encoding": ""
+},
     {
       "type": "dns",
       "tag": "dns-out"
@@ -203,9 +201,8 @@
         "outbound": "select"
       },
       {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
-        "geoip": "ir",
+        "domain_suffix": ".ru",
+        "geoip": "ru",
         "outbound": "bypass"
       }
     ],
@@ -220,7 +217,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "zQhy5-BMcNiq-kkL"
+      "secret": "zsiHstfuGOsqdnuR"
     }
   }
 }
