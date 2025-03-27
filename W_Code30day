@@ -58,12 +58,12 @@
         "2a06:98c1:3121::3",
         "188.114.96.3",
         "188.114.97.3",
-        "104.17.148.22",
         "104.17.147.22",
+        "104.17.148.22",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "188.114.96.3",
-        "188.114.97.3"
+        "188.114.97.3",
+        "188.114.96.3"
       ]
     },
     "independent_cache": true
@@ -104,8 +104,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_Nexttt +2 § 1"
       ],
       "default": "auto"
     },
@@ -113,18 +113,18 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇷🇺@Hiddify_nexttt  § 0",
-        "🇩🇪@Hiddify_nexttt  § 1"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_Nexttt +2 § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s"
     },
     {
       "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt  § 0",
+      "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "dbf0ce44-e7b5-4cd7-ba14-25ad65a32474",
+      "uuid": "e9101362-2731-43fd-8390-f2075a70121f",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -138,10 +138,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt  § 1",
+      "tag": "@Hiddify_Nexttt +2 § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "a586caf7-4303-4a87-8aa7-8a4d61b850c1",
+      "uuid": "50f193f7-499e-4ecf-8904-abd869975c75",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -150,7 +150,7 @@
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-},
+      },
       "packet_encoding": ""
     },
     {
