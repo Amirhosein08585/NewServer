@@ -56,12 +56,12 @@
       "sky.rethinkdns.com": [
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "188.114.96.3",
         "188.114.97.3",
-        "104.17.148.22",
+        "188.114.96.3",
         "104.17.147.22",
-        "2a06:98c1:3120::3",
+        "104.17.148.22",
         "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "188.114.96.3",
         "188.114.97.3"
       ]
@@ -124,7 +124,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "hajlab.ucdavis.edu",
       "server_port": 80,
-      "uuid": "3debd766-8cc8-4ca7-8913-bc1db8d09912",
+      "uuid": "b90c80ef-be0c-4ece-900e-3e22bc6135a7",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -141,7 +141,7 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "79d2f253-0148-4d19-9716-503fc2d74d70",
+      "uuid": "22aa1425-2e54-4a05-9043-22d101876ca1",
       "transport": {
         "type": "ws",
         "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
@@ -150,7 +150,7 @@
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
+},
       "packet_encoding": ""
     },
     {
@@ -224,3 +224,4 @@
     }
   }
 }
+
