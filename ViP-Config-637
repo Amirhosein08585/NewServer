@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
         "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
-        "104.17.147.22",
+        "188.114.96.3",
+        "188.114.97.3",
         "104.17.148.22",
-        "188.114.97.0",
-        "188.114.96.0",
-        "2a06:98c1:3120::",
-        "2a06:98c1:3121::"
+        "104.17.147.22",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "188.114.96.3",
+        "188.114.97.3"
       ]
     },
     "independent_cache": true
@@ -102,7 +102,6 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇳🇱@Hiddify_Nexttt 🇳🇱 § 0",
         "🇺🇸 @Hiddify_Nexttt 🇺🇸 § 1"
       ],
       "default": "auto"
@@ -111,35 +110,13 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇳🇱@Hiddify_Nexttt 🇳🇱 § 0",
         "🇺🇸 @Hiddify_Nexttt 🇺🇸 § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
-    {
-      "type": "vless",
-      "tag": "🇳🇱@Hiddify_Nexttt 🇳🇱 § 0",
-      "server": "185.234.247.125",
-      "server_port": 443,
-      "uuid": "e0adec6c-cca8-479d-abd2-93c6e5dbb362",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.booking.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "bbPonepVL9zTgjSJtLMYWoJJmrCPmHc9hXuEbbhUKUo",
-          "short_id": "7a58880277965526"
-        }
-      },
-      "packet_encoding": ""
-    },
+    
     {
       "type": "shadowsocks",
       "tag": "🇺🇸 @Hiddify_Nexttt 🇺🇸 § 1",
@@ -161,7 +138,7 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-        "size": "1-500",
+"size": "1-500",
         "sleep": "0-500"
       }
     },
@@ -216,7 +193,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "QLJAaRpbBnb03H_v"
+      "secret": "WEjpliARTyGb_GNp"
     }
   }
 }
